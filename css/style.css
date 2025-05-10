@@ -2,59 +2,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* استایل‌های عمومی */
+:root {
+    --primary-gradient: linear-gradient(135deg, #6e8efb, #a777e3);
+    --secondary-gradient: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    --dark-gradient: linear-gradient(135deg, #2c3e50, #3498db);
+}
+
 body {
     font-family: 'Vazirmatn', sans-serif;
-    line-height: 1.6;
+    background: var(--primary-gradient);
     color: #333;
 }
 
 /* نوار ناوبری */
 .navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: var(--dark-gradient) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .navbar-brand {
-    font-weight: 700;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 /* بخش معرفی */
 #about {
     padding-top: 100px;
+    background: var(--secondary-gradient);
 }
 
 #about img {
     max-width: 300px;
-    border: 5px solid #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border: 5px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+#about img:hover {
+    transform: scale(1.05);
 }
 
 /* بخش مهارت‌ها */
 .skill-item {
-    background: #fff;
+    background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
 
 .progress {
     height: 10px;
     border-radius: 5px;
-    background-color: #f0f0f0;
 }
 
 .progress-bar {
-    background-color: #007bff;
-    border-radius: 5px;
+    background: var(--primary-gradient);
 }
 
 /* بخش پروژه‌ها */
 .card {
-    transition: transform 0.3s ease;
     border: none;
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 
 .card-img-top {
@@ -76,23 +89,27 @@ body {
 
 /* بخش تماس */
 #contact {
-    background: #f8f9fa;
+    background: var(--secondary-gradient);
 }
 
 .form-control {
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    padding: 10px;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.form-control:focus {
-    box-shadow: none;
-    border-color: #007bff;
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* فوتر */
 footer {
-    background: #343a40;
+    background: var(--dark-gradient) !important;
 }
 
 footer a {
@@ -132,6 +149,18 @@ footer a:hover {
     .card {
         margin-bottom: 20px;
     }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    section {
+        padding: 40px 0;
+    }
+    
+    .profile-image {
+        margin-top: 30px;
+    }
 }
 
 .social-links .btn-outline-primary {
@@ -152,4 +181,31 @@ footer a:hover {
 
 .social-links .btn-outline-primary:hover i {
     transform: scale(1.2);
+}
+
+/* Section Styles */
+section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: -1;
+}
+
+/* Animation */
+.social-links a {
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
 } 
