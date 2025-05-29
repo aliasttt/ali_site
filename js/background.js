@@ -5,11 +5,25 @@ console.log('Background script started');
 window.addEventListener('load', () => {
     console.log('Window loaded');
     
+    // Check if Three.js is available
+    if (typeof THREE === 'undefined') {
+        console.error('Three.js is not loaded');
+        return;
+    }
+    
     try {
+        // Get canvas element
+        const canvas = document.querySelector('#bg-canvas');
+        if (!canvas) {
+            console.error('Canvas element not found');
+            return;
+        }
+
+        // Setup scene
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({
-            canvas: document.querySelector('#bg-canvas'),
+            canvas: canvas,
             antialias: true,
             alpha: true
         });
