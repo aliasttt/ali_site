@@ -10,7 +10,7 @@ const translations = {
         // About Section
         "about_title": "Merhaba, Ben Ali",
         "about_subtitle": "Web Geliştirici",
-        "about_description": "Güzel ve kullanışlı web siteleri oluşturmaya tutkulu bir geliştiriciyim.",
+        "about_description": "Marmara Üniversitesi Bilgisayar Programcılığı bölümünden mezun, güzel ve kullanışlı web siteleri oluşturmaya tutkulu bir geliştiriciyim.",
 
         // Skills Section
         "skills_title": "Yeteneklerim",
@@ -37,22 +37,32 @@ const translations = {
 
         // Contact Section
         "contact": "İletişim",
-        "contact-info": "İletişim Bilgileri",
-        "name_placeholder": "Adınız",
-        "email_placeholder": "E-posta Adresiniz",
-        "subject_placeholder": "Konu",
-        "message_placeholder": "Mesajınız",
-        "send_button": "Mesaj Gönder",
+        "contact_info": "İletişim Bilgileri",
+        "name": "İsim",
         "email": "E-posta",
+        "message": "Mesaj",
+        "name_placeholder": "İsminizi girin",
+        "email_placeholder": "E-posta adresinizi girin",
+        "message_placeholder": "Mesajınızı yazın",
+        "send_button": "Mesaj Gönder",
+        "address": "İstanbul, Türkiye",
         "phone": "Telefon",
-        "address": "Adres",
+        "email_label": "E-posta",
+        "location": "Konum",
 
         // Footer
         "footer_about": "Hakkımda",
         "footer_about_text": "Güzel ve kullanışlı web siteleri oluşturmaya tutkulu deneyimli bir web geliştiricisiyim.",
         "footer_quick_links": "Hızlı Bağlantılar",
         "footer_contact": "İletişim",
-        "copyright": "Tüm hakları saklıdır © 2024"
+        "copyright": "Tüm hakları saklıdır © 2024",
+
+        // Project Details
+        "project_details": "Proje Detayları",
+        "features": "Özellikler",
+        "technologies": "Kullanılan Teknolojiler",
+        "live_demo": "Canlı Demo",
+        "view_code": "Kodu Gör"
     },
     fa: {
         // Navigation
@@ -65,7 +75,7 @@ const translations = {
         // About Section
         "about_title": "سلام، من علی هستم",
         "about_subtitle": "برنامه‌نویس وب",
-        "about_description": "من یک توسعه‌دهنده پرشور هستم که عاشق ایجاد وب‌سایت‌های زیبا و کاربردی است.",
+        "about_description": "من فارغ‌التحصیل رشته برنامه‌نویسی کامپیوتر از دانشگاه مارمارا هستم و یک توسعه‌دهنده پرشور که عاشق ایجاد وب‌سایت‌های زیبا و کاربردی است.",
 
         // Skills Section
         "skills_title": "مهارت‌های من",
@@ -92,22 +102,32 @@ const translations = {
 
         // Contact Section
         "contact": "تماس با من",
-        "contact-info": "اطلاعات تماس",
-        "name_placeholder": "نام شما",
-        "email_placeholder": "ایمیل شما",
-        "subject_placeholder": "موضوع",
-        "message_placeholder": "پیام شما",
-        "send_button": "ارسال پیام",
+        "contact_info": "اطلاعات تماس",
+        "name": "نام",
         "email": "ایمیل",
+        "message": "پیام",
+        "name_placeholder": "نام خود را وارد کنید",
+        "email_placeholder": "ایمیل خود را وارد کنید",
+        "message_placeholder": "پیام خود را بنویسید",
+        "send_button": "ارسال پیام",
+        "address": "تهران، ایران",
         "phone": "تلفن",
-        "address": "آدرس",
+        "email_label": "ایمیل",
+        "location": "موقعیت",
 
         // Footer
         "footer_about": "درباره من",
         "footer_about_text": "من یک توسعه‌دهنده وب با تجربه هستم که عاشق ایجاد وبسایت‌های زیبا و کاربردی است.",
         "footer_quick_links": "لینک‌های سریع",
         "footer_contact": "ارتباط با من",
-        "copyright": "تمامی حقوق محفوظ است © 2024"
+        "copyright": "تمامی حقوق محفوظ است © 2024",
+
+        // Project Details
+        "project_details": "جزئیات پروژه",
+        "features": "ویژگی‌ها",
+        "technologies": "تکنولوژی‌های استفاده شده",
+        "live_demo": "نسخه زنده",
+        "view_code": "مشاهده کد"
     },
     en: {
         // Navigation
@@ -120,7 +140,7 @@ const translations = {
         // About Section
         "about_title": "Hello, I'm Ali",
         "about_subtitle": "Web Developer",
-        "about_description": "I'm a passionate developer who loves creating beautiful and functional websites.",
+        "about_description": "I'm a graduate in Computer Programming from Marmara University, a passionate developer who loves creating beautiful and functional websites.",
 
         // Skills Section
         "skills_title": "My Skills",
@@ -146,22 +166,32 @@ const translations = {
         "comment3_text": "The quality of work and support is excellent. We will definitely work with this team for future projects.",
 
         // Contact Section
-        "contact": "Contact Me",
-        "contact-info": "Contact Information",
-        "name_placeholder": "Your Name",
-        "email_placeholder": "Your Email",
-        "subject_placeholder": "Subject",
-        "message_placeholder": "Your Message",
-        "send_button": "Send Message",
+        "contact": "Contact",
+        "contact_info": "Contact Information",
+        "name": "Name",
         "email": "Email",
+        "message": "Message",
+        "name_placeholder": "Enter your name",
+        "email_placeholder": "Enter your email",
+        "message_placeholder": "Write your message",
+        "send_button": "Send Message",
+        "address": "Istanbul, Turkey",
         "phone": "Phone",
-        "address": "Address",
+        "email_label": "Email",
+        "location": "Location",
 
         // Footer
         "footer_about": "About Me",
         "footer_about_text": "I'm an experienced web developer who loves creating beautiful and functional websites.",
         "footer_quick_links": "Quick Links",
         "footer_contact": "Contact",
-        "copyright": "All rights reserved © 2024"
+        "copyright": "All rights reserved © 2024",
+
+        // Project Details
+        "project_details": "Project Details",
+        "features": "Features",
+        "technologies": "Technologies Used",
+        "live_demo": "Live Demo",
+        "view_code": "View Code"
     }
 }; 
