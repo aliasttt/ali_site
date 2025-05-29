@@ -362,10 +362,21 @@ footer a:hover {
     h6 { font-size: 1rem; }
 }
 
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
 .social-links .btn-outline-primary {
     border: 2px solid var(--secondary-color);
     color: var(--secondary-color);
     transition: all 0.3s ease;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .social-links .btn-outline-primary:hover {
@@ -378,10 +389,25 @@ footer a:hover {
 
 .social-links .btn-outline-primary i {
     transition: all 0.3s ease;
+    margin-right: 5px;
 }
 
 .social-links .btn-outline-primary:hover i {
     transform: scale(1.2);
+}
+
+/* Responsive adjustments for social links */
+@media (max-width: 576px) {
+    .social-links {
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .social-links .btn-outline-primary {
+        min-width: 100px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
 }
 
 /* Section Styles */
@@ -470,22 +496,12 @@ section {
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
 }
 
 .project-card img {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover img {
-    transform: scale(1.05);
 }
 
 .project-overlay {
@@ -496,12 +512,6 @@ section {
     background: linear-gradient(to top, rgba(75, 0, 130, 0.8), transparent);
     padding: 20px;
     color: white;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover .project-overlay {
-    transform: translateY(0);
 }
 
 .project-overlay h3 {
