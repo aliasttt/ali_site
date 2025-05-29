@@ -464,7 +464,7 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    background: linear-gradient(to top, rgba(75, 0, 130, 0.8), transparent);
     padding: 20px;
     color: white;
     transform: translateY(100%);
