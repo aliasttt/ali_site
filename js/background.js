@@ -11,32 +11,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
-        camera.position.setZ(30);
+        camera.position.setZ(50);
 
         // Create abstract shapes
         const shapes = [];
         const colors = [
-            0x6A0DAD, // Purple
+            0xFF1493, // Deep Pink
+            0x00FFFF, // Cyan
             0xFFD700, // Gold
-            0x8A2BE2, // Blue Violet
+            0xFF4500, // Orange Red
+            0x9400D3, // Dark Violet
+            0x00FF7F, // Spring Green
+            0xFF69B4, // Hot Pink
+            0x1E90FF, // Dodger Blue
             0xFFA500, // Orange
-            0x4B0082  // Indigo
+            0x7B68EE  // Medium Slate Blue
         ];
 
-        // Create multiple shapes
-        for (let i = 0; i < 20; i++) {
-            const geometry = new THREE.IcosahedronGeometry(Math.random() * 3 + 1, 0);
+        // Create multiple shapes with different geometries
+        const geometries = [
+            () => new THREE.IcosahedronGeometry(Math.random() * 5 + 3, 0),
+            () => new THREE.OctahedronGeometry(Math.random() * 5 + 3, 0),
+            () => new THREE.TetrahedronGeometry(Math.random() * 5 + 3, 0)
+        ];
+
+        for (let i = 0; i < 25; i++) {
+            const geometry = geometries[Math.floor(Math.random() * geometries.length)]();
             const material = new THREE.MeshPhongMaterial({
                 color: colors[Math.floor(Math.random() * colors.length)],
                 shininess: 100,
                 transparent: true,
                 opacity: 0.8,
-                wireframe: false
+                wireframe: false,
+                metalness: 0.8,
+                roughness: 0.2
             });
             const shape = new THREE.Mesh(geometry, material);
             
-            // Random position
-            const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(50));
+            // Distribute shapes across the entire viewport
+            const x = THREE.MathUtils.randFloatSpread(100);
+            const y = THREE.MathUtils.randFloatSpread(100);
+            const z = THREE.MathUtils.randFloatSpread(50);
             shape.position.set(x, y, z);
             
             // Random rotation
@@ -50,25 +65,36 @@ document.addEventListener('DOMContentLoaded', () => {
             scene.add(shape);
         }
 
-        // Add lights
-        const pointLight = new THREE.PointLight(0xffffff, 1.5);
-        pointLight.position.set(5, 5, 5);
+        // Add multiple lights for better illumination
+        const lights = [
+            new THREE.PointLight(0xffffff, 1.5, 100),
+            new THREE.PointLight(0xffffff, 1.5, 100),
+            new THREE.PointLight(0xffffff, 1.5, 100)
+        ];
+
+        lights[0].position.set(50, 50, 50);
+        lights[1].position.set(-50, -50, 50);
+        lights[2].position.set(0, 0, 50);
+
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-        scene.add(pointLight, ambientLight);
+        scene.add(...lights, ambientLight);
 
         // Animation
         function animate() {
             requestAnimationFrame(animate);
             
             // Rotate shapes
-            shapes.forEach(shape => {
-                shape.rotation.x += 0.002;
-                shape.rotation.y += 0.003;
-                shape.rotation.z += 0.002;
+            shapes.forEach((shape, index) => {
+                // Different rotation speeds for each shape
+                shape.rotation.x += 0.002 * (index % 3 + 1);
+                shape.rotation.y += 0.003 * (index % 2 + 1);
+                shape.rotation.z += 0.002 * (index % 3 + 1);
                 
-                // Floating motion
-                shape.position.y += Math.sin(Date.now() * 0.001 + shape.position.x) * 0.02;
-                shape.position.x += Math.cos(Date.now() * 0.001 + shape.position.y) * 0.02;
+                // Floating motion with different patterns
+                const time = Date.now() * 0.001;
+                shape.position.y += Math.sin(time + shape.position.x) * 0.02;
+                shape.position.x += Math.cos(time + shape.position.y) * 0.02;
+                shape.position.z += Math.sin(time + shape.position.z) * 0.01;
             });
             
             renderer.render(scene, camera);
