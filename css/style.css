@@ -18,12 +18,24 @@
     --spacing-base: 1rem;
 }
 
+/* Three.js Background Canvas */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+}
+
 body {
     font-family: var(--font-primary);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-    background: var(--primary-gradient);
+    background: transparent;
     color: var(--text-light);
+    position: relative;
 }
 
 /* نوار ناوبری */
@@ -362,7 +374,8 @@ section {
     padding: 80px 0;
     position: relative;
     overflow: hidden;
-    background: var(--primary-gradient);
+    background: rgba(106, 13, 173, 0.7);
+    backdrop-filter: blur(10px);
 }
 
 /* Animation */
