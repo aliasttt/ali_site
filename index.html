@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="tr" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وبسایت من</title>
+    <title>Web Sitem</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -11,60 +11,67 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- نوار ناوبری -->
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">پورتفولیو من</a>
+            <a class="navbar-brand" href="#">Web Sitem</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">درباره من</a>
+                        <a class="nav-link" href="#about">Hakkımda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">مهارت‌ها</a>
+                        <a class="nav-link" href="#skills">Yetenekler</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">پروژه‌ها</a>
+                        <a class="nav-link" href="#projects">Projeler</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#comments">نظرات</a>
+                        <a class="nav-link" href="#comments">Yorumlar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">تماس با من</a>
+                        <a class="nav-link" href="#contact">İletişim</a>
                     </li>
                 </ul>
+                <div class="language-selector">
+                    <select class="form-select" id="languageSelect">
+                        <option value="tr">Türkçe</option>
+                        <option value="fa">فارسی</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- بخش معرفی -->
+    <!-- About Section -->
     <section id="about" class="py-5 mt-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6" data-aos="fade-right">
-                    <h1 class="display-4">سلام، من علی هستم</h1>
-                    <p class="lead">برنامه‌نویس وب با تخصص در فرانت‌اند</p>
-                    <p>من یک توسعه‌دهنده پرشور هستم که عاشق ایجاد وب‌سایت‌های زیبا و کاربردی است.</p>
+                    <h1 class="display-4">Merhaba, Ben Ali</h1>
+                    <p class="lead">Web Geliştirici</p>
+                    <p>Güzel ve kullanışlı web siteleri oluşturmaya tutkulu bir geliştiriciyim.</p>
                     <div class="social-links mt-4">
-                        <a href="https://www.instagram.com/ali_asadiz_ttt/" class="btn btn-outline-primary me-2" target="_blank"><i class="bi bi-instagram"></i> اینستاگرام</a>
-                        <a href="https://www.linkedin.com/in/ali-asadi-206749262/" class="btn btn-outline-primary me-2" target="_blank"><i class="bi bi-linkedin"></i> لینکدین</a>
-                        <a href="https://github.com/aliasttt" class="btn btn-outline-primary" target="_blank"><i class="bi bi-github"></i> گیت‌هاب</a>
+                        <a href="https://www.instagram.com/ali_asadiz_ttt/" class="btn btn-outline-primary me-2" target="_blank"><i class="bi bi-instagram"></i> Instagram</a>
+                        <a href="https://www.linkedin.com/in/ali-asadi-206749262/" class="btn btn-outline-primary me-2" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/aliasttt" class="btn btn-outline-primary" target="_blank"><i class="bi bi-github"></i> GitHub</a>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-left">
-                    <img src="assets/images/profile.jpg" alt="تصویر من" class="img-fluid rounded-circle shadow-lg profile-image">
+                    <img src="assets/images/profile.jpg" alt="Profilim" class="img-fluid rounded-circle shadow-lg profile-image">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش مهارت‌ها -->
+    <!-- Skills Section -->
     <section id="skills" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">مهارت‌های من</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">Yeteneklerim</h2>
             <div class="row">
                 <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="skill-item">
@@ -102,7 +109,7 @@
                 <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
                     <div class="skill-item">
                         <div class="d-flex justify-content-between mb-2">
-                            <h5>زبان‌ها: فارسی، انگلیسی، ترکی</h5>
+                            <h5>Diller: Türkçe, Farsça, İngilizce</h5>
                             <span>95%</span>
                         </div>
                         <div class="progress">
@@ -114,38 +121,38 @@
         </div>
     </section>
 
-    <!-- بخش پروژه‌ها -->
+    <!-- Projects Section -->
     <section id="projects" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">پروژه‌های من</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">Projelerim</h2>
             <div class="row">
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card h-100 shadow">
-                        <img src="assets/images/project1.jpg" class="card-img-top" alt="پروژه 1">
+                        <img src="assets/images/project1.jpg" class="card-img-top" alt="Proje 1">
                         <div class="card-body">
-                            <h5 class="card-title">پروژه وبسایت فروشگاهی</h5>
-                            <p class="card-text">یک وبسایت فروشگاهی مدرن با قابلیت‌های پیشرفته و رابط کاربری زیبا.</p>
-                            <a href="#" class="btn btn-primary">مشاهده پروژه</a>
+                            <h5 class="card-title">E-ticaret Web Sitesi</h5>
+                            <p class="card-text">Modern özellikler ve güzel kullanıcı arayüzüne sahip bir e-ticaret web sitesi.</p>
+                            <a href="#" class="btn btn-primary">Projeyi Gör</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card h-100 shadow">
-                        <img src="assets/images/project2.jpg" class="card-img-top" alt="پروژه 2">
+                        <img src="assets/images/project2.jpg" class="card-img-top" alt="Proje 2">
                         <div class="card-body">
-                            <h5 class="card-title">پروژه وبلاگ شخصی</h5>
-                            <p class="card-text">یک وبلاگ شخصی با سیستم مدیریت محتوا و طراحی ریسپانسیو.</p>
-                            <a href="#" class="btn btn-primary">مشاهده پروژه</a>
+                            <h5 class="card-title">Kişisel Blog</h5>
+                            <p class="card-text">İçerik yönetim sistemi ve duyarlı tasarıma sahip kişisel bir blog.</p>
+                            <a href="#" class="btn btn-primary">Projeyi Gör</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card h-100 shadow">
-                        <img src="assets/images/project3.jpg" class="card-img-top" alt="پروژه 3">
+                        <img src="assets/images/project3.jpg" class="card-img-top" alt="Proje 3">
                         <div class="card-body">
-                            <h5 class="card-title">پروژه پنل مدیریت</h5>
-                            <p class="card-text">یک پنل مدیریت با داشبورد پیشرفته و نمودارهای تعاملی.</p>
-                            <a href="#" class="btn btn-primary">مشاهده پروژه</a>
+                            <h5 class="card-title">Yönetim Paneli</h5>
+                            <p class="card-text">Gelişmiş gösterge paneli ve interaktif grafiklere sahip bir yönetim paneli.</p>
+                            <a href="#" class="btn btn-primary">Projeyi Gör</a>
                         </div>
                     </div>
                 </div>
@@ -153,20 +160,20 @@
         </div>
     </section>
 
-    <!-- بخش نظرات -->
+    <!-- Comments Section -->
     <section id="comments" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">نظرات مشتریان</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">Müşteri Yorumları</h2>
             <div class="row">
                 <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card h-100 shadow">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
                                 <div>
-                                    <h5 class="mb-0">علی محمدی</h5>
+                                    <h5 class="mb-0">Ali Yılmaz</h5>
                                 </div>
                             </div>
-                            <p class="card-text">"طراحی وبسایت ما توسط این تیم بسیار حرفه‌ای انجام شد. رضایت کامل داریم."</p>
+                            <p class="card-text">"Web sitemizin tasarımı bu ekip tarafından çok profesyonel bir şekilde yapıldı. Tamamen memnunuz."</p>
                         </div>
                     </div>
                 </div>
@@ -175,10 +182,10 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
                                 <div>
-                                    <h5 class="mb-0">مریم احمدی</h5>
+                                    <h5 class="mb-0">Ayşe Demir</h5>
                                 </div>
                             </div>
-                            <p class="card-text">"تیم بسیار متعهد و حرفه‌ای هستند. پروژه را در زمان مقرر تحویل دادند."</p>
+                            <p class="card-text">"Ekip çok bağlı ve profesyonel. Projeyi belirlenen sürede teslim ettiler."</p>
                         </div>
                     </div>
                 </div>
@@ -187,10 +194,10 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
                                 <div>
-                                    <h5 class="mb-0">رضا حسینی</h5>
+                                    <h5 class="mb-0">Mehmet Kaya</h5>
                                 </div>
                             </div>
-                            <p class="card-text">"کیفیت کار و پشتیبانی عالی. حتماً برای پروژه‌های بعدی هم با این تیم کار خواهیم کرد."</p>
+                            <p class="card-text">"İş kalitesi ve destek mükemmel. Kesinlikle gelecekteki projelerimiz için de bu ekiple çalışacağız."</p>
                         </div>
                     </div>
                 </div>
@@ -198,80 +205,76 @@
         </div>
     </section>
 
-    <!-- بخش تماس -->
+    <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">تماس با من</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">İletişim</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8" data-aos="fade-up">
                     <form id="contactForm" action="mailto:aliasadi3853@gmail.com" method="POST">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" name="name" placeholder="نام شما" required>
+                                <input type="text" class="form-control" name="name" placeholder="Adınız" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" name="email" placeholder="ایمیل شما" required>
+                                <input type="email" class="form-control" name="email" placeholder="E-posta Adresiniz" required>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control" name="subject" placeholder="موضوع" required>
+                            <input type="text" class="form-control" name="subject" placeholder="Konu" required>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" name="message" rows="5" placeholder="پیام شما" required></textarea>
+                            <textarea class="form-control" name="message" rows="5" placeholder="Mesajınız" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">ارسال پیام</button>
+                        <button type="submit" class="btn btn-primary">Mesaj Gönder</button>
                     </form>
                 </div>
             </div>
             <div class="col-md-6">
-                <h5>اطلاعات تماس</h5>
-                <p>ایمیل: aliasadi3853@gmail.com</p>
-                <p>تلفن: 905340382335+</p>
-                <p>آدرس: ترکیه، استانبول</p>
+                <h5>İletişim Bilgileri</h5>
+                <p>E-posta: aliasadi3853@gmail.com</p>
+                <p>Telefon: +90 534 038 2335</p>
+                <p>Adres: İstanbul, Türkiye</p>
             </div>
         </div>
     </section>
 
-    <!-- فوتر -->
+    <!-- Footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5>درباره من</h5>
-                    <p>من یک توسعه‌دهنده وب با تجربه هستم که عاشق ایجاد وبسایت‌های زیبا و کاربردی است.</p>
+                    <h5>Hakkımda</h5>
+                    <p>Güzel ve kullanışlı web siteleri oluşturmaya tutkulu deneyimli bir web geliştiricisiyim.</p>
                 </div>
                 <div class="col-md-3">
-                    <h5>لینک‌های سریع</h5>
+                    <h5>Hızlı Bağlantılar</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#about" class="text-white">درباره من</a></li>
-                        <li><a href="#skills" class="text-white">مهارت‌ها</a></li>
-                        <li><a href="#projects" class="text-white">پروژه‌ها</a></li>
-                        <li><a href="#contact" class="text-white">تماس با من</a></li>
+                        <li><a href="#about" class="text-white">Hakkımda</a></li>
+                        <li><a href="#skills" class="text-white">Yetenekler</a></li>
+                        <li><a href="#projects" class="text-white">Projeler</a></li>
+                        <li><a href="#contact" class="text-white">İletişim</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h5>ارتباط با من</h5>
+                    <h5>İletişim</h5>
                     <ul class="list-unstyled">
-                        <li><i class="bi bi-envelope me-2"></i> email@example.com</li>
-                        <li><i class="bi bi-phone me-2"></i> +98 912 345 6789</li>
-                        <li><i class="bi bi-geo-alt me-2"></i> تهران، ایران</li>
+                        <li><i class="bi bi-envelope me-2"></i> aliasadi3853@gmail.com</li>
+                        <li><i class="bi bi-phone me-2"></i> +90 534 038 2335</li>
+                        <li><i class="bi bi-geo-alt me-2"></i> İstanbul, Türkiye</li>
                     </ul>
                 </div>
             </div>
             <hr>
             <div class="text-center">
-                <p class="mb-0">تمامی حقوق محفوظ است © 2024</p>
+                <p class="mb-0">Tüm hakları saklıdır © 2024</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    </script>
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html> 
