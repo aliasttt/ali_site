@@ -59,7 +59,7 @@ body {
     background: var(--dark-gradient) !important;
     box-shadow: var(--purple-shadow);
     backdrop-filter: blur(10px);
-    background-color: rgba(106, 13, 173, 0.95) !important;
+    background-color: rgba(75, 0, 130, 0.95) !important;
 }
 
 .navbar-brand {
