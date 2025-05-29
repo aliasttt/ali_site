@@ -116,7 +116,8 @@ body {
 /* بخش نظرات */
 #comments .card {
     border: none;
-    background: #fff;
+    background: rgba(106, 13, 173, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 #comments img {
@@ -138,6 +139,7 @@ body {
     color: var(--text-light);
     padding: 30px;
     border-radius: 10px;
+    backdrop-filter: blur(10px);
 }
 
 .contact-info i {
@@ -159,6 +161,7 @@ body {
     color: var(--text-light);
     padding: 30px;
     border-radius: 10px;
+    backdrop-filter: blur(10px);
 }
 
 .form-label {
