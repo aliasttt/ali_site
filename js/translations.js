@@ -36,13 +36,13 @@ const translations = {
         "comment3_text": "İş kalitesi ve destek mükemmel. Kesinlikle gelecekteki projelerimiz için de bu ekiple çalışacağız.",
 
         // Contact Section
-        "contact_title": "İletişim",
+        "contact": "İletişim",
+        "contact-info": "İletişim Bilgileri",
         "name_placeholder": "Adınız",
         "email_placeholder": "E-posta Adresiniz",
         "subject_placeholder": "Konu",
         "message_placeholder": "Mesajınız",
         "send_button": "Mesaj Gönder",
-        "contact_info": "İletişim Bilgileri",
         "email": "E-posta",
         "phone": "Telefon",
         "address": "Adres",
@@ -91,13 +91,13 @@ const translations = {
         "comment3_text": "کیفیت کار و پشتیبانی عالی. حتماً برای پروژه‌های بعدی هم با این تیم کار خواهیم کرد.",
 
         // Contact Section
-        "contact_title": "تماس با من",
+        "contact": "تماس با من",
+        "contact-info": "اطلاعات تماس",
         "name_placeholder": "نام شما",
         "email_placeholder": "ایمیل شما",
         "subject_placeholder": "موضوع",
         "message_placeholder": "پیام شما",
         "send_button": "ارسال پیام",
-        "contact_info": "اطلاعات تماس",
         "email": "ایمیل",
         "phone": "تلفن",
         "address": "آدرس",
@@ -146,13 +146,13 @@ const translations = {
         "comment3_text": "The quality of work and support is excellent. We will definitely work with this team for future projects.",
 
         // Contact Section
-        "contact_title": "Contact Me",
+        "contact": "Contact Me",
+        "contact-info": "Contact Information",
         "name_placeholder": "Your Name",
         "email_placeholder": "Your Email",
         "subject_placeholder": "Subject",
         "message_placeholder": "Your Message",
         "send_button": "Send Message",
-        "contact_info": "Contact Information",
         "email": "Email",
         "phone": "Phone",
         "address": "Address",
