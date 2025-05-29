@@ -116,16 +116,40 @@ body {
     background: var(--secondary-gradient);
 }
 
+.contact-info {
+    height: 100%;
+    border: 1px solid var(--secondary-color);
+    box-shadow: var(--purple-shadow);
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.contact-form {
+    border: 1px solid var(--secondary-color);
+    box-shadow: var(--purple-shadow);
+}
+
 .form-control {
     border: 1px solid var(--secondary-color);
     padding: 15px;
     border-radius: 10px;
     box-shadow: var(--purple-shadow);
+    transition: all 0.3s ease;
 }
 
 .form-control:focus {
     border-color: var(--primary-color);
     box-shadow: var(--gold-shadow);
+    outline: none;
+}
+
+.form-label {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 .btn-primary {
@@ -135,12 +159,31 @@ body {
     border-radius: 30px;
     box-shadow: var(--purple-shadow);
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .btn-primary:hover {
     background: var(--secondary-gradient);
     transform: translateY(-2px);
     box-shadow: var(--gold-shadow);
+}
+
+/* RTL Support for Contact Form */
+.rtl .contact-info i {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+.rtl .form-label {
+    text-align: right;
+}
+
+.rtl .form-control {
+    text-align: right;
+}
+
+.rtl .form-control::placeholder {
+    text-align: right;
 }
 
 /* فوتر */
