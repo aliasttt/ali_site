@@ -128,54 +128,66 @@ body {
 /* بخش تماس */
 #contact {
     background: var(--primary-gradient);
+    padding: 60px 0;
 }
 
 .contact-info {
-    background: rgba(106, 13, 173, 0.1);
+    background: rgba(106, 13, 173, 0.2);
     border: 1px solid var(--secondary-color);
     box-shadow: var(--purple-shadow);
     color: var(--text-light);
+    padding: 30px;
+    border-radius: 10px;
 }
 
 .contact-info i {
     color: var(--secondary-color);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    color: var(--text-light);
+    font-size: 1rem;
 }
 
 .contact-form {
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: var(--purple-shadow);
     color: var(--text-light);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.form-label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--text-light);
+    font-weight: 500;
 }
 
 .form-control {
-    padding: calc(var(--spacing-base) * 0.75);
-    font-size: 0.95rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: var(--purple-shadow);
-    color: white;
+    padding: 12px 15px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    box-shadow: none;
+    color: var(--text-light);
     transition: all 0.3s ease;
 }
 
 .form-control:focus {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #FFD700;
-    box-shadow: none;
-    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--secondary-color);
+    box-shadow: var(--gold-shadow);
+    color: var(--text-light);
 }
 
 .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.form-label {
-    font-size: 0.95rem;
-    margin-bottom: calc(var(--spacing-base) * 0.5);
-    color: white;
-    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .btn-primary {
@@ -183,22 +195,22 @@ body {
     border: none;
     padding: 12px 30px;
     border-radius: 30px;
-    box-shadow: var(--purple-shadow);
+    box-shadow: var(--gold-shadow);
     transition: all 0.3s ease;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--primary-color);
 }
 
 .btn-primary:hover {
     background: var(--primary-gradient);
     transform: translateY(-2px);
-    box-shadow: var(--gold-shadow);
+    box-shadow: var(--purple-shadow);
     color: var(--secondary-color);
 }
 
 /* RTL Support for Contact Form */
 .rtl .contact-info i {
-    margin-left: 1rem;
+    margin-left: 15px;
     margin-right: 0;
 }
 
@@ -212,6 +224,30 @@ body {
 
 .rtl .form-control::placeholder {
     text-align: right;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .contact-info, .contact-form {
+        padding: 20px;
+    }
+
+    .contact-info i {
+        font-size: 1.3rem;
+    }
+
+    .contact-info p {
+        font-size: 0.95rem;
+    }
+
+    .form-label, .form-control {
+        font-size: 0.95rem;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
 }
 
 /* فوتر */
