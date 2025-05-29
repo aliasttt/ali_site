@@ -298,6 +298,14 @@
     <!-- Three.js Background -->
     <canvas id="bg-canvas"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.162.0/three.min.js"></script>
+    <script>
+        // Test if Three.js is loaded
+        if (typeof THREE === 'undefined') {
+            console.error('Three.js failed to load');
+        } else {
+            console.log('Three.js loaded successfully');
+        }
+    </script>
     <script src="js/background.js"></script>
     <!-- WhatsApp Button -->
     <a href="https://wa.me/905340382335" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
