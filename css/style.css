@@ -145,7 +145,7 @@ body {
 }
 
 .contact-info {
-    background: rgba(106, 13, 173, 0.2);
+    background: rgba(106, 13, 173, 0.8);
     border: 1px solid var(--secondary-color);
     box-shadow: var(--purple-shadow);
     color: var(--text-light);
@@ -167,7 +167,7 @@ body {
 }
 
 .contact-form {
-    background: rgba(106, 13, 173, 0.2);
+    background: rgba(106, 13, 173, 0.8);
     border: 1px solid rgba(255, 215, 0, 0.3);
     box-shadow: var(--purple-shadow);
     color: var(--text-light);
