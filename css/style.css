@@ -23,19 +23,30 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: -1;
-    opacity: 1;
+    opacity: 0.6;
     pointer-events: none;
-    background: transparent;
+}
+
+/* Particles Background */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+    pointer-events: none;
 }
 
 body {
     font-family: var(--font-primary);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-    background: transparent;
+    background: var(--primary-gradient);
     color: var(--text-light);
     position: relative;
     min-height: 100vh;
@@ -378,8 +389,8 @@ section {
     padding: 80px 0;
     position: relative;
     overflow: hidden;
-    background: rgba(106, 13, 173, 0.4);
-    backdrop-filter: blur(5px);
+    background: rgba(106, 13, 173, 0.7);
+    backdrop-filter: blur(10px);
     z-index: 1;
 }
 
@@ -613,4 +624,12 @@ section h2::after {
 [dir="rtl"] .whatsapp-float {
     left: auto;
     right: 20px;
+}
+
+/* Make sections more transparent to show background */
+section {
+    background: rgba(106, 13, 173, 0.7);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
 } 
