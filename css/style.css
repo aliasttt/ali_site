@@ -563,9 +563,9 @@ section h2::after {
 
 /* WhatsApp Float Button */
 .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 20px !important;
     width: 60px;
     height: 60px;
     background-color: #25D366;
@@ -591,6 +591,6 @@ section h2::after {
 
 /* RTL Adjustment */
 [dir="rtl"] .whatsapp-float {
-    left: auto;
-    right: 20px;
+    left: auto !important;
+    right: 20px !important;
 } 
