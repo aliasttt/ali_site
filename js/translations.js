@@ -110,7 +110,7 @@ const translations = {
         "email_placeholder": "ایمیل خود را وارد کنید",
         "message_placeholder": "پیام خود را بنویسید",
         "send_button": "ارسال پیام",
-        "address": "تهران، ایران",
+        "address": "استانبول، ترکیه",
         "phone": "تلفن",
         "email_label": "ایمیل",
         "location": "موقعیت",
