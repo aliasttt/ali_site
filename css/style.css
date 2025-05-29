@@ -558,5 +558,5 @@ section h2::after {
     transform: translateX(-50%);
     width: 50px;
     height: 3px;
-    background: linear-gradient(to right, #6A0DAD, #FFD700);
+    background: linear-gradient(to right, #6A0DAD, #FFD700) !important;
 } 
