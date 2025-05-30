@@ -21,15 +21,12 @@
 /* Three.js Background Canvas */
 #bg-canvas {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    z-index: -1;
+    height: 100%;
+    z-index: 0;
     opacity: 1;
-    pointer-events: none;
-    background: transparent;
-    display: block;
 }
 
 /* Particles Background */
@@ -45,14 +42,11 @@
 }
 
 body {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-    background: linear-gradient(to bottom, #6A0DAD, #4A0D8D);
-    color: var(--text-light);
-    position: relative;
+    font-family: 'Vazirmatn', sans-serif;
+    background: linear-gradient(135deg, #6A0DAD, #4A0D8D);
+    color: #333;
     min-height: 200vh;
-    overflow-x: hidden;
+    position: relative;
 }
 
 /* نوار ناوبری */
@@ -416,11 +410,11 @@ footer a:hover {
 
 /* Section Styles */
 section {
-    padding: 80px 0;
-    position: relative;
-    overflow: hidden;
     background: rgba(106, 13, 173, 0.7);
     backdrop-filter: blur(10px);
+    margin-bottom: 2rem;
+    padding: 4rem 0;
+    position: relative;
     z-index: 1;
 }
 
@@ -647,18 +641,9 @@ section h2::after {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: transparent;
     z-index: 0;
     pointer-events: none;
-    display: block;
-}
-
-/* Update section backgrounds to be more transparent */
-section {
-    background: rgba(106, 13, 173, 0.7);
-    backdrop-filter: blur(10px);
-    position: relative;
-    z-index: 1;
+    opacity: 1;
 }
 
 /* Update footer to ensure it's above the animation */
