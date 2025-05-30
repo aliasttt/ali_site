@@ -29,6 +29,7 @@
     opacity: 1;
     pointer-events: none;
     background: transparent;
+    display: block;
 }
 
 /* Particles Background */
@@ -649,6 +650,7 @@ section h2::after {
     background: transparent;
     z-index: 0;
     pointer-events: none;
+    display: block;
 }
 
 /* Update section backgrounds to be more transparent */
@@ -664,4 +666,10 @@ footer {
     position: relative;
     z-index: 2;
     background: linear-gradient(to right, #6A0DAD, #4A0D8D);
+}
+
+/* Ensure body has enough height for scrolling */
+body {
+    min-height: 200vh;
+    position: relative;
 } 

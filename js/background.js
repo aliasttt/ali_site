@@ -10,6 +10,7 @@ const canvas = document.getElementById('bg-canvas');
 if (!canvas) {
     console.error('Canvas element not found');
 } else {
+    console.log('Canvas found, initializing animation...');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -113,5 +114,6 @@ if (!canvas) {
     });
 
     // Start animation
+    console.log('Starting animation...');
     animate();
 } 
