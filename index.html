@@ -242,18 +242,18 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <form id="contactForm" class="contact-form p-4 rounded shadow" action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+                    <form id="contactForm" class="contact-form p-4 rounded shadow" action="https://formspree.io/f/mqabzedr" method="POST">
                         <div class="mb-3">
                             <label for="name" class="form-label" data-translate="name">İsim</label>
-                            <input type="text" class="form-control" id="name" data-placeholder="name_placeholder" required>
+                            <input type="text" class="form-control" id="name" name="name" data-placeholder="name_placeholder" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label" data-translate="email">E-posta</label>
-                            <input type="email" class="form-control" id="email" data-placeholder="email_placeholder" required>
+                            <input type="email" class="form-control" id="email" name="email" data-placeholder="email_placeholder" required>
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label" data-translate="message">Mesaj</label>
-                            <textarea class="form-control" id="message" rows="5" data-placeholder="message_placeholder" required></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="5" data-placeholder="message_placeholder" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100" data-translate="send_button">Mesaj Gönder</button>
                     </form>
@@ -301,14 +301,18 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/three@0.157.0/build/three.min.js"></script>
-    <script>
-        // Check if Three.js is loaded
-        if (typeof THREE === 'undefined') {
-            console.error('Three.js failed to load');
-        } else {
-            console.log('Three.js loaded successfully');
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.162.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.162.0/examples/jsm/"
+            }
         }
+    </script>
+    <script type="module">
+        import * as THREE from 'three';
+        window.THREE = THREE;
+        console.log('Three.js loaded successfully');
     </script>
     <script src="js/background.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
