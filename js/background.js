@@ -1,61 +1,107 @@
-// Three.js Background Animation
-console.log('Background script started');
+// Check if Three.js is loaded
+if (typeof THREE === 'undefined') {
+    console.error('Three.js failed to load');
+} else {
+    console.log('Three.js loaded successfully');
+}
 
-window.addEventListener('load', () => {
-    console.log('Window loaded');
-    
-    try {
-        // Basic setup
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({
-            canvas: document.querySelector('#bg-canvas'),
-            antialias: true,
-            alpha: true
-        });
+// Get the canvas element
+const canvas = document.getElementById('bg-canvas');
+if (!canvas) {
+    console.error('Canvas element not found');
+} else {
+    // Scene setup
+    const scene = new THREE.Scene();
+    const camera = new THREE.OrthographicCamera(
+        window.innerWidth / -2,
+        window.innerWidth / 2,
+        window.innerHeight / 2,
+        window.innerHeight / -2,
+        1,
+        1000
+    );
+    camera.position.z = 5;
 
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        camera.position.z = 30;
+    const renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+        alpha: true,
+        antialias: true
+    });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
 
-        // Create a simple cube
-        const geometry = new THREE.BoxGeometry(10, 10, 10);
-        const material = new THREE.MeshPhongMaterial({
-            color: 0xFF1493,
-            shininess: 100,
+    // Create 2D shapes
+    const shapes = [];
+    const colors = [0xFF1493, 0x00BFFF, 0x32CD32, 0xFFD700, 0xFF69B4];
+    const geometries = [
+        new THREE.PlaneGeometry(50, 50),
+        new THREE.CircleGeometry(25, 32),
+        new THREE.BoxGeometry(40, 40, 1)
+    ];
+
+    // Create multiple shapes
+    for (let i = 0; i < 20; i++) {
+        const geometry = geometries[Math.floor(Math.random() * geometries.length)];
+        const material = new THREE.MeshBasicMaterial({
+            color: colors[Math.floor(Math.random() * colors.length)],
             transparent: true,
-            opacity: 0.8
+            opacity: 0.7
         });
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
-
-        // Add lights
-        const light = new THREE.PointLight(0xffffff, 1, 100);
-        light.position.set(10, 10, 10);
-        scene.add(light);
-
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-        scene.add(ambientLight);
-
-        // Animation
-        function animate() {
-            requestAnimationFrame(animate);
-            
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
-            
-            renderer.render(scene, camera);
-        }
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        console.log('Starting animation');
-        animate();
-    } catch (error) {
-        console.error('Error in Three.js setup:', error);
+        const shape = new THREE.Mesh(geometry, material);
+        
+        // Position shapes randomly
+        shape.position.x = Math.random() * window.innerWidth - window.innerWidth / 2;
+        shape.position.y = Math.random() * window.innerHeight - window.innerHeight / 2;
+        
+        // Add random rotation
+        shape.rotation.z = Math.random() * Math.PI * 2;
+        
+        // Add random speed
+        shape.userData = {
+            speedX: (Math.random() - 0.5) * 2,
+            speedY: (Math.random() - 0.5) * 2,
+            rotationSpeed: (Math.random() - 0.5) * 0.02
+        };
+        
+        shapes.push(shape);
+        scene.add(shape);
     }
-}); 
+
+    // Animation loop
+    function animate() {
+        requestAnimationFrame(animate);
+        
+        // Update shapes
+        shapes.forEach(shape => {
+            // Move shapes
+            shape.position.x += shape.userData.speedX;
+            shape.position.y += shape.userData.speedY;
+            
+            // Rotate shapes
+            shape.rotation.z += shape.userData.rotationSpeed;
+            
+            // Bounce off edges
+            if (Math.abs(shape.position.x) > window.innerWidth / 2) {
+                shape.userData.speedX *= -1;
+            }
+            if (Math.abs(shape.position.y) > window.innerHeight / 2) {
+                shape.userData.speedY *= -1;
+            }
+        });
+        
+        renderer.render(scene, camera);
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        camera.left = window.innerWidth / -2;
+        camera.right = window.innerWidth / 2;
+        camera.top = window.innerHeight / 2;
+        camera.bottom = window.innerHeight / -2;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Start animation
+    animate();
+} 

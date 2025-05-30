@@ -21,10 +21,10 @@
 /* Three.js Background Canvas */
 #bg-canvas {
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: -1;
     opacity: 1;
     pointer-events: none;
@@ -295,6 +295,8 @@ body {
 
 /* فوتر */
 footer {
+    position: relative;
+    z-index: 2;
     background: linear-gradient(to right, #6A0DAD, #4A0D8D);
     color: var(--text-light);
 }
