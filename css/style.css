@@ -47,7 +47,7 @@ body {
     font-family: var(--font-primary);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-    background: var(--primary-gradient);
+    background: linear-gradient(to bottom, #6A0DAD, #4A0D8D);
     color: var(--text-light);
     position: relative;
     min-height: 200vh;
