@@ -645,4 +645,15 @@ section {
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 1;
+}
+
+/* Add a new section for animation after footer */
+.animation-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: transparent;
+    z-index: 1;
+    margin-top: -100vh;
+    pointer-events: none;
 } 
