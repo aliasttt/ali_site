@@ -649,4 +649,19 @@ section h2::after {
     background: transparent;
     z-index: 0;
     pointer-events: none;
+}
+
+/* Update section backgrounds to be more transparent */
+section {
+    background: rgba(106, 13, 173, 0.7);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+/* Update footer to ensure it's above the animation */
+footer {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to right, #6A0DAD, #4A0D8D);
 } 
