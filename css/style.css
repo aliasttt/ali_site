@@ -712,4 +712,91 @@ p, span, label {
 
 .form-control::placeholder {
     color: rgba(255, 255, 255, 0.7);
+}
+
+/* Video Card Styles */
+.video-card {
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-card video {
+    width: 100%;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.video-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+    color: white;
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+}
+
+.video-overlay h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.video-overlay p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.video-overlay .btn {
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.video-overlay .btn:hover {
+    background: white;
+    color: black;
+}
+
+/* RTL Support for Video Cards */
+[dir="rtl"] .video-overlay {
+    text-align: right;
+}
+
+/* Video Container Styles */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background: #000;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+    border-radius: 0.5rem;
+}
+
+/* Remove play button styles */
+.play-btn {
+    display: none;
+}
+
+/* Remove hover effects */
+.video-container:hover .play-btn {
+    display: none;
+}
+
+/* Remove playing state */
+.video-container video:playing + .play-btn {
+    display: none;
 } 

@@ -59,4 +59,41 @@ function changeLanguage(lang) {
     } else {
         document.body.classList.remove('rtl');
     }
-} 
+}
+
+// Video playback functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const playButtons = document.querySelectorAll('.play-video');
+    
+    playButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const videoPath = this.getAttribute('data-video');
+            const videoElement = this.closest('.video-card').querySelector('video');
+            
+            if (videoElement) {
+                videoElement.play();
+                // Scroll to video
+                videoElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    });
+});
+
+// Ensure videos stay muted
+document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+        // Force mute on load
+        video.muted = true;
+        
+        // Force mute on play
+        video.addEventListener('play', function() {
+            this.muted = true;
+        });
+        
+        // Force mute on volume change
+        video.addEventListener('volumechange', function() {
+            this.muted = true;
+        });
+    });
+}); 
