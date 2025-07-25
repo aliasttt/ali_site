@@ -22,7 +22,7 @@ body[dir="rtl"] {
 .language-switcher {
     position: fixed;
     top: 100px;
-    right: 20px;
+    left: 20px;
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -556,7 +556,7 @@ body[dir="rtl"] {
 .whatsapp-fixed {
     position: fixed;
     bottom: 30px;
-    left: 30px;
+    right: 30px;
     width: 60px;
     height: 60px;
     background: #25d366;
@@ -639,7 +639,7 @@ body[dir="rtl"] {
     
     .whatsapp-fixed {
         bottom: 20px;
-        left: 20px;
+        right: 20px;
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
@@ -647,7 +647,7 @@ body[dir="rtl"] {
     
     .language-switcher {
         top: 80px;
-        right: 15px;
+        left: 15px;
         padding: 0.3rem;
     }
     
