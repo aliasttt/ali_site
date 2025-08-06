@@ -48,6 +48,8 @@ const translations = {
         management_desc: "Gelişmiş admin paneli ile içerik yönetim sistemi",
         personal_portfolio: "Kişisel Portföy",
         portfolio_desc: "Gelişmiş animasyonlarla kişisel portföy web sitesi",
+        watch_demo: "Demo İzle",
+        visit_website: "Siteyi Ziyaret Et",
         
         // Resume Section
         resume_certificates: "Özgeçmiş ve Sertifikalar",
@@ -65,6 +67,7 @@ const translations = {
         subject: "Konu",
         your_message: "Mesajınız",
         send_message: "Mesaj Gönder",
+        direct_email: "Veya doğrudan e-posta ile iletişime geçin:",
         
         // Footer
         professional_portfolio: "Profesyonel Portföy",
@@ -119,6 +122,8 @@ const translations = {
         management_desc: "Content management system with advanced admin panel",
         personal_portfolio: "Personal Portfolio",
         portfolio_desc: "Personal portfolio website with advanced animations",
+        watch_demo: "Watch Demo",
+        visit_website: "Visit Website",
         
         // Resume Section
         resume_certificates: "Resume & Certificates",
@@ -136,6 +141,7 @@ const translations = {
         subject: "Subject",
         your_message: "Your Message",
         send_message: "Send Message",
+        direct_email: "Or contact directly via email:",
         
         // Footer
         professional_portfolio: "Professional Portfolio",
@@ -190,6 +196,8 @@ const translations = {
         management_desc: "سیستم مدیریت محتوا با پنل ادمین پیشرفته",
         personal_portfolio: "پورتفولیو شخصی",
         portfolio_desc: "وب‌سایت پورتفولیو با انیمیشن‌های پیشرفته",
+        watch_demo: "مشاهده دمو",
+        visit_website: "بازدید از وب‌سایت",
         
         // Resume Section
         resume_certificates: "رزومه و گواهینامه‌ها",
@@ -207,6 +215,7 @@ const translations = {
         subject: "موضوع",
         your_message: "پیام شما",
         send_message: "ارسال پیام",
+        direct_email: "یا مستقیماً با ایمیل تماس بگیرید:",
         
         // Footer
         professional_portfolio: "پورتفولیو حرفه‌ای",
@@ -330,8 +339,6 @@ function initContactForm() {
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             // Get form data
             const name = this.querySelector('input[name="name"]').value;
             const email = this.querySelector('input[name="email"]').value;
@@ -340,34 +347,31 @@ function initContactForm() {
             
             // Simple validation
             if (!name || !email || !subject || !message) {
+                e.preventDefault();
                 showNotification('لطفاً تمام فیلدها را پر کنید', 'error');
                 return;
             }
             
             if (!isValidEmail(email)) {
+                e.preventDefault();
                 showNotification('لطفاً ایمیل معتبر وارد کنید', 'error');
                 return;
             }
             
-            // Prepare email content
-            const emailBody = `
-نام: ${name}
-ایمیل: ${email}
-موضوع: ${subject}
-پیام: ${message}
-            `;
+            // Show loading message
+            showNotification('پیام شما در حال ارسال است...', 'info');
             
-            // Create mailto link
-            const mailtoLink = `mailto:aliasadi@gmail.com?subject=${encodeURIComponent('پیام جدید از وب‌سایت: ' + subject)}&body=${encodeURIComponent(emailBody)}`;
-            
-            // Open default email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            showNotification('ایمیل شما آماده ارسال است!', 'success');
-            
-            // Reset form
-            this.reset();
+            // Form will be submitted to Formspree automatically
+            // Formspree will handle the email sending
+        });
+        
+        // Listen for form submission success/failure
+        contactForm.addEventListener('submit', function() {
+            // Reset form after submission
+            setTimeout(() => {
+                this.reset();
+                showNotification('پیام شما با موفقیت ارسال شد!', 'success');
+            }, 1000);
         });
     }
 }
@@ -663,6 +667,36 @@ function preloadImages() {
         img.src = url;
     });
 }
+
+// Video player functionality
+function playVideo(projectId) {
+    const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
+    const video = document.getElementById('projectVideo');
+    const videoSource = video.querySelector('source');
+    
+    // Set video source based on project ID
+            const videoSources = {
+            'project1': 'videos/bandicam 2025-06-02 17-35-46-733.mp4',
+            'project2': 'videos/bandicam 2025-06-03 00-31-12-332.mp4',
+            'project3': 'videos/bandicam 2025-06-04 02-06-20-461.mp4',
+            'project4': 'videos/06.08.2025_18.08.02_REC.mp4'
+        };
+    
+    if (videoSources[projectId]) {
+        videoSource.src = videoSources[projectId];
+        video.load();
+        videoModal.show();
+    } else {
+        showNotification('Video bulunamadı', 'error');
+    }
+}
+
+// Stop video when modal is closed
+document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+    const video = document.getElementById('projectVideo');
+    video.pause();
+    video.currentTime = 0;
+});
 
 // Initialize preloading
 preloadImages(); 

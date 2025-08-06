@@ -414,6 +414,91 @@ body[dir="rtl"] {
     transform: scale(1.1);
 }
 
+.project-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay .btn {
+    background: rgba(116, 185, 255, 0.9);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.project-overlay .btn.btn-success {
+    background: rgba(40, 167, 69, 0.9);
+}
+
+.project-overlay .btn.btn-success:hover {
+    background: rgba(40, 167, 69, 1);
+}
+
+.project-overlay .btn:hover {
+    background: rgba(116, 185, 255, 1);
+    transform: scale(1.05);
+}
+
+/* Video Modal Styles */
+.modal-content {
+    background: rgba(26, 26, 46, 0.95);
+    border: 1px solid rgba(116, 185, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(116, 185, 255, 0.3);
+    color: #ffffff;
+}
+
+.modal-title {
+    color: #74b9ff;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
 .project-content {
     padding: 1.5rem;
 }
