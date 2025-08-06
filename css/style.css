@@ -21,7 +21,7 @@ body[dir="rtl"] {
 /* Language Switcher */
 .language-switcher {
     position: fixed;
-    top: 100px;
+    bottom: 30px;
     left: 20px;
     z-index: 1000;
     display: flex;
@@ -646,7 +646,7 @@ body[dir="rtl"] {
     }
     
     .language-switcher {
-        top: 80px;
+        bottom: 20px;
         left: 15px;
         padding: 0.3rem;
     }

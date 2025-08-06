@@ -52,8 +52,8 @@ const translations = {
         // Resume Section
         resume_certificates: "Özgeçmiş ve Sertifikalar",
         education: "Eğitim",
-        computer_engineering: "Bilgisayar Mühendisliği Lisans",
-        university: "İstanbul Teknik Üniversitesi - 2020",
+        computer_engineering: "Bilgisayar Programlama",
+        university: "Marmara Üniversitesi - 2025",
         certificates: "Sertifikalar",
         python_developer: "Python Developer",
         javascript_advanced: "JavaScript Advanced",
@@ -123,8 +123,8 @@ const translations = {
         // Resume Section
         resume_certificates: "Resume & Certificates",
         education: "Education",
-        computer_engineering: "Computer Engineering Bachelor",
-        university: "Istanbul Technical University - 2020",
+        computer_engineering: "Computer Programming",
+        university: "Marmara University - 2025",
         certificates: "Certificates",
         python_developer: "Python Developer",
         javascript_advanced: "JavaScript Advanced",
@@ -194,8 +194,8 @@ const translations = {
         // Resume Section
         resume_certificates: "رزومه و گواهینامه‌ها",
         education: "تحصیلات",
-        computer_engineering: "کارشناسی مهندسی کامپیوتر",
-        university: "دانشگاه تهران - 2020",
+        computer_engineering: "برنامه‌نویسی کامپیوتر",
+        university: "دانشگاه مارمارا - 2025",
         certificates: "گواهینامه‌ها",
         python_developer: "Python Developer",
         javascript_advanced: "JavaScript Advanced",
@@ -326,18 +326,17 @@ function initScrollAnimations() {
 
 // Contact form functionality
 function initContactForm() {
-    const contactForm = document.querySelector('.contact-form');
+    const contactForm = document.querySelector('#contactForm');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form data
-            const formData = new FormData(this);
-            const name = this.querySelector('input[type="text"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            const subject = this.querySelectorAll('input[type="text"]')[1].value;
-            const message = this.querySelector('textarea').value;
+            const name = this.querySelector('input[name="name"]').value;
+            const email = this.querySelector('input[name="email"]').value;
+            const subject = this.querySelector('input[name="subject"]').value;
+            const message = this.querySelector('textarea[name="message"]').value;
             
             // Simple validation
             if (!name || !email || !subject || !message) {
@@ -350,20 +349,25 @@ function initContactForm() {
                 return;
             }
             
-            // Simulate form submission
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
+            // Prepare email content
+            const emailBody = `
+نام: ${name}
+ایمیل: ${email}
+موضوع: ${subject}
+پیام: ${message}
+            `;
             
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> در حال ارسال...';
-            submitBtn.disabled = true;
+            // Create mailto link
+            const mailtoLink = `mailto:aliasadi@gmail.com?subject=${encodeURIComponent('پیام جدید از وب‌سایت: ' + subject)}&body=${encodeURIComponent(emailBody)}`;
             
-            // Simulate API call
-            setTimeout(() => {
-                showNotification('پیام شما با موفقیت ارسال شد!', 'success');
-                this.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
+            // Open default email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            showNotification('ایمیل شما آماده ارسال است!', 'success');
+            
+            // Reset form
+            this.reset();
         });
     }
 }
