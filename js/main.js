@@ -42,6 +42,7 @@ const translations = {
         
         // Projects Section
         my_projects: "Projelerim",
+        video_demos: "Video Demoları",
         ecommerce_website: "E-ticaret Web Sitesi",
         ecommerce_desc: "Django ve Bootstrap ile tam özellikli e-ticaret web sitesi",
         management_app: "Yönetim Uygulaması",
@@ -116,6 +117,7 @@ const translations = {
         
         // Projects Section
         my_projects: "My Projects",
+        video_demos: "Video Demos",
         ecommerce_website: "E-commerce Website",
         ecommerce_desc: "Full-featured e-commerce website with Django and Bootstrap",
         management_app: "Management Application",
@@ -190,6 +192,7 @@ const translations = {
         
         // Projects Section
         my_projects: "پروژه‌های من",
+        video_demos: "دموهای ویدیویی",
         ecommerce_website: "وب‌سایت فروشگاهی",
         ecommerce_desc: "وب‌سایت فروشگاهی کامل با Django و Bootstrap",
         management_app: "اپلیکیشن مدیریت",
@@ -236,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initContactForm();
     initLoadingAnimations();
+    initProjectCards();
     
 });
 
@@ -348,18 +352,18 @@ function initContactForm() {
             // Simple validation
             if (!name || !email || !subject || !message) {
                 e.preventDefault();
-                showNotification('لطفاً تمام فیلدها را پر کنید', 'error');
+                showNotification('Please fill all fields', 'error');
                 return;
             }
             
             if (!isValidEmail(email)) {
                 e.preventDefault();
-                showNotification('لطفاً ایمیل معتبر وارد کنید', 'error');
+                showNotification('Please enter a valid email', 'error');
                 return;
             }
             
             // Show loading message
-            showNotification('پیام شما در حال ارسال است...', 'info');
+            showNotification('Your message is being sent...', 'info');
             
             // Form will be submitted to Formspree automatically
             // Formspree will handle the email sending
@@ -370,7 +374,7 @@ function initContactForm() {
             // Reset form after submission
             setTimeout(() => {
                 this.reset();
-                showNotification('پیام شما با موفقیت ارسال شد!', 'success');
+                showNotification('Your message was sent successfully!', 'success');
             }, 1000);
         });
     }
@@ -668,35 +672,43 @@ function preloadImages() {
     });
 }
 
-// Video player functionality
-function playVideo(projectId) {
-    const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
-    const video = document.getElementById('projectVideo');
-    const videoSource = video.querySelector('source');
-    
-    // Set video source based on project ID
-            const videoSources = {
-            'project1': 'videos/bandicam 2025-06-02 17-35-46-733.mp4',
-            'project2': 'videos/bandicam 2025-06-03 00-31-12-332.mp4',
-            'project3': 'videos/bandicam 2025-06-04 02-06-20-461.mp4',
-            'project4': 'videos/06.08.2025_18.08.02_REC.mp4'
-        };
-    
-    if (videoSources[projectId]) {
-        videoSource.src = videoSources[projectId];
-        video.load();
-        videoModal.show();
-    } else {
-        showNotification('Video bulunamadı', 'error');
-    }
-}
 
-// Stop video when modal is closed
-document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
-    const video = document.getElementById('projectVideo');
-    video.pause();
-    video.currentTime = 0;
-});
+
+
+// Initialize project cards functionality
+function initProjectCards() {
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        const overlay = card.querySelector('.project-overlay');
+        const visitButton = overlay.querySelector('a[target="_blank"]');
+        
+        if (visitButton) {
+            const targetUrl = visitButton.href;
+            
+            // Make the entire card clickable
+            card.style.cursor = 'pointer';
+            
+            // Add click event to the card
+            card.addEventListener('click', function(e) {
+                // Don't trigger if clicking on the button itself
+                if (e.target.closest('a')) {
+                    return;
+                }
+                
+                // Open the website in a new tab
+                window.open(targetUrl, '_blank');
+            });
+            
+            // Prevent the overlay from interfering with button clicks
+            overlay.addEventListener('click', function(e) {
+                if (e.target.closest('a')) {
+                    e.stopPropagation();
+                }
+            });
+        }
+    });
+}
 
 // Initialize preloading
 preloadImages(); 

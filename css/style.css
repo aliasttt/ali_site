@@ -433,6 +433,7 @@ body[dir="rtl"] {
     gap: 10px;
     opacity: 0;
     transition: opacity 0.3s ease;
+    cursor: pointer;
 }
 
 .project-card:hover .project-overlay {
@@ -813,4 +814,110 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(116, 185, 255, 0.7);
+}
+
+/* Video Cards Styling */
+.video-card {
+    background: rgba(26, 26, 46, 0.8);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(116, 185, 255, 0.2);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(116, 185, 255, 0.4);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background: #000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background: #000;
+    display: block;
+    object-fit: cover;
+}
+
+.video-content {
+    text-align: center;
+}
+
+.video-content h4 {
+    color: #74b9ff;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.video-content p {
+    color: #b2bec3;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Video controls styling */
+
+.project-video::-webkit-media-controls-play-button {
+    background-color: #74b9ff;
+    border-radius: 50%;
+}
+
+.project-video::-webkit-media-controls-play-button:hover {
+    background-color: #0984e3;
+}
+
+/* Additional video enhancements for better visibility */
+.project-video::-webkit-media-controls-timeline {
+    background-color: rgba(116, 185, 255, 0.3);
+}
+
+.project-video::-webkit-media-controls-current-time-display,
+.project-video::-webkit-media-controls-time-remaining-display {
+    color: #fff;
+    font-weight: 600;
+}
+
+.project-video::-webkit-media-controls-volume-slider {
+    background-color: rgba(116, 185, 255, 0.3);
+}
+
+.project-video::-webkit-media-controls-mute-button {
+    background-color: #74b9ff;
+    border-radius: 50%;
+}
+
+/* Ensure videos are not affected by dark overlays */
+.video-container::before,
+.video-container::after {
+    display: none;
+}
+
+/* Ensure video displays with natural colors */
+.project-video {
+    filter: none;
+}
+
+/* Ensure video poster displays naturally */
+.project-video[poster] {
+    filter: none;
+}
+
+/* Remove any potential overlays from video elements */
+.project-video * {
+    filter: none;
 } 
