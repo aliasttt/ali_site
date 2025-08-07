@@ -227,7 +227,7 @@ const translations = {
 };
 
 // Current language
-let currentLang = 'tr';
+let currentLang = 'en';
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
@@ -570,8 +570,8 @@ function updatePageMeta(lang) {
         fa: "توسعه‌دهنده حرفه‌ای وب با تخصص در Django، Python، JavaScript، CSS، HTML و Bootstrap"
     };
     
-    document.title = titles[lang] || titles.tr;
-    document.querySelector('meta[name="description"]').setAttribute('content', descriptions[lang] || descriptions.tr);
+    document.title = titles[lang] || titles.en;
+    document.querySelector('meta[name="description"]').setAttribute('content', descriptions[lang] || descriptions.en);
 }
 
 // Load saved language preference
