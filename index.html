@@ -9,6 +9,50 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Critical CSS to prevent layout shifts -->
+    <style>
+        /* Critical styles to prevent layout shifts */
+        .hero-section {
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
+        .floating-astronaut {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        .hero-content {
+            padding: 0 15px;
+        }
+        .hero-image {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0 40px 0;
+            }
+            .floating-astronaut {
+                font-size: 8rem;
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+            }
+        }
+    </style>
+    
+    <!-- Performance optimizations -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
 </head>
 <body>
     <!-- Background Animation -->
@@ -82,10 +126,14 @@
                             <span class="text-gradient" data-translate="hero_title">Profesyonel Web Geliştirici</span>
                         </h1>
                         <p class="hero-subtitle" data-translate="hero_subtitle">
-                            En basitinden en gelişmişine kadar web projeleri
+                            Dijital Dünyada Markanızı Büyütün!
                         </p>
                         <p class="hero-description" data-translate="hero_description">
-                            Django, Python, JavaScript, CSS, HTML, Bootstrap ve hosting hizmetleri konularında uzmanlık
+                            Modern, hızlı ve kullanıcı dostu web siteleri ile işinizi dijital dünyada öne çıkarın. 
+                            E-ticaret siteleri, kurumsal web siteleri, portföy siteleri ve özel projeler için 
+                            tam kapsamlı web geliştirme hizmetleri sunuyorum. Django, Python, JavaScript, 
+                            CSS, HTML, Bootstrap ve hosting hizmetleri konularında uzmanlık ile projelerinizi 
+                            hayata geçiriyorum.
                         </p>
                         <div class="hero-buttons">
                             <a href="#projects" class="btn btn-primary btn-lg me-3">
@@ -95,6 +143,26 @@
                                 <i class="fas fa-paper-plane"></i> <span data-translate="contact_me">Benimle İletişime Geç</span>
                             </a>
                         </div>
+                        
+                        <!-- Key Benefits -->
+                        <div class="hero-benefits mt-4">
+                            <div class="benefit-item">
+                                <i class="fas fa-rocket text-primary"></i>
+                                <span data-translate="benefit_fast">Hızlı Teslimat</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-mobile-alt text-primary"></i>
+                                <span data-translate="benefit_mobile">Mobil Uyumlu</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-shield-alt text-primary"></i>
+                                <span data-translate="benefit_secure">Güvenli</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-headset text-primary"></i>
+                                <span data-translate="benefit_support">7/24 Destek</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -102,6 +170,57 @@
                         <div class="floating-astronaut">
                             <i class="fas fa-user-astronaut"></i>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section id="value-proposition" class="section bg-gradient">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title text-center">
+                        <span class="text-gradient" data-translate="why_choose_me">Neden Beni Seçmelisiniz?</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 data-translate="value_growth">İşinizi Büyütün</h3>
+                        <p data-translate="value_growth_desc">Modern web siteleri ile satışlarınızı artırın ve müşteri memnuniyetini yükseltin</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 data-translate="value_time">Zaman Tasarrufu</h3>
+                        <p data-translate="value_time_desc">Hızlı teslimat ve profesyonel hizmet ile zamanınızı verimli kullanın</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 data-translate="value_cost">Uygun Fiyat</h3>
+                        <p data-translate="value_cost_desc">Kaliteli hizmeti uygun fiyatlarla sunuyorum, bütçenize uygun çözümler</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 data-translate="value_support">Sürekli Destek</h3>
+                        <p data-translate="value_support_desc">Proje sonrası da yanınızdayım, 7/24 teknik destek hizmeti</p>
                     </div>
                 </div>
             </div>
@@ -124,7 +243,9 @@
                         <h3 data-translate="experienced_developer">Deneyimli Web Geliştirici</h3>
                         <p data-translate="about_description">
                             Web programlama alanlarında uzmanlaşmış profesyonel bir web geliştiricisiyim. 
-                            Basit kullanıcı arayüzü tasarımından karmaşık uygulama geliştirmeye kadar her şeyi yapıyorum.
+                            Müşterilerimin dijital başarısı için modern teknolojiler kullanarak, SEO uyumlu, 
+                            mobil dostu ve yüksek performanslı web siteleri geliştiriyorum. Her projede kalite, 
+                            hız ve kullanıcı deneyimini ön planda tutarak, işinizi büyütecek çözümler sunuyorum.
                         </p>
                         <div class="skills-grid">
                             <div class="skill-item">

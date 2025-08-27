@@ -11,16 +11,33 @@ const translations = {
         contact: "İletişim",
         
         // Hero Section
-        hero_title: "Profesyonel Web Geliştirici",
-        hero_subtitle: "En basitinden en gelişmişine kadar web projeleri",
-        hero_description: "Django, Python, JavaScript, CSS, HTML, Bootstrap ve hosting hizmetleri konularında uzmanlık",
+        hero_title: "Professional Web Developer",
+        hero_subtitle: "Dijital Dünyada Markanızı Büyütün!",
+        hero_description: "Modern, hızlı ve kullanıcı dostu web siteleri ile işinizi dijital dünyada öne çıkarın. E-ticaret siteleri, kurumsal web siteleri, portföy siteleri ve özel projeler için tam kapsamlı web geliştirme hizmetleri sunuyorum. Django, Python, JavaScript, CSS, HTML, Bootstrap ve hosting hizmetleri konularında uzmanlık ile projelerinizi hayata geçiriyorum.",
         view_projects: "Projeleri Görüntüle",
         contact_me: "Benimle İletişime Geç",
+        
+        // Benefits
+        benefit_fast: "Hızlı Teslimat",
+        benefit_mobile: "Mobil Uyumlu",
+        benefit_secure: "Güvenli",
+        benefit_support: "7/24 Destek",
+        
+        // Value Proposition
+        why_choose_me: "Neden Beni Seçmelisiniz?",
+        value_growth: "İşinizi Büyütün",
+        value_growth_desc: "Modern web siteleri ile satışlarınızı artırın ve müşteri memnuniyetini yükseltin",
+        value_time: "Zaman Tasarrufu",
+        value_time_desc: "Hızlı teslimat ve profesyonel hizmet ile zamanınızı verimli kullanın",
+        value_cost: "Uygun Fiyat",
+        value_cost_desc: "Kaliteli hizmeti uygun fiyatlarla sunuyorum, bütçenize uygun çözümler",
+        value_support: "Sürekli Destek",
+        value_support_desc: "Proje sonrası da yanınızdayım, 7/24 teknik destek hizmeti",
         
         // About Section
         about_me: "Hakkımda",
         experienced_developer: "Deneyimli Web Geliştirici",
-        about_description: "Web programlama alanlarında uzmanlaşmış profesyonel bir web geliştiricisiyim. Basit kullanıcı arayüzü tasarımından karmaşık uygulama geliştirmeye kadar her şeyi yapıyorum.",
+        about_description: "Web programlama alanlarında uzmanlaşmış profesyonel bir web geliştiricisiyim. Müşterilerimin dijital başarısı için modern teknolojiler kullanarak, SEO uyumlu, mobil dostu ve yüksek performanslı web siteleri geliştiriyorum. Her projede kalite, hız ve kullanıcı deneyimini ön planda tutarak, işinizi büyütecek çözümler sunuyorum.",
         successful_projects: "Başarılı Proje",
         years_experience: "Yıl Deneyim",
         customer_satisfaction: "Müşteri Memnuniyeti",
@@ -87,15 +104,32 @@ const translations = {
         
         // Hero Section
         hero_title: "Professional Web Developer",
-        hero_subtitle: "From simplest to most advanced web projects",
-        hero_description: "Expert in Django, Python, JavaScript, CSS, HTML, Bootstrap and hosting services",
+        hero_subtitle: "Grow Your Brand in the Digital World!",
+        hero_description: "Make your business stand out in the digital world with modern, fast, and user-friendly websites. I provide comprehensive web development services for e-commerce sites, corporate websites, portfolio sites, and custom projects. I bring your projects to life with expertise in Django, Python, JavaScript, CSS, HTML, Bootstrap, and hosting services.",
         view_projects: "View Projects",
         contact_me: "Contact Me",
+        
+        // Benefits
+        benefit_fast: "Fast Delivery",
+        benefit_mobile: "Mobile Friendly",
+        benefit_secure: "Secure",
+        benefit_support: "24/7 Support",
+        
+        // Value Proposition
+        why_choose_me: "Why Choose Me?",
+        value_growth: "Grow Your Business",
+        value_growth_desc: "Increase your sales and customer satisfaction with modern websites",
+        value_time: "Save Time",
+        value_time_desc: "Use your time efficiently with fast delivery and professional service",
+        value_cost: "Affordable Price",
+        value_cost_desc: "I offer quality service at reasonable prices, solutions that fit your budget",
+        value_support: "Continuous Support",
+        value_support_desc: "I'm with you after the project too, 24/7 technical support service",
         
         // About Section
         about_me: "About Me",
         experienced_developer: "Experienced Web Developer",
-        about_description: "I am a professional web developer specialized in web programming areas. I do everything from simple user interface design to complex application development.",
+        about_description: "I am a professional web developer specialized in web programming areas. I develop SEO-friendly, mobile-friendly, and high-performance websites using modern technologies for my clients' digital success. I prioritize quality, speed, and user experience in every project, delivering solutions that will grow your business.",
         successful_projects: "Successful Projects",
         years_experience: "Years Experience",
         customer_satisfaction: "Customer Satisfaction",
@@ -161,16 +195,33 @@ const translations = {
         contact: "تماس",
         
         // Hero Section
-        hero_title: "توسعه‌دهنده حرفه‌ای وب",
-        hero_subtitle: "از ساده‌ترین تا پیشرفته‌ترین پروژه‌های وب",
-        hero_description: "با تخصص در Django، Python، JavaScript، CSS، HTML، Bootstrap و خدمات هاستینگ",
+        hero_title: "Professional Web Developer",
+        hero_subtitle: "برند خود را در دنیای دیجیتال رشد دهید!",
+        hero_description: "با وب‌سایت‌های مدرن، سریع و کاربرپسند، کسب‌وکار خود را در دنیای دیجیتال برجسته کنید. خدمات جامع توسعه وب برای سایت‌های فروشگاهی، وب‌سایت‌های شرکتی، سایت‌های پورتفولیو و پروژه‌های سفارشی ارائه می‌دهم. پروژه‌های شما را با تخصص در Django، Python، JavaScript، CSS، HTML، Bootstrap و خدمات هاستینگ به زندگی تبدیل می‌کنم.",
         view_projects: "مشاهده پروژه‌ها",
         contact_me: "تماس با من",
+        
+        // Benefits
+        benefit_fast: "تحویل سریع",
+        benefit_mobile: "سازگار با موبایل",
+        benefit_secure: "امن",
+        benefit_support: "پشتیبانی 24/7",
+        
+        // Value Proposition
+        why_choose_me: "چرا من را انتخاب کنید؟",
+        value_growth: "کسب‌وکار خود را رشد دهید",
+        value_growth_desc: "با وب‌سایت‌های مدرن، فروش و رضایت مشتریان خود را افزایش دهید",
+        value_time: "صرفه‌جویی در زمان",
+        value_time_desc: "با تحویل سریع و خدمات حرفه‌ای، زمان خود را بهینه استفاده کنید",
+        value_cost: "قیمت مناسب",
+        value_cost_desc: "خدمات با کیفیت را با قیمت‌های معقول ارائه می‌دهم، راه‌حل‌هایی که با بودجه شما سازگار است",
+        value_support: "پشتیبانی مداوم",
+        value_support_desc: "بعد از پروژه هم کنار شما هستم، خدمات پشتیبانی فنی 24/7",
         
         // About Section
         about_me: "درباره من",
         experienced_developer: "توسعه‌دهنده وب با تجربه",
-        about_description: "من یک توسعه‌دهنده وب حرفه‌ای هستم که در زمینه‌های مختلف برنامه‌نویسی وب تخصص دارم. از طراحی رابط کاربری ساده گرفته تا توسعه اپلیکیشن‌های پیچیده، همه چیز را انجام می‌دهم.",
+        about_description: "من یک توسعه‌دهنده وب حرفه‌ای هستم که در زمینه‌های مختلف برنامه‌نویسی وب تخصص دارم. برای موفقیت دیجیتال مشتریانم، وب‌سایت‌های سازگار با SEO، دوستدار موبایل و با عملکرد بالا با استفاده از تکنولوژی‌های مدرن توسعه می‌دهم. در هر پروژه‌ای کیفیت، سرعت و تجربه کاربری را در اولویت قرار می‌دهم و راه‌حل‌هایی ارائه می‌دهم که کسب‌وکار شما را رشد خواهد داد.",
         successful_projects: "پروژه موفق",
         years_experience: "سال تجربه",
         customer_satisfaction: "رضایت مشتری",
@@ -437,15 +488,29 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Loading animations
+// Loading animations with better performance
 function initLoadingAnimations() {
-    // Add loading class to elements
-    const elements = document.querySelectorAll('.service-card, .project-card, .skill-item, .stat-item');
-    elements.forEach((el, index) => {
+    // Add loading class to elements with staggered timing
+    const elements = document.querySelectorAll('.service-card, .project-card, .skill-item, .stat-item, .value-card');
+    
+    // Use Intersection Observer for better performance
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('loaded');
+                }, index * 50); // Faster loading
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '50px'
+    });
+    
+    elements.forEach(el => {
         el.classList.add('loading');
-        setTimeout(() => {
-            el.classList.add('loaded');
-        }, index * 100);
+        observer.observe(el);
     });
 }
 
@@ -651,12 +716,31 @@ function debounce(func, wait) {
     };
 }
 
-// Optimize scroll events
+// Optimize scroll events with better performance
 const optimizedScrollHandler = debounce(function() {
     // Scroll-based animations and effects
-}, 10);
+}, 16); // ~60fps
 
-window.addEventListener('scroll', optimizedScrollHandler);
+// Use passive listeners for better performance
+window.addEventListener('scroll', optimizedScrollHandler, { passive: true });
+
+// Optimize animations for mobile
+function optimizeForMobile() {
+    if (window.innerWidth <= 768) {
+        // Reduce animation complexity on mobile
+        document.documentElement.style.setProperty('--animation-duration', '0.3s');
+        
+        // Disable heavy animations on mobile
+        const heavyAnimations = document.querySelectorAll('.planet, .stars');
+        heavyAnimations.forEach(el => {
+            el.style.animation = 'none';
+        });
+    }
+}
+
+// Call optimization on load and resize
+window.addEventListener('load', optimizeForMobile);
+window.addEventListener('resize', debounce(optimizeForMobile, 250));
 
 // Preload critical images
 function preloadImages() {
