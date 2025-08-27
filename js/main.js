@@ -60,12 +60,33 @@ const translations = {
         // Projects Section
         my_projects: "Projelerim",
         video_demos: "Video Demoları",
-        ecommerce_website: "E-ticaret Web Sitesi",
-        ecommerce_desc: "Django ve Bootstrap ile tam özellikli e-ticaret web sitesi",
-        management_app: "Yönetim Uygulaması",
-        management_desc: "Gelişmiş admin paneli ile içerik yönetim sistemi",
-        personal_portfolio: "Kişisel Portföy",
-        portfolio_desc: "Gelişmiş animasyonlarla kişisel portföy web sitesi",
+        
+        // Project 1
+        project1_title: "Hedef Sürücü Kursu",
+        project1_desc: "Profesyonel sürücü kursu web sitesi - eğitim ve kayıt sistemi",
+        
+        // Project 2
+        project2_title: "Ali Asadi Portfolio",
+        project2_desc: "Kişisel portföy web sitesi - profesyonel tanıtım ve iletişim",
+        
+        // Project 3
+        project3_title: "Firment Shirt DE",
+        project3_desc: "Almanya'da faaliyet gösteren e-ticaret web sitesi - giyim satışı",
+        
+        // Project 4
+        project4_title: "Firment Shirt Shop",
+        project4_desc: "Uluslararası e-ticaret platformu - modern giyim mağazası",
+        
+        // Video Demos
+        video_demo1_title: "Proje Demo 1",
+        video_demo1_desc: "İlk proje demo videosu",
+        video_demo2_title: "Proje Demo 2",
+        video_demo2_desc: "İkinci proje demo videosu",
+        video_demo3_title: "Proje Demo 3",
+        video_demo3_desc: "Üçüncü proje demo videosu",
+        video_demo4_title: "Proje Demo 4",
+        video_demo4_desc: "Dördüncü proje demo videosu",
+        
         watch_demo: "Demo İzle",
         visit_website: "Siteyi Ziyaret Et",
         
@@ -152,6 +173,33 @@ const translations = {
         // Projects Section
         my_projects: "My Projects",
         video_demos: "Video Demos",
+        
+        // Project 1
+        project1_title: "Hedef Driver Course",
+        project1_desc: "Professional driving school website - education and registration system",
+        
+        // Project 2
+        project2_title: "Ali Asadi Portfolio",
+        project2_desc: "Personal portfolio website - professional presentation and communication",
+        
+        // Project 3
+        project3_title: "Firment Shirt DE",
+        project3_desc: "E-commerce website operating in Germany - clothing sales",
+        
+        // Project 4
+        project4_title: "Firment Shirt Shop",
+        project4_desc: "International e-commerce platform - modern clothing store",
+        
+        // Video Demos
+        video_demo1_title: "Project Demo 1",
+        video_demo1_desc: "First project demo video",
+        video_demo2_title: "Project Demo 2",
+        video_demo2_desc: "Second project demo video",
+        video_demo3_title: "Project Demo 3",
+        video_demo3_desc: "Third project demo video",
+        video_demo4_title: "Project Demo 4",
+        video_demo4_desc: "Fourth project demo video",
+        
         ecommerce_website: "E-commerce Website",
         ecommerce_desc: "Full-featured e-commerce website with Django and Bootstrap",
         management_app: "Management Application",
@@ -244,12 +292,33 @@ const translations = {
         // Projects Section
         my_projects: "پروژه‌های من",
         video_demos: "دموهای ویدیویی",
-        ecommerce_website: "وب‌سایت فروشگاهی",
-        ecommerce_desc: "وب‌سایت فروشگاهی کامل با Django و Bootstrap",
-        management_app: "اپلیکیشن مدیریت",
-        management_desc: "سیستم مدیریت محتوا با پنل ادمین پیشرفته",
-        personal_portfolio: "پورتفولیو شخصی",
-        portfolio_desc: "وب‌سایت پورتفولیو با انیمیشن‌های پیشرفته",
+        
+        // Project 1
+        project1_title: "مدرسه رانندگی هدف",
+        project1_desc: "وب‌سایت مدرسه رانندگی حرفه‌ای - سیستم آموزش و ثبت‌نام",
+        
+        // Project 2
+        project2_title: "پورتفولیو علی اسدی",
+        project2_desc: "وب‌سایت پورتفولیو شخصی - معرفی حرفه‌ای و ارتباط",
+        
+        // Project 3
+        project3_title: "فیرمنت شرت آلمان",
+        project3_desc: "وب‌سایت تجارت الکترونیک در آلمان - فروش پوشاک",
+        
+        // Project 4
+        project4_title: "فروشگاه فیرمنت شرت",
+        project4_desc: "پلتفرم تجارت الکترونیک بین‌المللی - فروشگاه پوشاک مدرن",
+        
+        // Video Demos
+        video_demo1_title: "دمو پروژه ۱",
+        video_demo1_desc: "اولین ویدیوی دمو پروژه",
+        video_demo2_title: "دمو پروژه ۲",
+        video_demo2_desc: "دومین ویدیوی دمو پروژه",
+        video_demo3_title: "دمو پروژه ۳",
+        video_demo3_desc: "سومین ویدیوی دمو پروژه",
+        video_demo4_title: "دمو پروژه ۴",
+        video_demo4_desc: "چهارمین ویدیوی دمو پروژه",
+        
         watch_demo: "مشاهده دمو",
         visit_website: "بازدید از وب‌سایت",
         
@@ -274,6 +343,119 @@ const translations = {
         // Footer
         professional_portfolio: "پورتفولیو حرفه‌ای",
         all_rights_reserved: "تمامی حقوق محفوظ است."
+    },
+    
+    ar: {
+        // Navigation
+        portfolio: "المحفظة",
+        home: "الرئيسية",
+        about: "حول",
+        services: "الخدمات",
+        projects: "المشاريع",
+        resume: "السيرة الذاتية",
+        contact: "اتصل",
+        
+        // Hero Section
+        hero_title: "مطور ويب محترف",
+        hero_subtitle: "نمّي علامتك التجارية في العالم الرقمي!",
+        hero_description: "اجعل عملك يبرز في العالم الرقمي مع مواقع ويب حديثة وسريعة وسهلة الاستخدام. أقدم خدمات تطوير ويب شاملة لمواقع التجارة الإلكترونية والمواقع المؤسسية ومواقع المحفظة والمشاريع المخصصة. أحول مشاريعك إلى حياة مع الخبرة في Django و Python و JavaScript و CSS و HTML و Bootstrap وخدمات الاستضافة.",
+        view_projects: "عرض المشاريع",
+        contact_me: "اتصل بي",
+        
+        // Benefits
+        benefit_fast: "تسليم سريع",
+        benefit_mobile: "متوافق مع الجوال",
+        benefit_secure: "آمن",
+        benefit_support: "دعم 24/7",
+        
+        // Value Proposition
+        why_choose_me: "لماذا تختارني؟",
+        value_growth: "نمّي عملك",
+        value_growth_desc: "زِد مبيعاتك ورضا عملائك مع المواقع الحديثة",
+        value_time: "وفر الوقت",
+        value_time_desc: "استخدم وقتك بكفاءة مع التسليم السريع والخدمة الاحترافية",
+        value_cost: "سعر معقول",
+        value_cost_desc: "أقدم خدمة عالية الجودة بأسعار معقولة، حلول تناسب ميزانيتك",
+        value_support: "دعم مستمر",
+        value_support_desc: "أنا معك بعد المشروع أيضاً، خدمة دعم فني 24/7",
+        
+        // About Section
+        about_me: "حول",
+        experienced_developer: "مطور ويب ذو خبرة",
+        about_description: "أنا مطور ويب محترف متخصص في مجالات برمجة الويب. أطور مواقع ويب متوافقة مع محركات البحث ومتجاوبة مع الجوال وعالية الأداء باستخدام التقنيات الحديثة لنجاح عملائي الرقمي. أعطي الأولوية للجودة والسرعة وتجربة المستخدم في كل مشروع، وأقدم حلولاً ستنمي عملك.",
+        successful_projects: "مشاريع ناجحة",
+        years_experience: "سنوات خبرة",
+        customer_satisfaction: "رضا العملاء",
+        
+        // Services Section
+        my_services: "خدماتي",
+        web_development: "تطوير الويب",
+        web_development_desc: "تطوير مواقع ويب احترافية باستخدام أحدث التقنيات",
+        django_python: "Django & Python",
+        django_python_desc: "تطوير تطبيقات ويب قوية مع Django و Python",
+        responsive_design: "تصميم متجاوب",
+        responsive_design_desc: "تصميم مواقع ويب تعرض بشكل مثالي على جميع الأجهزة",
+        hosting_deploy: "الاستضافة والنشر",
+        hosting_deploy_desc: "إعداد خوادم الويب ونشر المشاريع",
+        ui_ux_design: "تصميم UI/UX",
+        ui_ux_design_desc: "تصميم واجهات مستخدم جميلة وتجربة مستخدم محسنة",
+        optimization: "التحسين",
+        optimization_desc: "تحسين سرعة وأداء مواقع الويب",
+        
+        // Projects Section
+        my_projects: "مشاريعي",
+        video_demos: "عروض فيديو",
+        
+        // Project 1
+        project1_title: "مدرسة هديف للسواقة",
+        project1_desc: "موقع مدرسة سواقة احترافية - نظام تعليم وتسجيل",
+        
+        // Project 2
+        project2_title: "محفظة علي أسدي",
+        project2_desc: "موقع محفظة شخصي - عرض احترافي وتواصل",
+        
+        // Project 3
+        project3_title: "فيرمنت شيرت ألمانيا",
+        project3_desc: "موقع تجارة إلكترونية في ألمانيا - بيع الملابس",
+        
+        // Project 4
+        project4_title: "متجر فيرمنت شيرت",
+        project4_desc: "منصة تجارة إلكترونية دولية - متجر ملابس حديث",
+        
+        // Video Demos
+        video_demo1_title: "عرض المشروع ١",
+        video_demo1_desc: "أول فيديو عرض للمشروع",
+        video_demo2_title: "عرض المشروع ٢",
+        video_demo2_desc: "ثاني فيديو عرض للمشروع",
+        video_demo3_title: "عرض المشروع ٣",
+        video_demo3_desc: "ثالث فيديو عرض للمشروع",
+        video_demo4_title: "عرض المشروع ٤",
+        video_demo4_desc: "رابع فيديو عرض للمشروع",
+        
+        watch_demo: "شاهد العرض",
+        visit_website: "زيارة الموقع",
+        
+        // Resume Section
+        resume_certificates: "السيرة الذاتية والشهادات",
+        education: "التعليم",
+        computer_engineering: "برمجة الحاسوب",
+        university: "جامعة مرمرة - 2025",
+        certificates: "الشهادات",
+        python_developer: "Python Developer",
+        javascript_advanced: "JavaScript Advanced",
+        django_framework: "Django Framework",
+        
+        // Contact Section
+        your_name: "اسمك",
+        your_email: "بريدك الإلكتروني",
+        subject: "الموضوع",
+        your_message: "رسالتك",
+        send_message: "إرسال الرسالة",
+        direct_email: "أو اتصل مباشرة عبر البريد الإلكتروني:",
+        
+        // Footer
+        professional_portfolio: "محفظة احترافية",
+        all_rights_reserved: "جميع الحقوق محفوظة."
     }
 };
 
@@ -594,7 +776,7 @@ function changeLanguage(lang) {
     
     // Update HTML lang and dir attributes
     document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+    document.documentElement.dir = (lang === 'fa' || lang === 'ar') ? 'rtl' : 'ltr';
     
     // Update all translatable elements
     const translatableElements = document.querySelectorAll('[data-translate]');
@@ -626,13 +808,15 @@ function updatePageMeta(lang) {
     const titles = {
         tr: "Profesyonel Portföy - Web Geliştirici",
         en: "Professional Portfolio - Web Developer",
-        fa: "پورتفولیو حرفه‌ای - توسعه‌دهنده وب"
+        fa: "پورتفولیو حرفه‌ای - توسعه‌دهنده وب",
+        ar: "محفظة احترافية - مطور ويب"
     };
     
     const descriptions = {
         tr: "Django, Python, JavaScript, CSS, HTML ve Bootstrap konularında uzman profesyonel web geliştirici",
         en: "Professional web developer expert in Django, Python, JavaScript, CSS, HTML and Bootstrap",
-        fa: "توسعه‌دهنده حرفه‌ای وب با تخصص در Django، Python، JavaScript، CSS، HTML و Bootstrap"
+        fa: "توسعه‌دهنده حرفه‌ای وب با تخصص در Django، Python، JavaScript، CSS، HTML و Bootstrap",
+        ar: "مطور ويب محترف متخصص في Django و Python و JavaScript و CSS و HTML و Bootstrap"
     };
     
     document.title = titles[lang] || titles.en;

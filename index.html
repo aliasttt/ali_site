@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     
     <!-- Critical CSS to prevent layout shifts -->
@@ -68,17 +70,21 @@
 
     <!-- Language Switcher -->
     <div class="language-switcher">
-                        <button class="lang-btn" data-lang="tr">
-                    <img src="https://flagcdn.com/24x18/tr.png" alt="Türkçe">
-                    TR
-                </button>
-                <button class="lang-btn active" data-lang="en">
-                    <img src="https://flagcdn.com/24x18/gb.png" alt="English">
-                    EN
-                </button>
+        <button class="lang-btn" data-lang="tr">
+            <img src="https://flagcdn.com/24x18/tr.png" alt="Türkçe">
+            TR
+        </button>
+        <button class="lang-btn active" data-lang="en">
+            <img src="https://flagcdn.com/24x18/gb.png" alt="English">
+            EN
+        </button>
         <button class="lang-btn" data-lang="fa">
             <img src="https://flagcdn.com/24x18/ir.png" alt="فارسی">
             FA
+        </button>
+        <button class="lang-btn" data-lang="ar">
+            <img src="https://flagcdn.com/24x18/sa.png" alt="العربية">
+            AR
         </button>
     </div>
 
@@ -86,7 +92,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#home">
-                <i class="fas fa-rocket"></i> <span data-translate="portfolio">Portföy</span>
+                <i class="fas fa-rocket"></i> <span data-translate="portfolio">Portfolio</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -94,22 +100,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home" data-translate="home">Ana Sayfa</a>
+                        <a class="nav-link" href="#home" data-translate="home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about" data-translate="about">Hakkımda</a>
+                        <a class="nav-link" href="#about" data-translate="about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services" data-translate="services">Hizmetler</a>
+                        <a class="nav-link" href="#services" data-translate="services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects" data-translate="projects">Projeler</a>
+                        <a class="nav-link" href="#projects" data-translate="projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#resume" data-translate="resume">Özgeçmiş</a>
+                        <a class="nav-link" href="#resume" data-translate="resume">Resume</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact" data-translate="contact">İletişim</a>
+                        <a class="nav-link" href="#contact" data-translate="contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -123,24 +129,23 @@
                 <div class="col-lg-6">
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            <span class="text-gradient" data-translate="hero_title">Profesyonel Web Geliştirici</span>
+                            <span class="text-gradient" data-translate="hero_title">Professional Web Developer</span>
                         </h1>
                         <p class="hero-subtitle" data-translate="hero_subtitle">
-                            Dijital Dünyada Markanızı Büyütün!
+                            Grow Your Brand in the Digital World!
                         </p>
                         <p class="hero-description" data-translate="hero_description">
-                            Modern, hızlı ve kullanıcı dostu web siteleri ile işinizi dijital dünyada öne çıkarın. 
-                            E-ticaret siteleri, kurumsal web siteleri, portföy siteleri ve özel projeler için 
-                            tam kapsamlı web geliştirme hizmetleri sunuyorum. Django, Python, JavaScript, 
-                            CSS, HTML, Bootstrap ve hosting hizmetleri konularında uzmanlık ile projelerinizi 
-                            hayata geçiriyorum.
+                            Make your business stand out in the digital world with modern, fast, and user-friendly websites. 
+                            I provide comprehensive web development services for e-commerce sites, corporate websites, 
+                            portfolio sites, and custom projects. I bring your projects to life with expertise in Django, 
+                            Python, JavaScript, CSS, HTML, Bootstrap, and hosting services.
                         </p>
                         <div class="hero-buttons">
                             <a href="#projects" class="btn btn-primary btn-lg me-3">
-                                <i class="fas fa-eye"></i> <span data-translate="view_projects">Projeleri Görüntüle</span>
+                                <i class="fas fa-eye"></i> <span data-translate="view_projects">View Projects</span>
                             </a>
                             <a href="#contact" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-paper-plane"></i> <span data-translate="contact_me">Benimle İletişime Geç</span>
+                                <i class="fas fa-paper-plane"></i> <span data-translate="contact_me">Contact Me</span>
                             </a>
                         </div>
                         
@@ -148,19 +153,19 @@
                         <div class="hero-benefits mt-4">
                             <div class="benefit-item">
                                 <i class="fas fa-rocket text-primary"></i>
-                                <span data-translate="benefit_fast">Hızlı Teslimat</span>
+                                <span data-translate="benefit_fast">Fast Delivery</span>
                             </div>
                             <div class="benefit-item">
                                 <i class="fas fa-mobile-alt text-primary"></i>
-                                <span data-translate="benefit_mobile">Mobil Uyumlu</span>
+                                <span data-translate="benefit_mobile">Mobile Friendly</span>
                             </div>
                             <div class="benefit-item">
                                 <i class="fas fa-shield-alt text-primary"></i>
-                                <span data-translate="benefit_secure">Güvenli</span>
+                                <span data-translate="benefit_secure">Secure</span>
                             </div>
                             <div class="benefit-item">
                                 <i class="fas fa-headset text-primary"></i>
-                                <span data-translate="benefit_support">7/24 Destek</span>
+                                <span data-translate="benefit_support">24/7 Support</span>
                             </div>
                         </div>
                     </div>
@@ -233,7 +238,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="section-title text-center">
-                        <span class="text-gradient" data-translate="about_me">Hakkımda</span>
+                        <span class="text-gradient" data-translate="about_me">About Me</span>
                     </h2>
                 </div>
             </div>
@@ -305,7 +310,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="section-title text-center">
-                        <span class="text-gradient" data-translate="my_services">Hizmetlerim</span>
+                        <span class="text-gradient" data-translate="my_services">My Services</span>
                     </h2>
                 </div>
             </div>
@@ -374,7 +379,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="section-title text-center">
-                        <span class="text-gradient" data-translate="my_projects">Projelerim</span>
+                        <span class="text-gradient" data-translate="my_projects">My Projects</span>
                     </h2>
                 </div>
             </div>
@@ -390,8 +395,8 @@
                 </div>
                 </div>
                         <div class="project-content">
-                            <h3>Hedef Sürücü Kursu</h3>
-                            <p>Profesyonel sürücü kursu web sitesi - eğitim ve kayıt sistemi</p>
+                            <h3 data-translate="project1_title">Hedef Sürücü Kursu</h3>
+                            <p data-translate="project1_desc">Profesyonel sürücü kursu web sitesi - eğitim ve kayıt sistemi</p>
                             <div class="project-tech">
                                 <span class="tech-tag">HTML</span>
                                 <span class="tech-tag">CSS</span>
@@ -415,8 +420,8 @@
                     </div>
                 </div>
                         <div class="project-content">
-                            <h3>Ali Asadi Portfolio</h3>
-                            <p>Kişisel portföy web sitesi - profesyonel tanıtım ve iletişim</p>
+                            <h3 data-translate="project2_title">Ali Asadi Portfolio</h3>
+                            <p data-translate="project2_desc">Kişisel portföy web sitesi - profesyonel tanıtım ve iletişim</p>
                             <div class="project-tech">
                                 <span class="tech-tag">HTML</span>
                                 <span class="tech-tag">CSS</span>
@@ -440,8 +445,8 @@
                     </div>
                 </div>
                         <div class="project-content">
-                            <h3>Firment Shirt DE</h3>
-                            <p>Almanya'da faaliyet gösteren e-ticaret web sitesi - giyim satışı</p>
+                            <h3 data-translate="project3_title">Firment Shirt DE</h3>
+                            <p data-translate="project3_desc">Almanya'da faaliyet gösteren e-ticaret web sitesi - giyim satışı</p>
                             <div class="project-tech">
                                 <span class="tech-tag">HTML</span>
                                 <span class="tech-tag">CSS</span>
@@ -465,8 +470,8 @@
                     </div>
                 </div>
                         <div class="project-content">
-                            <h3>Firment Shirt Shop</h3>
-                            <p>Uluslararası e-ticaret platformu - modern giyim mağazası</p>
+                            <h3 data-translate="project4_title">Firment Shirt Shop</h3>
+                            <p data-translate="project4_desc">Uluslararası e-ticaret platformu - modern giyim mağazası</p>
                             <div class="project-tech">
                                 <span class="tech-tag">HTML</span>
                                 <span class="tech-tag">CSS</span>
@@ -499,8 +504,8 @@
                             </video>
                         </div>
                         <div class="video-content">
-                            <h4>Proje Demo 1</h4>
-                            <p>İlk proje demo videosu</p>
+                            <h4 data-translate="video_demo1_title">Project Demo 1</h4>
+                            <p data-translate="video_demo1_desc">First project demo video</p>
                         </div>
                     </div>
                 </div>
@@ -513,8 +518,8 @@
                             </video>
                         </div>
                         <div class="video-content">
-                            <h4>Proje Demo 2</h4>
-                            <p>İkinci proje demo videosu</p>
+                            <h4 data-translate="video_demo2_title">Project Demo 2</h4>
+                            <p data-translate="video_demo2_desc">Second project demo video</p>
                         </div>
                     </div>
                 </div>
@@ -527,8 +532,8 @@
                             </video>
                         </div>
                         <div class="video-content">
-                            <h4>Proje Demo 3</h4>
-                            <p>Üçüncü proje demo videosu</p>
+                            <h4 data-translate="video_demo3_title">Project Demo 3</h4>
+                            <p data-translate="video_demo3_desc">Third project demo video</p>
                         </div>
                     </div>
                 </div>
@@ -541,8 +546,8 @@
                             </video>
                         </div>
                         <div class="video-content">
-                            <h4>Proje Demo 4</h4>
-                            <p>Dördüncü proje demo videosu</p>
+                            <h4 data-translate="video_demo4_title">Project Demo 4</h4>
+                            <p data-translate="video_demo4_desc">Fourth project demo video</p>
                         </div>
                     </div>
                 </div>
