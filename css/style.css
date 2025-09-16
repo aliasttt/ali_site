@@ -1534,21 +1534,79 @@ html {
     background: linear-gradient(135deg, rgba(116, 185, 255, 0.1), rgba(26, 26, 46, 0.3));
 }
 
-.pdf-icon {
+.pdf-preview {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.pdf-preview-content {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 200px;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+}
+
+.pdf-header {
     text-align: center;
+    border-bottom: 2px solid #74b9ff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.pdf-logo {
     color: #74b9ff;
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
 }
 
-.pdf-icon i {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.pdf-text {
-    font-size: 1.2rem;
+.pdf-title {
+    font-size: 0.8rem;
     font-weight: 600;
+    color: #333;
+}
+
+.pdf-body {
+    text-align: center;
+    margin-bottom: 0.8rem;
+}
+
+.pdf-certificate-title {
+    font-size: 1rem;
+    font-weight: 700;
     color: #74b9ff;
+    margin-bottom: 0.3rem;
+}
+
+.pdf-recipient {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+
+.pdf-description {
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.pdf-footer {
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 0.5rem;
+    font-size: 0.7rem;
+    color: #e74c3c;
+}
+
+.pdf-footer i {
+    margin-right: 0.3rem;
 }
 
 .pdf-viewer {

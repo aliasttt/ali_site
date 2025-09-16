@@ -1040,7 +1040,8 @@ function initCertificateGallery() {
         'python_harvard.png',
         'google_ads_search.jpg',
         'google_analytics.jpg',
-        'marmara_sertification.pdf'
+        'marmara_sertification.pdf',
+        'marmara_turkish_sertif.jpg'
     ];
     
     // If no certificates are specified, show placeholder
@@ -1060,12 +1061,27 @@ function initCertificateGallery() {
         const isPDF = imageName.toLowerCase().endsWith('.pdf');
         
         if (isPDF) {
-            // For PDF files, create a special container
+            // For PDF files, create a preview container
             certificateItem.innerHTML = `
                 <div class="certificate-image-container pdf-container">
-                    <div class="pdf-icon">
-                        <i class="fas fa-file-pdf"></i>
-                        <span class="pdf-text">PDF</span>
+                    <div class="pdf-preview">
+                        <div class="pdf-preview-content">
+                            <div class="pdf-header">
+                                <div class="pdf-logo">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="pdf-title">Marmara Üniversitesi</div>
+                            </div>
+                            <div class="pdf-body">
+                                <div class="pdf-certificate-title">Sertifika</div>
+                                <div class="pdf-recipient">Ali Asadi</div>
+                                <div class="pdf-description">Bilgisayar Programlama</div>
+                            </div>
+                            <div class="pdf-footer">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>PDF Belgesi</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="certificate-overlay">
                         <button class="btn btn-sm btn-light certificate-view-btn" 
