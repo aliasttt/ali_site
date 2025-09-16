@@ -97,11 +97,11 @@
 
     <!-- Language Switcher -->
     <div class="language-switcher">
-        <button class="lang-btn" data-lang="tr">
+        <button class="lang-btn active" data-lang="tr">
             <img src="https://flagcdn.com/24x18/tr.png" alt="Türkçe">
             TR
         </button>
-        <button class="lang-btn active" data-lang="en">
+        <button class="lang-btn" data-lang="en">
             <img src="https://flagcdn.com/24x18/gb.png" alt="English">
             EN
         </button>
@@ -201,6 +201,30 @@
                     <div class="hero-image">
                         <div class="floating-astronaut">
                             <i class="fas fa-user-astronaut"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Photos Section -->
+    <section id="personal-photos" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title text-center">
+                        <span class="text-gradient" data-translate="personal_photos_title">Kişisel Fotoğraflarım</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="photos-gallery" id="photosGallery">
+                        <!-- Photos will be loaded dynamically from the photos folder -->
+                        <div class="photos-placeholder">
+                            <i class="fas fa-user-circle"></i>
+                            <p data-translate="photos_placeholder">Kişisel fotoğraflarınızı photos klasörüne ekleyin</p>
                         </div>
                     </div>
                 </div>
@@ -603,23 +627,16 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <!-- <div class="resume-section">
+                    <div class="resume-section">
                         <h3><i class="fas fa-certificate"></i> <span data-translate="certificates">Sertifikalar</span></h3>
-                        <div class="certificate-grid">
-                            <div class="certificate-item">
-                                <i class="fab fa-python"></i>
-                                <span data-translate="python_developer">Python Developer</span>
-                            </div>
-                            <div class="certificate-item">
-                                <i class="fab fa-js-square"></i>
-                                <span data-translate="javascript_advanced">JavaScript Advanced</span>
-                            </div>
-                            <div class="certificate-item">
-                                <i class="fab fa-python"></i>
-                                <span data-translate="django_framework">Django Framework</span>
+                        <div class="certificate-gallery" id="certificateGallery">
+                            <!-- Certificates will be loaded dynamically from the certificates folder -->
+                            <div class="certificate-placeholder">
+                                <i class="fas fa-image"></i>
+                                <p data-translate="certificates_placeholder">Sertifika resimlerinizi certificates klasörüne ekleyin</p>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>

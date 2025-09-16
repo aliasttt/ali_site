@@ -110,7 +110,18 @@ const translations = {
         
         // Footer
         professional_portfolio: "Profesyonel Portföy",
-        all_rights_reserved: "Tüm hakları saklıdır."
+        all_rights_reserved: "Tüm hakları saklıdır.",
+        
+        // Certificates
+        certificates_placeholder: "Sertifika resimlerinizi certificates klasörüne ekleyin",
+        view_certificate: "Görüntüle",
+        download_pdf: "PDF'yi İndir",
+        
+        // Personal Photos
+        personal_photos_title: "Kişisel Fotoğraflarım",
+        personal_photos_subtitle: "Beni tanıyın ve güvenin - Profesyonel web geliştirici olarak çalışmalarım",
+        photos_placeholder: "Kişisel fotoğraflarınızı photos klasörüne ekleyin",
+        view_photo: "Görüntüle"
     },
     
     en: {
@@ -229,7 +240,18 @@ const translations = {
         
         // Footer
         professional_portfolio: "Professional Portfolio",
-        all_rights_reserved: "All rights reserved."
+        all_rights_reserved: "All rights reserved.",
+        
+        // Certificates
+        certificates_placeholder: "Add your certificate images to the certificates folder",
+        view_certificate: "View",
+        download_pdf: "Download PDF",
+        
+        // Personal Photos
+        personal_photos_title: "Personal Photos",
+        personal_photos_subtitle: "Get to know me and trust me - Professional web developer at work",
+        photos_placeholder: "Add your personal photos to the photos folder",
+        view_photo: "View"
     },
     
     fa: {
@@ -342,7 +364,18 @@ const translations = {
         
         // Footer
         professional_portfolio: "پورتفولیو حرفه‌ای",
-        all_rights_reserved: "تمامی حقوق محفوظ است."
+        all_rights_reserved: "تمامی حقوق محفوظ است.",
+        
+        // Certificates
+        certificates_placeholder: "تصاویر گواهینامه‌های خود را در پوشه certificates قرار دهید",
+        view_certificate: "مشاهده",
+        download_pdf: "دانلود PDF",
+        
+        // Personal Photos
+        personal_photos_title: "عکس‌های شخصی من",
+        personal_photos_subtitle: "مرا بشناسید و به من اعتماد کنید - توسعه‌دهنده حرفه‌ای وب در حال کار",
+        photos_placeholder: "عکس‌های شخصی خود را در پوشه photos قرار دهید",
+        view_photo: "مشاهده"
     },
     
     ar: {
@@ -455,12 +488,23 @@ const translations = {
         
         // Footer
         professional_portfolio: "محفظة احترافية",
-        all_rights_reserved: "جميع الحقوق محفوظة."
+        all_rights_reserved: "جميع الحقوق محفوظة.",
+        
+        // Certificates
+        certificates_placeholder: "أضف صور شهاداتك إلى مجلد certificates",
+        view_certificate: "عرض",
+        download_pdf: "تحميل PDF",
+        
+        // Personal Photos
+        personal_photos_title: "صوري الشخصية",
+        personal_photos_subtitle: "تعرف عليّ وثق بي - مطور ويب محترف في العمل",
+        photos_placeholder: "أضف صورك الشخصية إلى مجلد photos",
+        view_photo: "عرض"
     }
 };
 
 // Current language
-let currentLang = 'en';
+let currentLang = 'tr';
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
@@ -473,6 +517,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initLoadingAnimations();
     initProjectCards();
+    initCertificateGallery();
+    initPhotosGallery();
+    
+    // Set Turkish as default language on page load
+    changeLanguage('tr');
     
 });
 
@@ -979,4 +1028,230 @@ function initProjectCards() {
 }
 
 // Initialize preloading
-preloadImages(); 
+preloadImages();
+
+// Certificate Gallery functionality
+function initCertificateGallery() {
+    const certificateGallery = document.getElementById('certificateGallery');
+    if (!certificateGallery) return;
+    
+    // List of certificate images
+    const certificateImages = [
+        'python_harvard.png',
+        'google_ads_search.jpg',
+        'google_analytics.jpg',
+        'marmara_sertification.pdf'
+    ];
+    
+    // If no certificates are specified, show placeholder
+    if (certificateImages.length === 0) {
+        return; // Keep the placeholder
+    }
+    
+    // Clear placeholder
+    certificateGallery.innerHTML = '';
+    
+    // Create certificate grid
+    certificateImages.forEach((imageName, index) => {
+        const certificateItem = document.createElement('div');
+        certificateItem.className = 'certificate-item';
+        
+        // Check if it's a PDF file
+        const isPDF = imageName.toLowerCase().endsWith('.pdf');
+        
+        if (isPDF) {
+            // For PDF files, create a special container
+            certificateItem.innerHTML = `
+                <div class="certificate-image-container pdf-container">
+                    <div class="pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="pdf-text">PDF</span>
+                    </div>
+                    <div class="certificate-overlay">
+                        <button class="btn btn-sm btn-light certificate-view-btn" 
+                                onclick="viewCertificate('./certificates/${imageName}')">
+                            <i class="fas fa-eye"></i> <span data-translate="view_certificate">Görüntüle</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+        } else {
+            // For image files
+            certificateItem.innerHTML = `
+                <div class="certificate-image-container">
+                    <img src="./certificates/${imageName}" 
+                         alt="Certificate ${index + 1}" 
+                         class="certificate-image"
+                         loading="lazy"
+                         onerror="this.style.display='none'">
+                    <div class="certificate-overlay">
+                        <button class="btn btn-sm btn-light certificate-view-btn" 
+                                onclick="viewCertificate('./certificates/${imageName}')">
+                            <i class="fas fa-eye"></i> <span data-translate="view_certificate">Görüntüle</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        certificateGallery.appendChild(certificateItem);
+    });
+}
+
+// View certificate in modal
+function viewCertificate(imageSrc) {
+    // Create modal if it doesn't exist
+    let modal = document.getElementById('certificateModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'certificateModal';
+        modal.className = 'certificate-modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeCertificateModal()">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+    
+    const modalContent = document.getElementById('modalContent');
+    const isPDF = imageSrc.toLowerCase().endsWith('.pdf');
+    
+    if (isPDF) {
+        // For PDF files, create an iframe or download link
+        modalContent.innerHTML = `
+            <div class="pdf-viewer">
+                <iframe src="${imageSrc}" width="100%" height="600px" style="border: none; border-radius: 10px;"></iframe>
+                <div class="pdf-download">
+                    <a href="${imageSrc}" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-download"></i> <span data-translate="download_pdf">PDF'yi İndir</span>
+                    </a>
+                </div>
+            </div>
+        `;
+    } else {
+        // For image files
+        modalContent.innerHTML = `<img src="${imageSrc}" alt="Certificate" style="max-width: 100%; max-height: 80vh; border-radius: 10px;">`;
+    }
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+// Close certificate modal
+function closeCertificateModal() {
+    const modal = document.getElementById('certificateModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('certificateModal');
+    if (modal && e.target === modal) {
+        closeCertificateModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeCertificateModal();
+    }
+});
+
+// Photos Gallery functionality
+function initPhotosGallery() {
+    const photosGallery = document.getElementById('photosGallery');
+    if (!photosGallery) return;
+    
+    // List of photo images
+    const photoImages = [
+        'ali1.jpg',
+        'ali2.jpg',
+        'ali3.jpg',
+        'ali4.jpg',
+        'ali5.jpg',
+        'ali6.jpg'
+    ];
+    
+    // If no photos are specified, show placeholder
+    if (photoImages.length === 0) {
+        return; // Keep the placeholder
+    }
+    
+    // Clear placeholder
+    photosGallery.innerHTML = '';
+    
+    // Create photos grid
+    photoImages.forEach((imageName, index) => {
+        const photoItem = document.createElement('div');
+        photoItem.className = 'photo-item';
+        photoItem.innerHTML = `
+            <div class="photo-image-container">
+                <img src="./photos/${imageName}" 
+                     alt="Personal Photo ${index + 1}" 
+                     class="photo-image"
+                     loading="lazy"
+                     onerror="this.style.display='none'">
+                <div class="photo-overlay">
+                    <button class="btn photo-view-btn" 
+                            onclick="viewPhoto('./photos/${imageName}')">
+                        <i class="fas fa-eye"></i> <span data-translate="view_photo">Görüntüle</span>
+                    </button>
+                </div>
+            </div>
+        `;
+        photosGallery.appendChild(photoItem);
+    });
+}
+
+// View photo in modal
+function viewPhoto(imageSrc) {
+    // Create modal if it doesn't exist
+    let modal = document.getElementById('photosModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'photosModal';
+        modal.className = 'photos-modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="modal-close" onclick="closePhotosModal()">&times;</span>
+                <img id="modalPhotoImage" src="" alt="Personal Photo">
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+    
+    // Set image source and show modal
+    document.getElementById('modalPhotoImage').src = imageSrc;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+// Close photos modal
+function closePhotosModal() {
+    const modal = document.getElementById('photosModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close photos modal when clicking outside
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('photosModal');
+    if (modal && e.target === modal) {
+        closePhotosModal();
+    }
+});
+
+// Close photos modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closePhotosModal();
+    }
+}); 

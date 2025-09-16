@@ -1428,4 +1428,468 @@ html {
 /* Remove any potential overlays from video elements */
 .project-video * {
     filter: none;
+}
+
+/* Certificate Gallery Styles */
+.certificate-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.certificate-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(116, 185, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.certificate-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(116, 185, 255, 0.3);
+    border-color: rgba(116, 185, 255, 0.5);
+}
+
+.certificate-image-container {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.certificate-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certificate-item:hover .certificate-image {
+    transform: scale(1.05);
+}
+
+.certificate-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.certificate-item:hover .certificate-overlay {
+    opacity: 1;
+}
+
+.certificate-view-btn {
+    background: rgba(116, 185, 255, 0.9);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.certificate-view-btn:hover {
+    background: rgba(116, 185, 255, 1);
+    transform: scale(1.05);
+}
+
+.certificate-placeholder {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    border: 2px dashed rgba(116, 185, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(116, 185, 255, 0.05);
+}
+
+.certificate-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: rgba(116, 185, 255, 0.5);
+}
+
+.certificate-placeholder p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* PDF Certificate Styles */
+.pdf-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(116, 185, 255, 0.1), rgba(26, 26, 46, 0.3));
+}
+
+.pdf-icon {
+    text-align: center;
+    color: #74b9ff;
+}
+
+.pdf-icon i {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.pdf-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #74b9ff;
+}
+
+.pdf-viewer {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pdf-download {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.pdf-download .btn {
+    background: rgba(116, 185, 255, 0.9);
+    border: none;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.pdf-download .btn:hover {
+    background: rgba(116, 185, 255, 1);
+    transform: scale(1.05);
+}
+
+/* Certificate Modal */
+.certificate-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.certificate-modal .modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background: rgba(26, 26, 46, 0.95);
+    border-radius: 10px;
+    padding: 1rem;
+    border: 1px solid rgba(116, 185, 255, 0.3);
+}
+
+.certificate-modal .modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #74b9ff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design for Certificates */
+@media (max-width: 768px) {
+    .certificate-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .certificate-image-container {
+        height: 120px;
+    }
+    
+    .certificate-placeholder {
+        padding: 2rem 1rem;
+    }
+    
+    .certificate-placeholder i {
+        font-size: 2rem;
+    }
+    
+    .certificate-placeholder p {
+        font-size: 1rem;
+    }
+    
+    .certificate-modal .modal-content {
+        max-width: 95%;
+        padding: 0.5rem;
+    }
+    
+    .certificate-modal .modal-content img {
+        max-height: 70vh;
+    }
+}
+
+/* Personal Photos Gallery Styles */
+.photos-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.photo-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(116, 185, 255, 0.2);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.photo-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(116, 185, 255, 0.4);
+    border-color: rgba(116, 185, 255, 0.6);
+}
+
+.photo-image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.photo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    filter: brightness(0.9);
+}
+
+.photo-item:hover .photo-image {
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+
+.photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(116, 185, 255, 0.8), rgba(26, 26, 46, 0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.photo-item:hover .photo-overlay {
+    opacity: 1;
+}
+
+.photo-view-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #1a1a2e;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.photo-view-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.photos-placeholder {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: rgba(255, 255, 255, 0.6);
+    border: 3px dashed rgba(116, 185, 255, 0.3);
+    border-radius: 15px;
+    background: rgba(116, 185, 255, 0.05);
+    grid-column: 1 / -1;
+}
+
+.photos-placeholder i {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: rgba(116, 185, 255, 0.5);
+}
+
+.photos-placeholder p {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Photos Modal */
+.photos-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.photos-modal .modal-content {
+    position: relative;
+    max-width: 95%;
+    max-height: 95%;
+    background: rgba(26, 26, 46, 0.98);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 2px solid rgba(116, 185, 255, 0.4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photos-modal .modal-content img {
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.photos-modal .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photos-modal .modal-close:hover {
+    color: #74b9ff;
+    background: rgba(116, 185, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Responsive Design for Photos */
+@media (max-width: 768px) {
+    .photos-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .photo-image-container {
+        height: 250px;
+    }
+    
+    .photos-placeholder {
+        padding: 3rem 1rem;
+    }
+    
+    .photos-placeholder i {
+        font-size: 3rem;
+    }
+    
+    .photos-placeholder p {
+        font-size: 1rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .photos-modal .modal-content {
+        max-width: 98%;
+        padding: 0.5rem;
+    }
+    
+    .photos-modal .modal-content img {
+        max-width: 95vw;
+        max-height: 75vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+    
+    .photos-modal .modal-close {
+        top: 10px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+    }
 } 
