@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://angraweb.com/sitemap.xml
 
 # Disallow certain directories (if any)
 # Disallow: /admin/
