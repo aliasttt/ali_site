@@ -11,11 +11,11 @@ const translations = {
         contact: "İletişim",
         
         // Hero Section
-        hero_title: "Professional Web Developer",
-        hero_subtitle: "Dijital Dünyada Markanızı Büyütün!",
-        hero_description: "Modern, hızlı ve kullanıcı dostu web siteleri ile işinizi dijital dünyada öne çıkarın. E-ticaret siteleri, kurumsal web siteleri, portföy siteleri ve özel projeler için tam kapsamlı web geliştirme hizmetleri sunuyorum. Django, Python, JavaScript, CSS, HTML, Bootstrap ve hosting hizmetleri konularında uzmanlık ile projelerinizi hayata geçiriyorum.",
-        view_projects: "Projeleri Görüntüle",
-        contact_me: "Benimle İletişime Geç",
+        hero_title: "Profesyonel Web Tasarım ve E-Ticaret Uzmanı",
+        hero_subtitle: "İşletmenizi Dijital Dünyada Büyütün!",
+        hero_description: "İşletmeniz için modern, hızlı ve kullanıcı dostu web siteleri tasarlıyorum. E-ticaret sitesi, kurumsal web sitesi ve profesyonel web tasarım çözümleri sunuyorum. 20'den fazla müşterim %100 memnuniyet ile hizmet aldı. Uygun fiyatlı web sitesi çözümleri ile projelerinizi hayata geçiriyorum.",
+        view_projects: "Projelerimi İncele",
+        contact_me: "Ücretsiz Teklif Al",
         
         // Benefits
         benefit_fast: "Hızlı Teslimat",
@@ -36,26 +36,26 @@ const translations = {
         
         // About Section
         about_me: "Hakkımda",
-        experienced_developer: "Deneyimli Web Geliştirici",
-        about_description: "Web programlama alanlarında uzmanlaşmış profesyonel bir web geliştiricisiyim. Müşterilerimin dijital başarısı için modern teknolojiler kullanarak, SEO uyumlu, mobil dostu ve yüksek performanslı web siteleri geliştiriyorum. Her projede kalite, hız ve kullanıcı deneyimini ön planda tutarak, işinizi büyütecek çözümler sunuyorum.",
+        experienced_developer: "Profesyonel Web Tasarım Uzmanı",
+        about_description: "Marmara Üniversitesi Bilgisayar Programlama mezunu olarak profesyonel web tasarım çözümleri sunuyorum. 20'den fazla müşterim %100 memnuniyet ile hizmet aldı. İşletmeniz için modern, hızlı ve kullanıcı dostu web siteleri tasarlıyorum. E-ticaret sitesi, kurumsal web sitesi ve profesyonel web tasarım projelerinizi uygun fiyatlı çözümlerle hayata geçiriyorum.",
         successful_projects: "Başarılı Proje",
         years_experience: "Yıl Deneyim",
         customer_satisfaction: "Müşteri Memnuniyeti",
         
         // Services Section
         my_services: "Hizmetlerim",
-        web_development: "Web Geliştirme",
-        web_development_desc: "En son teknolojileri kullanarak profesyonel web siteleri geliştirme",
-        django_python: "Django & Python",
-        django_python_desc: "Django ve Python ile güçlü web uygulamaları geliştirme",
-        responsive_design: "Responsive Tasarım",
-        responsive_design_desc: "Tüm cihazlarda optimize görüntülenen web siteleri tasarlama",
-        hosting_deploy: "Hosting ve Deploy",
-        hosting_deploy_desc: "Web sunucularının kurulumu ve projelerin deploy edilmesi",
-        ui_ux_design: "UI/UX Tasarım",
-        ui_ux_design_desc: "Güzel kullanıcı arayüzü ve optimize kullanıcı deneyimi tasarlama",
-        optimization: "Optimizasyon",
-        optimization_desc: "Web sitelerinin hız ve performans optimizasyonu",
+        web_development: "Profesyonel Web Tasarım",
+        web_development_desc: "İşinizi büyütecek modern ve hızlı web siteleri tasarlıyorum. Kurumsal web sitesi çözümleri ile markanızı güçlendirin.",
+        ecommerce_solutions: "E-Ticaret Çözümleri",
+        ecommerce_solutions_desc: "Satışlarınızı artıracak profesyonel e-ticaret sitesi. Güvenli ödeme sistemleri ve kullanıcı dostu arayüz.",
+        responsive_design: "Mobil Uyumlu Tasarım",
+        responsive_design_desc: "Tüm cihazlarda mükemmel görünen web siteleri. Telefon, tablet ve bilgisayarda optimize deneyim.",
+        hosting_deploy: "Hosting ve Yayınlama",
+        hosting_deploy_desc: "Web sitenizi güvenli sunucularda yayınlıyorum. 7/24 teknik destek ve bakım hizmeti.",
+        ui_ux_design: "Kullanıcı Deneyimi Tasarımı",
+        ui_ux_design_desc: "Müşterilerinizi etkileyecek güzel ve kullanışlı arayüz tasarımları. Dönüşüm oranlarınızı artırın.",
+        optimization: "Hız ve SEO Optimizasyonu",
+        optimization_desc: "Web sitenizi Google'da üst sıralara çıkarıyorum. Hızlı yükleme ve arama motoru optimizasyonu.",
         
         // Projects Section
         my_projects: "Projelerim",
@@ -105,8 +105,26 @@ const translations = {
         your_email: "E-posta Adresiniz",
         subject: "Konu",
         your_message: "Mesajınız",
-        send_message: "Mesaj Gönder",
+        send_message: "Ücretsiz Teklif İste",
         direct_email: "Veya doğrudan e-posta ile iletişime geçin:",
+        
+        // CTA Section
+        cta_title: "Projenizi Hayata Geçirmek İçin Bugün Başlayalım!",
+        cta_description: "Ücretsiz danışmanlık ve teklif almak için hemen iletişime geçin. Uygun fiyatlı web sitesi çözümleri ile işinizi büyütün.",
+        whatsapp_contact: "WhatsApp'tan Yaz",
+        
+        // Service CTA Buttons
+        cta_free_quote: "Ücretsiz Teklif Al",
+        cta_start_project: "Projenizi Başlatın",
+        cta_start_now: "Hemen Başlayalım",
+        cta_hosting_package: "Hosting Paketi Al",
+        cta_design_quote: "Tasarım Teklifi Al",
+        cta_seo_analysis: "SEO Analizi Yap",
+        
+        // Trust Elements
+        trust_university: "Marmara Üniversitesi Mezunu",
+        trust_secure: "Güvenli ve Hızlı Çözümler",
+        trust_support: "7/24 Teknik Destek",
         
         // Footer
         professional_portfolio: "Profesyonel Portföy",
@@ -235,8 +253,26 @@ const translations = {
         your_email: "Your Email",
         subject: "Subject",
         your_message: "Your Message",
-        send_message: "Send Message",
+        send_message: "Get Free Quote",
         direct_email: "Or contact directly via email:",
+        
+        // CTA Section
+        cta_title: "Let's Start Bringing Your Project to Life Today!",
+        cta_description: "Contact us now for free consultation and quote. Grow your business with affordable website solutions.",
+        whatsapp_contact: "Write on WhatsApp",
+        
+        // Service CTA Buttons
+        cta_free_quote: "Get Free Quote",
+        cta_start_project: "Start Your Project",
+        cta_start_now: "Start Now",
+        cta_hosting_package: "Get Hosting Package",
+        cta_design_quote: "Get Design Quote",
+        cta_seo_analysis: "Do SEO Analysis",
+        
+        // Trust Elements
+        trust_university: "Marmara University Graduate",
+        trust_secure: "Secure and Fast Solutions",
+        trust_support: "24/7 Technical Support",
         
         // Footer
         professional_portfolio: "Professional Portfolio",
@@ -359,8 +395,26 @@ const translations = {
         your_email: "ایمیل شما",
         subject: "موضوع",
         your_message: "پیام شما",
-        send_message: "ارسال پیام",
+        send_message: "درخواست پیشنهاد رایگان",
         direct_email: "یا مستقیماً با ایمیل تماس بگیرید:",
+        
+        // CTA Section
+        cta_title: "بیایید امروز پروژه شما را به زندگی تبدیل کنیم!",
+        cta_description: "برای مشاوره رایگان و دریافت پیشنهاد فوری با ما تماس بگیرید. کسب و کار خود را با راه‌حل‌های مقرون‌به‌صرفه وب‌سایت رشد دهید.",
+        whatsapp_contact: "پیام در واتساپ",
+        
+        // Service CTA Buttons
+        cta_free_quote: "درخواست پیشنهاد رایگان",
+        cta_start_project: "شروع پروژه شما",
+        cta_start_now: "همین الان شروع کنید",
+        cta_hosting_package: "دریافت پکیج هاستینگ",
+        cta_design_quote: "دریافت پیشنهاد طراحی",
+        cta_seo_analysis: "انجام تحلیل SEO",
+        
+        // Trust Elements
+        trust_university: "فارغ‌التحصیل دانشگاه مارمارا",
+        trust_secure: "راه‌حل‌های امن و سریع",
+        trust_support: "پشتیبانی فنی 24/7",
         
         // Footer
         professional_portfolio: "پورتفولیو حرفه‌ای",
@@ -483,8 +537,26 @@ const translations = {
         your_email: "بريدك الإلكتروني",
         subject: "الموضوع",
         your_message: "رسالتك",
-        send_message: "إرسال الرسالة",
+        send_message: "طلب عرض مجاني",
         direct_email: "أو اتصل مباشرة عبر البريد الإلكتروني:",
+        
+        // CTA Section
+        cta_title: "لنبدأ اليوم في إحياء مشروعك!",
+        cta_description: "اتصل بنا الآن للحصول على استشارة مجانية وعرض سعر. نمّي عملك بحلول مواقع ويب بأسعار معقولة.",
+        whatsapp_contact: "اكتب على واتساب",
+        
+        // Service CTA Buttons
+        cta_free_quote: "طلب عرض مجاني",
+        cta_start_project: "ابدأ مشروعك",
+        cta_start_now: "ابدأ الآن",
+        cta_hosting_package: "احصل على باقة الاستضافة",
+        cta_design_quote: "احصل على عرض تصميم",
+        cta_seo_analysis: "إجراء تحليل SEO",
+        
+        // Trust Elements
+        trust_university: "خريج جامعة مرمرة",
+        trust_secure: "حلول آمنة وسريعة",
+        trust_support: "دعم فني 24/7",
         
         // Footer
         professional_portfolio: "محفظة احترافية",
