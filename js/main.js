@@ -15,7 +15,8 @@ const translations = {
         hero_subtitle: "İşletmenizi Dijital Dünyada Büyütün!",
         hero_description: "İşletmeniz için modern, hızlı ve kullanıcı dostu web siteleri tasarlıyorum. E-ticaret sitesi, kurumsal web sitesi ve profesyonel web tasarım çözümleri sunuyorum. 20'den fazla müşterim %100 memnuniyet ile hizmet aldı. Uygun fiyatlı web sitesi çözümleri ile projelerinizi hayata geçiriyorum.",
         view_projects: "Projelerimi İncele",
-        contact_me: "Ücretsiz Teklif Al",
+        view_certificates: "Sertifikalarımı İncele",
+        contact_me: "WhatsApp'tan Yaz",
         
         // Benefits
         benefit_fast: "Hızlı Teslimat",
@@ -157,7 +158,8 @@ const translations = {
         hero_subtitle: "Grow Your Brand in the Digital World!",
         hero_description: "Make your business stand out in the digital world with modern, fast, and user-friendly websites. I provide comprehensive web development services for e-commerce sites, corporate websites, portfolio sites, and custom projects. I bring your projects to life with expertise in Django, Python, JavaScript, CSS, HTML, Bootstrap, and hosting services.",
         view_projects: "View Projects",
-        contact_me: "Contact Me",
+        view_certificates: "View Certificates",
+        contact_me: "Write on WhatsApp",
         
         // Benefits
         benefit_fast: "Fast Delivery",
@@ -186,18 +188,18 @@ const translations = {
         
         // Services Section
         my_services: "My Services",
-        web_development: "Web Development",
-        web_development_desc: "Developing professional websites using the latest technologies",
-        django_python: "Django & Python",
-        django_python_desc: "Developing powerful web applications with Django and Python",
-        responsive_design: "Responsive Design",
-        responsive_design_desc: "Designing websites that display optimally on all devices",
-        hosting_deploy: "Hosting & Deploy",
-        hosting_deploy_desc: "Setting up web servers and deploying projects",
-        ui_ux_design: "UI/UX Design",
-        ui_ux_design_desc: "Designing beautiful user interfaces and optimized user experience",
-        optimization: "Optimization",
-        optimization_desc: "Speed and performance optimization of websites",
+        web_development: "Professional Web Design",
+        web_development_desc: "I design modern and fast websites that will grow your business. Strengthen your brand with corporate website solutions.",
+        ecommerce_solutions: "E-commerce Solutions",
+        ecommerce_solutions_desc: "Professional e-commerce site that will increase your sales. Secure payment systems and user-friendly interface.",
+        responsive_design: "Mobile Responsive Design",
+        responsive_design_desc: "Websites that look perfect on all devices. Optimized experience on phone, tablet and computer.",
+        hosting_deploy: "Hosting and Publishing",
+        hosting_deploy_desc: "I publish your website on secure servers. 24/7 technical support and maintenance service.",
+        ui_ux_design: "User Experience Design",
+        ui_ux_design_desc: "Beautiful and functional interface designs that will impress your customers. Increase your conversion rates.",
+        optimization: "Speed and SEO Optimization",
+        optimization_desc: "I bring your website to the top ranks on Google. Fast loading and search engine optimization.",
         
         // Projects Section
         my_projects: "My Projects",
@@ -305,7 +307,8 @@ const translations = {
         hero_subtitle: "برند خود را در دنیای دیجیتال رشد دهید!",
         hero_description: "با وب‌سایت‌های مدرن، سریع و کاربرپسند، کسب‌وکار خود را در دنیای دیجیتال برجسته کنید. خدمات جامع توسعه وب برای سایت‌های فروشگاهی، وب‌سایت‌های شرکتی، سایت‌های پورتفولیو و پروژه‌های سفارشی ارائه می‌دهم. پروژه‌های شما را با تخصص در Django، Python، JavaScript، CSS، HTML، Bootstrap و خدمات هاستینگ به زندگی تبدیل می‌کنم.",
         view_projects: "مشاهده پروژه‌ها",
-        contact_me: "تماس با من",
+        view_certificates: "مشاهده گواهینامه‌ها",
+        contact_me: "پیام در واتساپ",
         
         // Benefits
         benefit_fast: "تحویل سریع",
@@ -334,18 +337,18 @@ const translations = {
         
         // Services Section
         my_services: "خدمات من",
-        web_development: "توسعه وب",
-        web_development_desc: "توسعه وب‌سایت‌های حرفه‌ای با استفاده از جدیدترین تکنولوژی‌ها",
-        django_python: "Django & Python",
-        django_python_desc: "توسعه اپلیکیشن‌های وب قدرتمند با Django و Python",
-        responsive_design: "طراحی ریسپانسیو",
-        responsive_design_desc: "طراحی وب‌سایت‌هایی که در تمام دستگاه‌ها بهینه نمایش داده می‌شوند",
-        hosting_deploy: "هاستینگ و دپلوی",
-        hosting_deploy_desc: "راه‌اندازی و نگهداری سرورهای وب و دپلوی پروژه‌ها",
-        ui_ux_design: "طراحی UI/UX",
-        ui_ux_design_desc: "طراحی رابط کاربری زیبا و تجربه کاربری بهینه",
-        optimization: "بهینه‌سازی",
-        optimization_desc: "بهینه‌سازی سرعت و عملکرد وب‌سایت‌ها",
+        web_development: "طراحی وب حرفه‌ای",
+        web_development_desc: "وب‌سایت‌های مدرن و سریعی طراحی می‌کنم که کسب‌وکار شما را رشد خواهد داد. برند خود را با راه‌حل‌های وب‌سایت شرکتی تقویت کنید.",
+        ecommerce_solutions: "راه‌حل‌های تجارت الکترونیک",
+        ecommerce_solutions_desc: "وب‌سایت تجارت الکترونیک حرفه‌ای که فروش شما را افزایش خواهد داد. سیستم‌های پرداخت امن و رابط کاربری دوستانه.",
+        responsive_design: "طراحی واکنش‌گرا موبایل",
+        responsive_design_desc: "وب‌سایت‌هایی که در تمام دستگاه‌ها عالی به نظر می‌رسند. تجربه بهینه در تلفن، تبلت و کامپیوتر.",
+        hosting_deploy: "هاستینگ و انتشار",
+        hosting_deploy_desc: "وب‌سایت شما را در سرورهای امن منتشر می‌کنم. پشتیبانی فنی و خدمات نگهداری 24/7.",
+        ui_ux_design: "طراحی تجربه کاربری",
+        ui_ux_design_desc: "طراحی‌های رابط کاربری زیبا و کاربردی که مشتریان شما را تحت تأثیر قرار خواهد داد. نرخ تبدیل خود را افزایش دهید.",
+        optimization: "بهینه‌سازی سرعت و SEO",
+        optimization_desc: "وب‌سایت شما را در رتبه‌های بالای گوگل قرار می‌دهم. بارگذاری سریع و بهینه‌سازی موتور جستجو.",
         
         // Projects Section
         my_projects: "پروژه‌های من",
@@ -447,7 +450,8 @@ const translations = {
         hero_subtitle: "نمّي علامتك التجارية في العالم الرقمي!",
         hero_description: "اجعل عملك يبرز في العالم الرقمي مع مواقع ويب حديثة وسريعة وسهلة الاستخدام. أقدم خدمات تطوير ويب شاملة لمواقع التجارة الإلكترونية والمواقع المؤسسية ومواقع المحفظة والمشاريع المخصصة. أحول مشاريعك إلى حياة مع الخبرة في Django و Python و JavaScript و CSS و HTML و Bootstrap وخدمات الاستضافة.",
         view_projects: "عرض المشاريع",
-        contact_me: "اتصل بي",
+        view_certificates: "عرض الشهادات",
+        contact_me: "اكتب على واتساب",
         
         // Benefits
         benefit_fast: "تسليم سريع",
@@ -476,18 +480,18 @@ const translations = {
         
         // Services Section
         my_services: "خدماتي",
-        web_development: "تطوير الويب",
-        web_development_desc: "تطوير مواقع ويب احترافية باستخدام أحدث التقنيات",
-        django_python: "Django & Python",
-        django_python_desc: "تطوير تطبيقات ويب قوية مع Django و Python",
-        responsive_design: "تصميم متجاوب",
-        responsive_design_desc: "تصميم مواقع ويب تعرض بشكل مثالي على جميع الأجهزة",
+        web_development: "تصميم ويب احترافي",
+        web_development_desc: "أصمم مواقع ويب حديثة وسريعة ستنمي عملك. قوّي علامتك التجارية بحلول مواقع ويب مؤسسية.",
+        ecommerce_solutions: "حلول التجارة الإلكترونية",
+        ecommerce_solutions_desc: "موقع تجارة إلكترونية احترافي سيزيد مبيعاتك. أنظمة دفع آمنة وواجهة سهلة الاستخدام.",
+        responsive_design: "تصميم متجاوب للهاتف المحمول",
+        responsive_design_desc: "مواقع ويب تبدو مثالية على جميع الأجهزة. تجربة محسنة على الهاتف والتابلت والكمبيوتر.",
         hosting_deploy: "الاستضافة والنشر",
-        hosting_deploy_desc: "إعداد خوادم الويب ونشر المشاريع",
-        ui_ux_design: "تصميم UI/UX",
-        ui_ux_design_desc: "تصميم واجهات مستخدم جميلة وتجربة مستخدم محسنة",
-        optimization: "التحسين",
-        optimization_desc: "تحسين سرعة وأداء مواقع الويب",
+        hosting_deploy_desc: "أنشر موقعك على خوادم آمنة. دعم فني وخدمة صيانة 24/7.",
+        ui_ux_design: "تصميم تجربة المستخدم",
+        ui_ux_design_desc: "تصميمات واجهات جميلة وعملية ستبهر عملاءك. زِد معدلات التحويل.",
+        optimization: "تحسين السرعة و SEO",
+        optimization_desc: "أجعل موقعك في المراتب العليا في جوجل. تحميل سريع وتحسين محركات البحث.",
         
         // Projects Section
         my_projects: "مشاريعي",

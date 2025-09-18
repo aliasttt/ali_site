@@ -2051,4 +2051,55 @@ html {
     .trust-item span {
         font-size: 0.85rem;
     }
+}
+
+/* Hero Contact Information Styles */
+.hero-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.contact-item i {
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-item span {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* Responsive adjustments for contact info */
+@media (max-width: 768px) {
+    .hero-contact-info {
+        margin-top: 1rem;
+    }
+    
+    .contact-item {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .contact-item span {
+        font-size: 0.9rem;
+    }
 } 
