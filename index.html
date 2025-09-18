@@ -746,25 +746,27 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mqabzedr" method="POST" enctype="multipart/form-data">
-                        <input type="hidden" name="_subject" value="New Contact Form Submission">
-                        <input type="hidden" name="_next" value="https://angraweb.com/#contact">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xvgbjjpa" method="POST" target="_blank">
                         <div class="row">
                             <div class="col-md-6 mb-3">
+                                <label class="form-label" data-translate="your_name">Adınız</label>
                                 <input type="text" class="form-control" name="name" data-translate-placeholder="your_name" placeholder="Adınız" required>
                             </div>
                             <div class="col-md-6 mb-3">
+                                <label class="form-label" data-translate="your_email">E-posta Adresiniz</label>
                                 <input type="email" class="form-control" name="email" data-translate-placeholder="your_email" placeholder="E-posta Adresiniz" required>
                             </div>
                         </div>
                         <div class="mb-3">
+                            <label class="form-label" data-translate="subject">Konu</label>
                             <input type="text" class="form-control" name="subject" data-translate-placeholder="subject" placeholder="Konu" required>
                         </div>
                         <div class="mb-3">
+                            <label class="form-label" data-translate="your_message">Mesajınız</label>
                             <textarea class="form-control" name="message" rows="5" data-translate-placeholder="your_message" placeholder="Mesajınız" required></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg" onclick="return gtag_report_conversion('form_submit')">
+                            <button type="submit" class="btn btn-primary btn-lg">
                                 <i class="fas fa-paper-plane"></i> <span data-translate="send_message">Ücretsiz Teklif İste</span>
                             </button>
                         </div>

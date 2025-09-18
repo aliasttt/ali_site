@@ -16,7 +16,7 @@ const translations = {
         hero_description: "İşletmeniz için modern, hızlı ve kullanıcı dostu web siteleri tasarlıyorum. E-ticaret sitesi, kurumsal web sitesi ve profesyonel web tasarım çözümleri sunuyorum. 20'den fazla müşterim %100 memnuniyet ile hizmet aldı. Uygun fiyatlı web sitesi çözümleri ile projelerinizi hayata geçiriyorum.",
         view_projects: "Projelerimi İncele",
         view_certificates: "Sertifikalarımı İncele",
-        contact_me: "WhatsApp'tan Yaz",
+        contact_me: "İletişime Geç",
         
         // Benefits
         benefit_fast: "Hızlı Teslimat",
@@ -159,7 +159,7 @@ const translations = {
         hero_description: "Make your business stand out in the digital world with modern, fast, and user-friendly websites. I provide comprehensive web development services for e-commerce sites, corporate websites, portfolio sites, and custom projects. I bring your projects to life with expertise in Django, Python, JavaScript, CSS, HTML, Bootstrap, and hosting services.",
         view_projects: "View Projects",
         view_certificates: "View Certificates",
-        contact_me: "Write on WhatsApp",
+        contact_me: "Contact Me",
         
         // Benefits
         benefit_fast: "Fast Delivery",
@@ -308,7 +308,7 @@ const translations = {
         hero_description: "با وب‌سایت‌های مدرن، سریع و کاربرپسند، کسب‌وکار خود را در دنیای دیجیتال برجسته کنید. خدمات جامع توسعه وب برای سایت‌های فروشگاهی، وب‌سایت‌های شرکتی، سایت‌های پورتفولیو و پروژه‌های سفارشی ارائه می‌دهم. پروژه‌های شما را با تخصص در Django، Python، JavaScript، CSS، HTML، Bootstrap و خدمات هاستینگ به زندگی تبدیل می‌کنم.",
         view_projects: "مشاهده پروژه‌ها",
         view_certificates: "مشاهده گواهینامه‌ها",
-        contact_me: "پیام در واتساپ",
+        contact_me: "تماس با من",
         
         // Benefits
         benefit_fast: "تحویل سریع",
@@ -451,7 +451,7 @@ const translations = {
         hero_description: "اجعل عملك يبرز في العالم الرقمي مع مواقع ويب حديثة وسريعة وسهلة الاستخدام. أقدم خدمات تطوير ويب شاملة لمواقع التجارة الإلكترونية والمواقع المؤسسية ومواقع المحفظة والمشاريع المخصصة. أحول مشاريعك إلى حياة مع الخبرة في Django و Python و JavaScript و CSS و HTML و Bootstrap وخدمات الاستضافة.",
         view_projects: "عرض المشاريع",
         view_certificates: "عرض الشهادات",
-        contact_me: "اكتب على واتساب",
+        contact_me: "تواصل معي",
         
         // Benefits
         benefit_fast: "تسليم سريع",
@@ -697,43 +697,14 @@ function initScrollAnimations() {
 
 // Contact form functionality
 function initContactForm() {
+    // Simplified form handling - let Formspree handle everything
     const contactForm = document.querySelector('#contactForm');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            // Get form data
-            const name = this.querySelector('input[name="name"]').value;
-            const email = this.querySelector('input[name="email"]').value;
-            const subject = this.querySelector('input[name="subject"]').value;
-            const message = this.querySelector('textarea[name="message"]').value;
-            
-            // Simple validation
-            if (!name || !email || !subject || !message) {
-                e.preventDefault();
-                showNotification('Please fill all fields', 'error');
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                e.preventDefault();
-                showNotification('Please enter a valid email', 'error');
-                return;
-            }
-            
-            // Show loading message
-            showNotification('Your message is being sent...', 'info');
-            
-            // Form will be submitted to Formspree automatically
-            // Formspree will handle the email sending
-        });
-        
-        // Listen for form submission success/failure
-        contactForm.addEventListener('submit', function() {
-            // Reset form after submission
-            setTimeout(() => {
-                this.reset();
-                showNotification('Your message was sent successfully!', 'success');
-            }, 1000);
+            // Let Formspree handle the form submission
+            console.log('Form submitted to Formspree');
+            // No preventDefault - let the form submit naturally
         });
     }
 }
@@ -1053,15 +1024,14 @@ window.addEventListener('resize', debounce(optimizeForMobile, 250));
 
 // Preload critical images
 function preloadImages() {
-    const imageUrls = [
-        'https://via.placeholder.com/400x250/1a1a2e/ffffff?text=پروژه+1',
-        'https://via.placeholder.com/400x250/16213e/ffffff?text=پروژه+2',
-        'https://via.placeholder.com/400x250/0f3460/ffffff?text=پروژه+3'
-    ];
+    // Get actual project images from the page instead of placeholder URLs
+    const projectImages = document.querySelectorAll('.project-thumbnail');
     
-    imageUrls.forEach(url => {
-        const img = new Image();
-        img.src = url;
+    projectImages.forEach(img => {
+        if (img.src && img.src !== '') {
+            const preloadImg = new Image();
+            preloadImg.src = img.src;
+        }
     });
 }
 
