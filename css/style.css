@@ -2102,4 +2102,18 @@ html {
     .contact-item span {
         font-size: 0.9rem;
     }
+}
+
+/* Force 2 columns on mobile for services, value proposition, and projects */
+@media (max-width: 576px) {
+    .col-sm-6 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+    
+    .service-card,
+    .value-card,
+    .project-card {
+        margin-bottom: 1rem;
+    }
 } 
