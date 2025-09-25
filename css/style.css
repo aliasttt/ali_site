@@ -976,21 +976,17 @@ body[dir="rtl"] .benefit-item {
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
 }
 
-/* Social Media Links */
-.social-links {
-    position: fixed;
-    top: 50%;
-    right: 30px;
-    transform: translateY(-50%);
+/* Footer Social Media Links */
+.footer-social-links {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     gap: 1rem;
-    z-index: 1000;
+    margin-bottom: 1rem;
 }
 
-.social-link {
-    width: 50px;
-    height: 50px;
+.footer-social-link {
+    width: 45px;
+    height: 45px;
     background: rgba(116, 185, 255, 0.1);
     border: 1px solid rgba(116, 185, 255, 0.3);
     border-radius: 50%;
@@ -1002,9 +998,26 @@ body[dir="rtl"] .benefit-item {
     transition: all 0.3s ease;
 }
 
-.social-link:hover {
+.footer-social-link:hover {
     background: rgba(116, 185, 255, 0.2);
     transform: scale(1.1);
+    color: #74b9ff;
+}
+
+/* Navbar Social Dropdown */
+.navbar .dropdown-menu {
+    background: rgba(26, 26, 46, 0.95);
+    border: 1px solid rgba(116, 185, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.navbar .dropdown-item {
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.navbar .dropdown-item:hover {
+    background: rgba(116, 185, 255, 0.2);
     color: #74b9ff;
 }
 
@@ -1030,14 +1043,6 @@ body[dir="rtl"] .benefit-item {
         font-size: 2rem;
     }
     
-    .social-links {
-        right: 15px;
-    }
-    
-    .social-link {
-        width: 40px;
-        height: 40px;
-    }
     
     .whatsapp-fixed {
         bottom: 20px;
@@ -2116,8 +2121,8 @@ html {
 /* Force 2 columns on mobile for services, value proposition, and projects */
 @media (max-width: 576px) {
     .col-sm-6 {
-        flex: 0 0 50% !important;
-        max-width: 50% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
     }
     
     .service-card,
@@ -2125,4 +2130,15 @@ html {
     .project-card {
         margin-bottom: 1rem;
     }
-} 
+}
+
+/* Mobile layout improvements */
+@media (max-width: 576px) {
+    /* Keep WhatsApp button fully visible with safe-area support */
+    .whatsapp-fixed {
+        right: 16px;
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+        width: 56px;
+        height: 56px;
+    }
+}
