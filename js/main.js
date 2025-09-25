@@ -45,7 +45,7 @@ const translations = {
         
         // Services Section
         my_services: "Hizmetlerim",
-        web_development: "Profesyonel Web Tasarım",
+        web_development: "Uzman Web Tasarımı",
         web_development_desc: "İşinizi büyütecek modern ve hızlı web siteleri tasarlıyorum. Kurumsal web sitesi çözümleri ile markanızı güçlendirin.",
         ecommerce_solutions: "E-Ticaret Çözümleri",
         ecommerce_solutions_desc: "Satışlarınızı artıracak profesyonel e-ticaret sitesi. Güvenli ödeme sistemleri ve kullanıcı dostu arayüz.",
@@ -55,7 +55,7 @@ const translations = {
         hosting_deploy_desc: "Web sitenizi güvenli sunucularda yayınlıyorum. 7/24 teknik destek ve bakım hizmeti.",
         ui_ux_design: "Kullanıcı Deneyimi Tasarımı",
         ui_ux_design_desc: "Müşterilerinizi etkileyecek güzel ve kullanışlı arayüz tasarımları. Dönüşüm oranlarınızı artırın.",
-        optimization: "Hız ve SEO Optimizasyonu",
+        optimization: "Hız ve SEO",
         optimization_desc: "Web sitenizi Google'da üst sıralara çıkarıyorum. Hızlı yükleme ve arama motoru optimizasyonu.",
         
         // Projects Section
@@ -599,7 +599,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set Turkish as default language on page load
     changeLanguage('tr');
     
+    // Force all content to be visible - Anti-disappearing fix
+    forceContentVisibility();
+    
 });
+
+// Anti-disappearing function
+function forceContentVisibility() {
+    const allContentElements = document.querySelectorAll('.service-card, .project-card, .skill-item, .stat-item, .value-card, .certificate-item, .photo-item');
+    
+    allContentElements.forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        el.style.visibility = 'visible';
+        el.style.display = 'block';
+        el.classList.remove('loading');
+        el.classList.add('loaded', 'animate-in');
+    });
+    
+    // Run again after a short delay to ensure it sticks
+    setTimeout(forceContentVisibility, 100);
+}
 
 // Navbar functionality
 function initNavbar() {
@@ -673,25 +693,17 @@ function initSmoothScrolling() {
     });
 }
 
-// Scroll animations
+// Scroll animations - Completely disabled to prevent content disappearing
 function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation
+    // Completely disable scroll animations
     const animateElements = document.querySelectorAll('.service-card, .project-card, .skill-item, .stat-item, .certificate-item');
     animateElements.forEach(el => {
-        observer.observe(el);
+        el.classList.add('animate-in');
+        // Force visibility and remove any problematic styles
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        el.style.visibility = 'visible';
+        el.style.display = 'block';
     });
 }
 
@@ -766,29 +778,20 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Loading animations with better performance
+// Loading animations - Completely disabled to prevent content disappearing
 function initLoadingAnimations() {
-    // Add loading class to elements with staggered timing
+    // Completely disable loading animations
     const elements = document.querySelectorAll('.service-card, .project-card, .skill-item, .stat-item, .value-card');
     
-    // Use Intersection Observer for better performance
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('loaded');
-                }, index * 50); // Faster loading
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '50px'
-    });
-    
     elements.forEach(el => {
-        el.classList.add('loading');
-        observer.observe(el);
+        // Remove any loading classes that might cause issues
+        el.classList.remove('loading');
+        el.classList.add('loaded');
+        // Force visibility
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        el.style.visibility = 'visible';
+        el.style.display = 'block';
     });
 }
 
@@ -944,22 +947,15 @@ document.addEventListener('DOMContentLoaded', function() {
     initParticleEffect();
 });
 
-// Add CSS for animations
+// Add CSS for animations - Completely disabled
 const style = document.createElement('style');
 style.textContent = `
     .animate-in {
-        animation: fadeInUp 0.6s ease forwards;
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: none !important;
+        visibility: visible !important;
+        display: block !important;
     }
     
     .navbar-nav .nav-link.active {

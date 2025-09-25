@@ -1102,16 +1102,25 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Loading Animation */
+/* Loading Animation - Completely Fixed */
 .loading {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
 }
 
 .loading.loaded {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Force all content to be visible - Anti-disappearing fix */
+.service-card, .project-card, .skill-item, .stat-item, .value-card, .certificate-item {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+    display: block !important;
+    transition: none !important;
 }
 
 /* Performance Optimizations */
