@@ -260,6 +260,23 @@ body[dir="rtl"] {
     transform: translateZ(0);
 }
 
+/* Pause heavy animations until we explicitly enable them for better LCP */
+.space-background,
+.text-gradient,
+.floating-astronaut,
+.planet,
+.stars {
+    animation-play-state: paused;
+}
+
+.animations-on .space-background,
+.animations-on .text-gradient,
+.animations-on .floating-astronaut,
+.animations-on .planet,
+.animations-on .stars {
+    animation-play-state: running;
+}
+
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -582,6 +599,12 @@ body[dir="rtl"] .benefit-item {
 .section {
     padding: 100px 0;
     position: relative;
+}
+
+/* Reduce work for below-the-fold sections */
+.section:not(.hero-section) {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
 }
 
 .section-title {
