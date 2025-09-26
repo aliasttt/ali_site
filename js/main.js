@@ -2,7 +2,7 @@
 const translations = {
     tr: {
         // Navigation
-        portfolio: "Portföy",
+        portfolio: "Angraweb",
         home: "Ana Sayfa",
         about: "Hakkımda",
         services: "Hizmetler",
