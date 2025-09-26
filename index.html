@@ -5,23 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profesyonel Portföy - Web Geliştirici</title>
     
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TZNMG6HP');</script>
-    <!-- End Google Tag Manager -->
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNM9ZF7K7Z"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-HNM9ZF7K7Z');
-      gtag('config', 'AW-17220061979');
-    </script>
     
     <!-- Event snippet for Contact conversion page
     In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
@@ -114,18 +98,13 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://flagcdn.com" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <link rel="preconnect" href="https://www.googletagservices.com" crossorigin>
-    <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZNMG6HP" loading="lazy" referrerpolicy="no-referrer" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    
     
     <!-- Background Animation -->
     <div class="space-background">
@@ -844,5 +823,31 @@
       });
     </script>
     <script defer src="js/main.js"></script>
+    
+    <!-- Lazy-load Google Analytics and Ads after idle to avoid blocking -->
+    <script>
+      (function(){
+        var loaded = false;
+        function loadGtag(){
+          if (loaded) return; loaded = true;
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){ dataLayer.push(arguments); }
+          window.gtag = gtag;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HNM9ZF7K7Z';
+          s.onload = function(){
+            try {
+              gtag('js', new Date());
+              gtag('config', 'G-HNM9ZF7K7Z');
+              gtag('config', 'AW-17220061979');
+            } catch (e) {}
+          };
+          document.head.appendChild(s);
+        }
+        var ric = window.requestIdleCallback || function(cb){ setTimeout(cb, 1500); };
+        window.addEventListener('load', function(){ ric(loadGtag); });
+      })();
+    </script>
 </body>
 </html> 
