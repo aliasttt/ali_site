@@ -593,8 +593,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initLoadingAnimations();
     initProjectCards();
-    initCertificateGallery();
-    initPhotosGallery();
+    setupLazyInit();
+    setupIdleTasks();
     
     // Set Turkish as default language on page load
     changeLanguage('tr');
@@ -616,9 +616,54 @@ function forceContentVisibility() {
         el.classList.remove('loading');
         el.classList.add('loaded', 'animate-in');
     });
-    
-    // Run again after a short delay to ensure it sticks
-    setTimeout(forceContentVisibility, 100);
+}
+
+// Lazy initialize heavy sections when they enter viewport
+function setupLazyInit() {
+    const supportsIO = 'IntersectionObserver' in window;
+    if (!supportsIO) {
+        // Fallback: initialize immediately
+        try { initCertificateGallery(); } catch (e) {}
+        try { initPhotosGallery(); } catch (e) {}
+        return;
+    }
+
+    const observeOnce = (element, onEnter) => {
+        if (!element) return;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    onEnter();
+                    observer.disconnect();
+                }
+            });
+        }, { rootMargin: '200px' });
+        observer.observe(element);
+    };
+
+    observeOnce(document.getElementById('certificateGallery'), () => {
+        try { initCertificateGallery(); } catch (e) {}
+    });
+    observeOnce(document.getElementById('photosGallery'), () => {
+        try { initPhotosGallery(); } catch (e) {}
+    });
+}
+
+// Defer non-critical effects and image preloading to idle time
+function setupIdleTasks() {
+    const idle = window.requestIdleCallback || function(cb){ setTimeout(() => cb({ timeRemaining: () => 0 }), 300); };
+
+    idle(() => {
+        try { preloadImages(); } catch (e) {}
+    });
+
+    window.addEventListener('load', function() {
+        idle(() => {
+            try { initParallax(); } catch (e) {}
+            try { initTypingEffect(); } catch (e) {}
+            try { initParticleEffect(); } catch (e) {}
+        });
+    }, { once: true });
 }
 
 // Navbar functionality
@@ -942,9 +987,6 @@ function loadSavedLanguage() {
 // Initialize additional effects
 document.addEventListener('DOMContentLoaded', function() {
     loadSavedLanguage();
-    initParallax();
-    initTypingEffect();
-    initParticleEffect();
 });
 
 // Add CSS for animations - Completely disabled
