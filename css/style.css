@@ -1151,6 +1151,25 @@ html {
     transition: none !important;
 }
 
+/* Lazy Loading Styles */
+img.lazy-load {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background: linear-gradient(90deg, #1a1a2e 25%, #16213e 50%, #1a1a2e 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+img.lazy-loaded {
+    opacity: 1;
+    animation: none;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
 /* Performance Optimizations */
 * {
     will-change: auto;
@@ -1160,6 +1179,37 @@ html {
 .section,
 .navbar {
     will-change: transform;
+}
+
+/* Reduce animation on mobile for better performance */
+@media (max-width: 768px) {
+    * {
+        animation-duration: 0.2s !important;
+        transition-duration: 0.2s !important;
+    }
+    
+    .space-background {
+        animation-duration: 20s !important;
+    }
+    
+    .floating-astronaut {
+        animation-duration: 4s !important;
+    }
+    
+    .planet {
+        animation-duration: 15s !important;
+    }
+    
+    /* Disable heavy animations on low-end devices */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
 }
 
 /* Prevent Layout Shift on Mobile */

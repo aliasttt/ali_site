@@ -1662,4 +1662,65 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closePhotosModal();
     }
-}); 
+});
+
+// Advanced Lazy Loading with Intersection Observer for better performance
+(function() {
+    'use strict';
+    
+    // Check if Intersection Observer is supported
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        // Load the actual image
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy-load');
+                        img.classList.add('lazy-loaded');
+                        // Remove data-src to prevent reloading
+                        img.removeAttribute('data-src');
+                        // Stop observing this image
+                        observer.unobserve(img);
+                    }
+                }
+            });
+        }, {
+            rootMargin: '50px' // Start loading 50px before image enters viewport
+        });
+        
+        // Observe all lazy-load images
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('img.lazy-load');
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+        });
+        
+        // Also observe dynamically added images
+        const originalObserver = imageObserver;
+        const observeNewImages = function() {
+            const newLazyImages = document.querySelectorAll('img.lazy-load:not([data-observed])');
+            newLazyImages.forEach(img => {
+                img.setAttribute('data-observed', 'true');
+                originalObserver.observe(img);
+            });
+        };
+        
+        // Observe new images periodically (for dynamically added content)
+        setInterval(observeNewImages, 1000);
+    } else {
+        // Fallback for browsers without Intersection Observer
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('img.lazy-load');
+            lazyImages.forEach(img => {
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy-load');
+                    img.removeAttribute('data-src');
+                }
+            });
+        });
+    }
+})(); 
