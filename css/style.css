@@ -2245,6 +2245,27 @@ html {
 .package-features {
     flex: 1;
     margin-bottom: 2rem;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.package-features::-webkit-scrollbar {
+    width: 6px;
+}
+
+.package-features::-webkit-scrollbar-track {
+    background: rgba(116, 185, 255, 0.1);
+    border-radius: 10px;
+}
+
+.package-features::-webkit-scrollbar-thumb {
+    background: rgba(116, 185, 255, 0.3);
+    border-radius: 10px;
+}
+
+.package-features::-webkit-scrollbar-thumb:hover {
+    background: rgba(116, 185, 255, 0.5);
 }
 
 .package-features ul {
@@ -2256,16 +2277,21 @@ html {
 
 .package-features li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.75rem;
-    padding: 0.75rem 0;
+    padding: 0.6rem 0;
     color: #b2bec3;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
     border-bottom: 1px solid rgba(116, 185, 255, 0.1);
 }
 
 .package-features li:last-child {
     border-bottom: none;
+}
+
+.package-features li span {
+    flex: 1;
 }
 
 .package-features li i.fa-check {
@@ -2391,15 +2417,22 @@ html {
         padding: 0;
     }
     
+    .package-features {
+        max-height: 400px;
+        padding-right: 0.3rem;
+    }
+    
     .package-features li {
-        font-size: 0.7rem;
-        padding: 0.4rem 0;
-        gap: 0.5rem;
+        font-size: 0.65rem;
+        padding: 0.35rem 0;
+        gap: 0.4rem;
+        line-height: 1.4;
     }
     
     .package-features li i {
-        font-size: 0.8rem;
-        min-width: 15px;
+        font-size: 0.75rem;
+        min-width: 12px;
+        margin-top: 0.1rem;
     }
     
     .package-cta {
