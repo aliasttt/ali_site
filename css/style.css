@@ -2165,3 +2165,435 @@ html {
         height: 56px;
     }
 }
+
+/* Packages Section Styles */
+.package-card {
+    background: rgba(116, 185, 255, 0.1);
+    border: 2px solid rgba(116, 185, 255, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(116, 185, 255, 0.3);
+    border-color: rgba(116, 185, 255, 0.5);
+}
+
+.package-card.package-featured {
+    border-color: rgba(116, 185, 255, 0.6);
+    background: rgba(116, 185, 255, 0.15);
+    transform: scale(1.05);
+}
+
+.package-card.package-featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.package-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: linear-gradient(45deg, #74b9ff, #0984e3);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(116, 185, 255, 0.4);
+}
+
+.package-header {
+    margin-bottom: 2rem;
+}
+
+.package-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #74b9ff;
+    margin-bottom: 1rem;
+}
+
+.package-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.price-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.price-currency {
+    font-size: 1.2rem;
+    color: #b2bec3;
+    font-weight: 500;
+}
+
+.package-features {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+.package-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.package-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    color: #b2bec3;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(116, 185, 255, 0.1);
+}
+
+.package-features li:last-child {
+    border-bottom: none;
+}
+
+.package-features li i.fa-check {
+    color: #00b894;
+    font-size: 1.1rem;
+    min-width: 20px;
+}
+
+.package-features li i.fa-times {
+    color: #d63031;
+    font-size: 1.1rem;
+    min-width: 20px;
+}
+
+.package-features .feature-disabled {
+    color: #636e72;
+    text-decoration: line-through;
+}
+
+.package-cta {
+    margin-top: auto;
+    padding-top: 1.5rem;
+}
+
+.package-cta .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.package-cta .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(116, 185, 255, 0.3);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* RTL Support for Packages */
+[dir="rtl"] .package-features ul {
+    text-align: left;
+}
+
+[dir="rtl"] .package-badge {
+    right: auto;
+    left: 20px;
+}
+
+/* Responsive Design for Packages */
+@media (max-width: 768px) {
+    .package-card {
+        margin-bottom: 2rem;
+    }
+    
+    .package-card.package-featured {
+        transform: scale(1);
+    }
+    
+    .package-card.package-featured:hover {
+        transform: translateY(-10px);
+    }
+    
+    .package-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .price-amount {
+        font-size: 2rem;
+    }
+    
+    .package-features li {
+        font-size: 0.9rem;
+        padding: 0.6rem 0;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Force 3 columns on mobile for packages */
+@media (max-width: 576px) {
+    #packages .col-sm-4 {
+        flex: 0 0 33.333333% !important;
+        max-width: 33.333333% !important;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+    
+    .package-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .package-header h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .price-amount {
+        font-size: 1.3rem;
+    }
+    
+    .price-currency {
+        font-size: 0.8rem;
+    }
+    
+    .package-features {
+        margin-bottom: 1rem;
+    }
+    
+    .package-features ul {
+        padding: 0;
+    }
+    
+    .package-features li {
+        font-size: 0.7rem;
+        padding: 0.4rem 0;
+        gap: 0.5rem;
+    }
+    
+    .package-features li i {
+        font-size: 0.8rem;
+        min-width: 15px;
+    }
+    
+    .package-cta {
+        padding-top: 1rem;
+    }
+    
+    .package-cta .btn {
+        font-size: 0.8rem;
+        padding: 0.6rem 0.5rem;
+    }
+    
+    .package-cta .btn i {
+        font-size: 0.9rem;
+    }
+    
+    .package-badge {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.6rem;
+        right: 10px;
+        top: -12px;
+    }
+    
+    [dir="rtl"] .package-badge {
+        left: 10px;
+    }
+    
+    .section-subtitle {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Portfolio Showcase Section Styles */
+.portfolio-showcase-card {
+    background: rgba(116, 185, 255, 0.1);
+    border: 2px solid rgba(116, 185, 255, 0.3);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.portfolio-showcase-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(116, 185, 255, 0.3);
+    border-color: rgba(116, 185, 255, 0.5);
+}
+
+.portfolio-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(45deg, #74b9ff, #0984e3);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(116, 185, 255, 0.4);
+    z-index: 10;
+}
+
+.portfolio-badge-commercial {
+    background: linear-gradient(45deg, #00b894, #00a085);
+    box-shadow: 0 5px 15px rgba(0, 184, 148, 0.4);
+}
+
+[dir="rtl"] .portfolio-badge {
+    right: auto;
+    left: 15px;
+}
+
+.portfolio-image {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.portfolio-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-showcase-card:hover .portfolio-thumbnail {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-showcase-card:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay .btn {
+    background: rgba(40, 167, 69, 0.9);
+    border: none;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.portfolio-overlay .btn:hover {
+    background: rgba(40, 167, 69, 1);
+    transform: scale(1.05);
+}
+
+.portfolio-content {
+    padding: 1.5rem;
+}
+
+.portfolio-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.portfolio-content p {
+    color: #b2bec3;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design for Portfolio Showcase */
+@media (max-width: 768px) {
+    .portfolio-showcase-card {
+        margin-bottom: 2rem;
+    }
+    
+    .portfolio-image {
+        height: 200px;
+    }
+    
+    .portfolio-content {
+        padding: 1.25rem;
+    }
+    
+    .portfolio-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .portfolio-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+        top: 10px;
+        right: 10px;
+    }
+    
+    [dir="rtl"] .portfolio-badge {
+        left: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio-image {
+        height: 180px;
+    }
+    
+    .portfolio-content {
+        padding: 1rem;
+    }
+    
+    .portfolio-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .portfolio-content p {
+        font-size: 0.9rem;
+    }
+    
+    .portfolio-overlay .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}

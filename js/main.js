@@ -140,7 +140,45 @@ const translations = {
         personal_photos_title: "Kişisel Fotoğraflarım",
         personal_photos_subtitle: "Beni tanıyın ve güvenin - Profesyonel web geliştirici olarak çalışmalarım",
         photos_placeholder: "Kişisel fotoğraflarınızı photos klasörüne ekleyin",
-        view_photo: "Görüntüle"
+        view_photo: "Görüntüle",
+        
+        // Packages Section
+        packages: "Paketler",
+        packages_title: "Paketlerimiz",
+        packages_subtitle: "İhtiyacınıza uygun paketi seçin ve işinizi dijital dünyaya taşıyın",
+        package_basic: "Temel Paket",
+        package_commercial: "Ticari Paket",
+        package_professional: "Profesyonel Paket",
+        popular: "Popüler",
+        consultation_btn: "Danışmanlık İçin",
+        feature_responsive: "Responsive Tasarım",
+        feature_pages: "5 Sayfaya Kadar",
+        feature_pages_extended: "10 Sayfaya Kadar",
+        feature_unlimited_pages: "Sınırsız Sayfa",
+        feature_contact_form: "İletişim Formu",
+        feature_basic_seo: "Temel SEO",
+        feature_advanced_seo: "Gelişmiş SEO",
+        feature_premium_seo: "Premium SEO",
+        feature_social_media: "Sosyal Medya Bağlantıları",
+        feature_no_admin: "Admin Paneli Yok",
+        feature_basic_admin: "Basit Admin Paneli",
+        feature_advanced_admin: "Özel Admin Paneli",
+        feature_basic_database: "Temel Veritabanı",
+        feature_advanced_database: "Gelişmiş Veritabanı",
+        feature_no_ecommerce: "Online Satış Yok",
+        feature_ecommerce: "Tam Online Satış",
+        feature_payment_gateway: "Ödeme Gateway",
+        feature_analytics: "Analitik ve Raporlama",
+        
+        // Portfolio Showcase
+        portfolio_showcase_title: "Örnek Çalışmalarımız",
+        portfolio_showcase_subtitle: "Tasarımlanmış ve aktif web siteleri",
+        professional_package: "Profesyonel Paket",
+        commercial_package: "Ticari Paket",
+        portfolio_firment_desc: "Online giyim satış web sitesi - modern e-ticaret platformu",
+        portfolio_gezgin_desc: "Profesyonel hizmet platformu - müşterileri ustalarla buluşturma",
+        portfolio_kanoon_desc: "Hukuki hizmetler ve danışmanlık web sitesi - uzman platform",
+        portfolio_hedef_desc: "Profesyonel sürücü kursu web sitesi - kayıt ve eğitim sistemi"
     },
     
     en: {
@@ -289,7 +327,45 @@ const translations = {
         personal_photos_title: "Personal Photos",
         personal_photos_subtitle: "Get to know me and trust me - Professional web developer at work",
         photos_placeholder: "Add your personal photos to the photos folder",
-        view_photo: "View"
+        view_photo: "View",
+        
+        // Packages Section
+        packages: "Packages",
+        packages_title: "Our Packages",
+        packages_subtitle: "Choose the package that suits your needs and take your business to the digital world",
+        package_basic: "Basic Package",
+        package_commercial: "Commercial Package",
+        package_professional: "Professional Package",
+        popular: "Popular",
+        consultation_btn: "For Consultation",
+        feature_responsive: "Responsive Design",
+        feature_pages: "Up to 5 Pages",
+        feature_pages_extended: "Up to 10 Pages",
+        feature_unlimited_pages: "Unlimited Pages",
+        feature_contact_form: "Contact Form",
+        feature_basic_seo: "Basic SEO",
+        feature_advanced_seo: "Advanced SEO",
+        feature_premium_seo: "Premium SEO",
+        feature_social_media: "Social Media Links",
+        feature_no_admin: "No Admin Panel",
+        feature_basic_admin: "Basic Admin Panel",
+        feature_advanced_admin: "Custom Admin Panel",
+        feature_basic_database: "Basic Database",
+        feature_advanced_database: "Advanced Database",
+        feature_no_ecommerce: "No Online Sales",
+        feature_ecommerce: "Full Online Sales",
+        feature_payment_gateway: "Payment Gateway",
+        feature_analytics: "Analytics & Reporting",
+        
+        // Portfolio Showcase
+        portfolio_showcase_title: "Our Portfolio",
+        portfolio_showcase_subtitle: "Designed and active websites",
+        professional_package: "Professional Package",
+        commercial_package: "Commercial Package",
+        portfolio_firment_desc: "Online clothing sales website - modern e-commerce platform",
+        portfolio_gezgin_desc: "Professional services platform - connecting customers with craftsmen",
+        portfolio_kanoon_desc: "Legal services and consulting website - specialized platform",
+        portfolio_hedef_desc: "Professional driving school website - registration and training system"
     },
     
     fa: {
@@ -432,7 +508,45 @@ const translations = {
         personal_photos_title: "عکس‌های شخصی من",
         personal_photos_subtitle: "مرا بشناسید و به من اعتماد کنید - توسعه‌دهنده حرفه‌ای وب در حال کار",
         photos_placeholder: "عکس‌های شخصی خود را در پوشه photos قرار دهید",
-        view_photo: "مشاهده"
+        view_photo: "مشاهده",
+        
+        // Packages Section
+        packages: "پکیج‌ها",
+        packages_title: "پکیج‌های ما",
+        packages_subtitle: "پکیج مناسب نیاز خود را انتخاب کنید و کسب‌وکار خود را به دنیای دیجیتال ببرید",
+        package_basic: "پکیج پایه",
+        package_commercial: "پکیج تجاری",
+        package_professional: "پکیج حرفه‌ای",
+        popular: "محبوب",
+        consultation_btn: "برای مشاوره",
+        feature_responsive: "طراحی ریسپانسیو",
+        feature_pages: "تا 5 صفحه",
+        feature_pages_extended: "تا 10 صفحه",
+        feature_unlimited_pages: "صفحات نامحدود",
+        feature_contact_form: "فرم تماس",
+        feature_basic_seo: "سئو پایه",
+        feature_advanced_seo: "سئو پیشرفته",
+        feature_premium_seo: "سئو حرفه‌ای",
+        feature_social_media: "لینک شبکه‌های اجتماعی",
+        feature_no_admin: "پنل ادمین ندارد",
+        feature_basic_admin: "پنل ادمین ساده",
+        feature_advanced_admin: "پنل ادمین اختصاصی",
+        feature_basic_database: "دیتابیس پایه",
+        feature_advanced_database: "دیتابیس پیشرفته",
+        feature_no_ecommerce: "فروش آنلاین ندارد",
+        feature_ecommerce: "فروش آنلاین کامل",
+        feature_payment_gateway: "درگاه پرداخت",
+        feature_analytics: "آنالیتیکس و گزارش",
+        
+        // Portfolio Showcase
+        portfolio_showcase_title: "نمونه کارهای ما",
+        portfolio_showcase_subtitle: "وبسایت‌های طراحی شده و فعال",
+        professional_package: "پکیج حرفه‌ای",
+        commercial_package: "پکیج تجاری",
+        portfolio_firment_desc: "وبسایت فروش آنلاین پوشاک - پلتفرم تجارت الکترونیک مدرن",
+        portfolio_gezgin_desc: "پلتفرم خدمات حرفه‌ای - اتصال مشتریان با استادکاران",
+        portfolio_kanoon_desc: "وبسایت خدمات حقوقی و مشاوره - پلتفرم تخصصی",
+        portfolio_hedef_desc: "وبسایت آموزشگاه رانندگی حرفه‌ای - سیستم ثبت‌نام و آموزش"
     },
     
     ar: {
@@ -575,7 +689,45 @@ const translations = {
         personal_photos_title: "صوري الشخصية",
         personal_photos_subtitle: "تعرف عليّ وثق بي - مطور ويب محترف في العمل",
         photos_placeholder: "أضف صورك الشخصية إلى مجلد photos",
-        view_photo: "عرض"
+        view_photo: "عرض",
+        
+        // Packages Section
+        packages: "الباقات",
+        packages_title: "باقاتنا",
+        packages_subtitle: "اختر الباقة المناسبة لاحتياجاتك وخذ عملك إلى العالم الرقمي",
+        package_basic: "الباقة الأساسية",
+        package_commercial: "الباقة التجارية",
+        package_professional: "الباقة الاحترافية",
+        popular: "شائع",
+        consultation_btn: "للاستشارة",
+        feature_responsive: "تصميم متجاوب",
+        feature_pages: "حتى 5 صفحات",
+        feature_pages_extended: "حتى 10 صفحات",
+        feature_unlimited_pages: "صفحات غير محدودة",
+        feature_contact_form: "نموذج الاتصال",
+        feature_basic_seo: "SEO أساسي",
+        feature_advanced_seo: "SEO متقدم",
+        feature_premium_seo: "SEO احترافي",
+        feature_social_media: "روابط وسائل التواصل الاجتماعي",
+        feature_no_admin: "لا يوجد لوحة تحكم",
+        feature_basic_admin: "لوحة تحكم بسيطة",
+        feature_advanced_admin: "لوحة تحكم مخصصة",
+        feature_basic_database: "قاعدة بيانات أساسية",
+        feature_advanced_database: "قاعدة بيانات متقدمة",
+        feature_no_ecommerce: "لا يوجد مبيعات عبر الإنترنت",
+        feature_ecommerce: "مبيعات عبر الإنترنت كاملة",
+        feature_payment_gateway: "بوابة الدفع",
+        feature_analytics: "التحليلات والتقارير",
+        
+        // Portfolio Showcase
+        portfolio_showcase_title: "معرض أعمالنا",
+        portfolio_showcase_subtitle: "مواقع ويب مصممة ونشطة",
+        professional_package: "الباقة الاحترافية",
+        commercial_package: "الباقة التجارية",
+        portfolio_firment_desc: "موقع بيع الملابس عبر الإنترنت - منصة تجارة إلكترونية حديثة",
+        portfolio_gezgin_desc: "منصة الخدمات المهنية - ربط العملاء بالحرفيين",
+        portfolio_kanoon_desc: "موقع الخدمات القانونية والاستشارات - منصة متخصصة",
+        portfolio_hedef_desc: "موقع مدرسة سواقة احترافية - نظام التسجيل والتدريب"
     }
 };
 
