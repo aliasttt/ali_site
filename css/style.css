@@ -211,13 +211,6 @@ body[dir="rtl"] {
     border-radius: 10px;
     padding: 0.5rem;
     backdrop-filter: blur(10px);
-    /* Fix for mobile scroll jitter */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    will-change: transform;
-    overflow: visible;
 }
 
 .lang-btn {
@@ -364,11 +357,6 @@ body[dir="rtl"] {
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     padding: 1rem 0;
-    /* Fix for mobile scroll jitter */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
 }
 
 .navbar-brand {
@@ -2279,69 +2267,25 @@ img.lazy-loaded {
         bottom: calc(20px + env(safe-area-inset-bottom, 0px));
         width: 56px;
         height: 56px;
-        /* Additional fixes for mobile scroll jitter */
-        transform: translateZ(0) !important;
-        -webkit-transform: translateZ(0) !important;
-        -webkit-backface-visibility: hidden !important;
-        backface-visibility: hidden !important;
-        -webkit-perspective: 1000px;
-        perspective: 1000px;
     }
     
     .language-switcher {
-        /* Additional fixes for mobile scroll jitter */
-        transform: translateZ(0) !important;
-        -webkit-transform: translateZ(0) !important;
-        -webkit-backface-visibility: hidden !important;
-        backface-visibility: hidden !important;
-        -webkit-perspective: 1000px;
-        perspective: 1000px;
-        /* Reduce backdrop-filter on mobile for better performance */
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-    }
-    
-    /* Fix navbar jitter on mobile */
-    .navbar {
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+        left: 15px;
+        padding: 0.4rem;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
     }
     
     /* Prevent body scroll jitter */
     body {
         -webkit-overflow-scrolling: touch;
         overflow-x: hidden;
-        position: relative;
-        /* Prevent scroll jitter */
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
     }
     
     html {
         -webkit-overflow-scrolling: touch;
         overflow-x: hidden;
-        /* Prevent scroll jitter */
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
-    }
-    
-    /* Fix space background jitter on mobile */
-    .space-background {
-        transform: translateZ(0) !important;
-        -webkit-transform: translateZ(0) !important;
-        -webkit-backface-visibility: hidden !important;
-        backface-visibility: hidden !important;
-    }
-    
-    /* Prevent all fixed elements from jittering */
-    [class*="fixed"],
-    [style*="position: fixed"] {
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
     }
 }
 
