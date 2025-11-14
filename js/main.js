@@ -1055,27 +1055,84 @@ function initNavbar() {
     });
 }
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links - Android compatible
 function initSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
     
     links.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                // Check if smooth scrolling is supported
+                const supportsSmoothScroll = 'scrollBehavior' in document.documentElement.style;
                 
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+                if (supportsSmoothScroll) {
+                    e.preventDefault();
+                    const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                    
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Fallback for browsers without smooth scroll support (including some Android browsers)
+                    e.preventDefault();
+                    const offsetTop = targetSection.offsetTop - 80;
+                    
+                    // Use requestAnimationFrame for smooth scrolling on Android
+                    const start = window.pageYOffset;
+                    const distance = offsetTop - start;
+                    const duration = 500;
+                    let startTime = null;
+                    
+                    function animation(currentTime) {
+                        if (startTime === null) startTime = currentTime;
+                        const timeElapsed = currentTime - startTime;
+                        const run = easeInOutQuad(timeElapsed, start, distance, duration);
+                        window.scrollTo(0, run);
+                        if (timeElapsed < duration) requestAnimationFrame(animation);
+                    }
+                    
+                    function easeInOutQuad(t, b, c, d) {
+                        t /= d / 2;
+                        if (t < 1) return c / 2 * t * t + b;
+                        t--;
+                        return -c / 2 * (t * (t - 2) - 1) + b;
+                    }
+                    
+                    requestAnimationFrame(animation);
+                }
+                
+                // Update URL hash for proper anchor behavior
+                if (history.pushState) {
+                    history.pushState(null, null, targetId);
+                } else {
+                    window.location.hash = targetId;
+                }
             }
         });
     });
+    
+    // Handle direct anchor links (e.g., from Google Ads)
+    if (window.location.hash) {
+        const hash = window.location.hash;
+        const targetSection = document.querySelector(hash);
+        
+        if (targetSection) {
+            // Wait for page to fully load
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    const offsetTop = targetSection.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            });
+        }
+    }
 }
 
 // Scroll animations - Completely disabled to prevent content disappearing

@@ -394,7 +394,7 @@
                         <a class="nav-link" href="#resume" data-translate="resume">Resume</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact" data-translate="contact">Contact</a>
+                        <a class="nav-link" href="#contact" data-translate="contact" aria-label="Contact Us">Contact</a>
                     </li>
                     <!-- Social Media Links in Navbar -->
                     <li class="nav-item dropdown">
@@ -1240,7 +1240,7 @@
 
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section" itemscope itemtype="https://schema.org/ContactPage" role="region" aria-label="Contact Us">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -1326,6 +1326,38 @@
       (window.requestIdleCallback||function(cb){setTimeout(cb,1)})(function(){
         document.documentElement.classList.add('animations-on');
       });
+    </script>
+    <!-- Immediate script to handle anchor links from Google Ads (Android compatibility) -->
+    <script>
+      // Handle hash links immediately for Google Ads compatibility
+      (function() {
+        if (window.location.hash) {
+          var hash = window.location.hash;
+          var scrollToSection = function() {
+            var target = document.querySelector(hash);
+            if (target) {
+              var offsetTop = target.offsetTop - 80;
+              // Use immediate scroll for Android compatibility
+              if ('scrollBehavior' in document.documentElement.style) {
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+              } else {
+                window.scrollTo(0, offsetTop);
+              }
+            }
+          };
+          // Try immediately
+          if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setTimeout(scrollToSection, 100);
+          } else {
+            window.addEventListener('load', function() {
+              setTimeout(scrollToSection, 100);
+            });
+            document.addEventListener('DOMContentLoaded', function() {
+              setTimeout(scrollToSection, 100);
+            });
+          }
+        }
+      })();
     </script>
     <script defer src="js/main.js"></script>
     

@@ -1184,6 +1184,21 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Ensure contact section and all sections are accessible via anchor links */
+section[id] {
+    scroll-margin-top: 100px; /* Account for fixed navbar */
+    min-height: 50vh; /* Ensure section has enough height */
+}
+
+/* Contact section specific styles for Android compatibility */
+#contact {
+    position: relative;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+    min-height: 60vh;
+}
+
 /* Loading Animation - Completely Fixed */
 .loading {
     opacity: 1 !important;
