@@ -232,7 +232,7 @@ const translations = {
     
     en: {
         // Navigation
-        portfolio: "Portfolio",
+        portfolio: "Angraweb",
         home: "Home",
         about: "About",
         services: "Services",
@@ -468,7 +468,7 @@ const translations = {
     
     fa: {
         // Navigation
-        portfolio: "پورتفولیو",
+        portfolio: "Angraweb",
         home: "خانه",
         about: "درباره من",
         services: "خدمات",
@@ -698,7 +698,7 @@ const translations = {
     
     ar: {
         // Navigation
-        portfolio: "المحفظة",
+        portfolio: "Angraweb",
         home: "الرئيسية",
         about: "حول",
         services: "الخدمات",
