@@ -2733,6 +2733,46 @@ img.lazy-loaded {
     font-size: 0.95rem;
 }
 
+.portfolio-domain {
+    color: #74b9ff !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+    font-family: 'Courier New', monospace;
+}
+
+/* Portfolio Visit Button - Always Visible */
+.portfolio-visit-btn {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(45deg, #28a745, #20c997) !important;
+    border: none !important;
+    color: white !important;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: 25px !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-top: 1rem !important;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.portfolio-visit-btn:hover {
+    background: linear-gradient(45deg, #20c997, #28a745) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.portfolio-visit-btn i {
+    font-size: 0.9rem;
+}
+
 /* Responsive Design for Portfolio Showcase */
 @media (max-width: 768px) {
     .portfolio-showcase-card {
