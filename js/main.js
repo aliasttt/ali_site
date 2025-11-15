@@ -1393,21 +1393,24 @@ function changeLanguage(lang) {
 // Update page meta information
 function updatePageMeta(lang) {
     const titles = {
-        tr: "Profesyonel Portföy - Web Geliştirici",
-        en: "Professional Portfolio - Web Developer",
-        fa: "پورتفولیو حرفه‌ای - توسعه‌دهنده وب",
-        ar: "محفظة احترافية - مطور ويب"
+        tr: "Web sitesi ve mobil uygulama tasarımı | Özel yazılımcı ve tasarımcı",
+        en: "Website & Mobile App Design | Custom Programmer & Designer",
+        fa: "طراحی وب‌سایت و اپلیکیشن موبایل | برنامه‌نویس و طراح اختصاصی",
+        ar: "تصميم مواقع الويب وتطبيقات الجوال | مبرمج ومصمم مخصص"
     };
     
     const descriptions = {
-        tr: "Django, Python, JavaScript, CSS, HTML ve Bootstrap konularında uzman profesyonel web geliştirici",
-        en: "Professional web developer expert in Django, Python, JavaScript, CSS, HTML and Bootstrap",
-        fa: "توسعه‌دهنده حرفه‌ای وب با تخصص در Django، Python، JavaScript، CSS، HTML و Bootstrap",
-        ar: "مطور ويب محترف متخصص في Django و Python و JavaScript و CSS و HTML و Bootstrap"
+        tr: "Özel web sitesi ve mobil uygulama geliştiricisi ve tasarımcısı – 5.000 Toman'dan başlayan fiyatlarla",
+        en: "Programmer and Custom Website & Mobile App Designer - Starting from 5,000 TL",
+        fa: "برنامه‌نویس و طراح اختصاصی وب‌سایت و اپلیکیشن موبایل - از 5,000 تومان شروع می‌شود",
+        ar: "مبرمج ومصمم مواقع ويب وتطبيقات الجوال المخصصة - بدءًا من 5,000 ليرة"
     };
     
     document.title = titles[lang] || titles.en;
-    document.querySelector('meta[name="description"]').setAttribute('content', descriptions[lang] || descriptions.en);
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+        metaDesc.setAttribute('content', descriptions[lang] || descriptions.en);
+    }
 }
 
 // Load saved language preference
