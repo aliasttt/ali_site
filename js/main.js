@@ -2,7 +2,7 @@
 const translations = {
     tr: {
         // Navigation
-        portfolio: "Angraweb",
+        portfolio: "Angraweb.com",
         home: "Ana Sayfa",
         about: "Hakkımda",
         services: "Hizmetler",
@@ -232,7 +232,7 @@ const translations = {
     
     en: {
         // Navigation
-        portfolio: "Angraweb",
+        portfolio: "Angraweb.com",
         home: "Home",
         about: "About",
         services: "Services",
@@ -468,7 +468,7 @@ const translations = {
     
     fa: {
         // Navigation
-        portfolio: "Angraweb",
+        portfolio: "Angraweb.com",
         home: "خانه",
         about: "درباره من",
         services: "خدمات",
@@ -698,7 +698,7 @@ const translations = {
     
     ar: {
         // Navigation
-        portfolio: "Angraweb",
+        portfolio: "Angraweb.com",
         home: "الرئيسية",
         about: "حول",
         services: "الخدمات",
