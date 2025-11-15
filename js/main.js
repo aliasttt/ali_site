@@ -11,9 +11,11 @@ const translations = {
         contact: "İletişim",
         
         // Hero Section
-        hero_title: "Profesyonel Web Tasarım ve E-Ticaret Uzmanı",
-        hero_subtitle: "İşletmenizi Dijital Dünyada Büyütün!",
+        hero_title: "Programcı ve Özel Web Sitesi ve Mobil Uygulama Tasarımcısı",
+        hero_subtitle: "5.000 TL'den Başlayan Fiyatlarla",
         hero_description: "İşletmeniz için modern, hızlı ve kullanıcı dostu web siteleri tasarlıyorum. E-ticaret sitesi, kurumsal web sitesi ve profesyonel web tasarım çözümleri sunuyorum. 20'den fazla müşterim %100 memnuniyet ile hizmet aldı. Uygun fiyatlı web sitesi çözümleri ile projelerinizi hayata geçiriyorum.",
+        get_quote: "Teklif Al",
+        discount_notification: "Her Pakette İlk Tasarım İçin %20 İndirim - Hemen Tıklayın!",
         view_projects: "Projelerimi İncele",
         view_certificates: "Sertifikalarımı İncele",
         contact_me: "İletişime Geç",
@@ -239,9 +241,11 @@ const translations = {
         contact: "Contact",
         
         // Hero Section
-        hero_title: "Professional Web Developer",
-        hero_subtitle: "Grow Your Brand in the Digital World!",
+        hero_title: "Programmer and Custom Website & Mobile App Designer",
+        hero_subtitle: "Starting from 5,000 TL",
         hero_description: "Make your business stand out in the digital world with modern, fast, and user-friendly websites. I provide comprehensive web development services for e-commerce sites, corporate websites, portfolio sites, and custom projects. I bring your projects to life with expertise in Django, Python, JavaScript, CSS, HTML, Bootstrap, and hosting services.",
+        get_quote: "Get Quote",
+        discount_notification: "20% Discount on Every Package for First Design - Click Now!",
         view_projects: "View Projects",
         view_certificates: "View Certificates",
         contact_me: "Contact Me",
@@ -473,9 +477,11 @@ const translations = {
         contact: "تماس",
         
         // Hero Section
-        hero_title: "Professional Web Developer",
-        hero_subtitle: "برند خود را در دنیای دیجیتال رشد دهید!",
+        hero_title: "برنامه‌نویس و طراح اختصاصی وب‌سایت و اپلیکیشن موبایل",
+        hero_subtitle: "از 5,000 تومان شروع می‌شود",
         hero_description: "با وب‌سایت‌های مدرن، سریع و کاربرپسند، کسب‌وکار خود را در دنیای دیجیتال برجسته کنید. خدمات جامع توسعه وب برای سایت‌های فروشگاهی، وب‌سایت‌های شرکتی، سایت‌های پورتفولیو و پروژه‌های سفارشی ارائه می‌دهم. پروژه‌های شما را با تخصص در Django، Python، JavaScript، CSS، HTML، Bootstrap و خدمات هاستینگ به زندگی تبدیل می‌کنم.",
+        get_quote: "دریافت قیمت",
+        discount_notification: "20 درصد تخفیف روی هر بسته برای اولین طراحی - همین الان کلیک کنید!",
         view_projects: "مشاهده پروژه‌ها",
         view_certificates: "مشاهده گواهینامه‌ها",
         contact_me: "تماس با من",
@@ -701,9 +707,11 @@ const translations = {
         contact: "اتصل",
         
         // Hero Section
-        hero_title: "مطور ويب محترف",
-        hero_subtitle: "نمّي علامتك التجارية في العالم الرقمي!",
+        hero_title: "مبرمج ومصمم مواقع ويب وتطبيقات الجوال المخصصة",
+        hero_subtitle: "بدءًا من 5,000 ليرة",
         hero_description: "اجعل عملك يبرز في العالم الرقمي مع مواقع ويب حديثة وسريعة وسهلة الاستخدام. أقدم خدمات تطوير ويب شاملة لمواقع التجارة الإلكترونية والمواقع المؤسسية ومواقع المحفظة والمشاريع المخصصة. أحول مشاريعك إلى حياة مع الخبرة في Django و Python و JavaScript و CSS و HTML و Bootstrap وخدمات الاستضافة.",
+        get_quote: "احصل على عرض سعر",
+        discount_notification: "خصم 20% على كل باقة للتصميم الأول - انقر الآن!",
         view_projects: "عرض المشاريع",
         view_certificates: "عرض الشهادات",
         contact_me: "تواصل معي",
