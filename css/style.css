@@ -29,6 +29,7 @@ body[dir="rtl"] {
 [dir="rtl"] .language-switcher {
     left: 20px;
     right: auto;
+    flex-direction: column !important; /* Always vertical */
 }
 
 [dir="rtl"] .navbar-nav {
@@ -129,12 +130,16 @@ body[dir="rtl"] {
 
 /* Additional RTL Mobile Support */
 @media (max-width: 768px) {
-    [dir="rtl"] .language-switcher {
+    [dir="rtl"] .language-switcher,
+    html[dir="rtl"] .language-switcher,
+    body[dir="rtl"] .language-switcher {
         left: 20px;
         right: auto;
-        flex-direction: row;
+        flex-direction: column !important; /* Keep vertical even in RTL */
+        flex-wrap: nowrap !important;
         bottom: 20px;
-        width: auto;
+        width: auto !important;
+        max-width: none !important;
     }
     
     [dir="rtl"] .hero-buttons {
@@ -197,20 +202,31 @@ body[dir="rtl"] {
     }
 }
 
-/* Language Switcher */
+/* Language Switcher - Always Vertical */
 .language-switcher {
     position: fixed;
     bottom: 30px;
     left: 20px;
     z-index: 1000;
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important; /* Always vertical - never horizontal */
+    flex-wrap: nowrap !important; /* Prevent wrapping to horizontal */
     gap: 0.5rem;
     background: rgba(116, 185, 255, 0.1);
     border: 1px solid rgba(116, 185, 255, 0.3);
     border-radius: 10px;
     padding: 0.5rem;
     backdrop-filter: blur(10px);
+    width: auto !important;
+    max-width: none !important;
+}
+
+/* Force vertical in all RTL states */
+[dir="rtl"] .language-switcher,
+html[dir="rtl"] .language-switcher,
+body[dir="rtl"] .language-switcher {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
 }
 
 .lang-btn {
@@ -1129,10 +1145,17 @@ body[dir="rtl"] .benefit-item {
         font-size: 1.2rem;
     }
     
-    .language-switcher {
+    .language-switcher,
+    [dir="rtl"] .language-switcher,
+    html[dir="rtl"] .language-switcher,
+    body[dir="rtl"] .language-switcher {
         bottom: 20px;
         left: 15px;
         padding: 0.3rem;
+        flex-direction: column !important; /* Always vertical on mobile */
+        flex-wrap: nowrap !important;
+        width: auto !important;
+        max-width: none !important;
     }
     
     .lang-btn {
@@ -2284,12 +2307,19 @@ img.lazy-loaded {
         height: 56px;
     }
     
-    .language-switcher {
+    .language-switcher,
+    [dir="rtl"] .language-switcher,
+    html[dir="rtl"] .language-switcher,
+    body[dir="rtl"] .language-switcher {
         bottom: calc(20px + env(safe-area-inset-bottom, 0px));
         left: 15px;
         padding: 0.4rem;
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
+        flex-direction: column !important; /* Always vertical on mobile */
+        flex-wrap: nowrap !important;
+        width: auto !important;
+        max-width: none !important;
     }
     
     /* Prevent body scroll jitter */
@@ -3087,13 +3117,13 @@ img.lazy-loaded {
         height: 20px;
         font-size: 1rem;
     }
-}
-
-[dir="rtl"] .portfolio-badge {
-    left: 5px;
-}
-
-.portfolio-overlay .btn {
+    }
+    
+    [dir="rtl"] .portfolio-badge {
+        left: 5px;
+    }
+    
+    .portfolio-overlay .btn {
         padding: 0.4rem 0.8rem;
         font-size: 0.75rem;
     }
