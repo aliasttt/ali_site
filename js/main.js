@@ -1018,6 +1018,7 @@ function setupIdleTasks() {
 function initNavbar() {
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
     
     // Navbar background on scroll
     window.addEventListener('scroll', function() {
@@ -1051,16 +1052,53 @@ function initNavbar() {
         });
     });
     
-    // Mobile menu close on link click
+    // Prevent menu from closing when clicking on dropdown toggle
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    if (dropdownToggle) {
+        dropdownToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            // Don't close the navbar collapse when clicking dropdown toggle
+        });
+    }
+    
+    // Mobile menu close on link click (but not on dropdown toggle)
     navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            if (navbarCollapse.classList.contains('show')) {
+        link.addEventListener('click', function(e) {
+            // Don't close menu if clicking on dropdown toggle
+            if (link.classList.contains('dropdown-toggle')) {
+                e.stopPropagation(); // Prevent closing menu
+                return; // Let Bootstrap handle dropdown toggle
+            }
+            
+            // Only close if it's a regular nav link (not dropdown)
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
                 const bsCollapse = new bootstrap.Collapse(navbarCollapse);
                 bsCollapse.hide();
             }
         });
     });
+    
+    // Close menu when clicking on dropdown items (social media links)
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', function() {
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                // Small delay to allow link to open first
+                setTimeout(() => {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }, 100);
+            }
+        });
+    });
+    
+    // Prevent navbar collapse from closing when clicking inside dropdown menu
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    if (dropdownMenu) {
+        dropdownMenu.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent click from bubbling to navbar
+        });
+    }
 }
 
 // Smooth scrolling for navigation links - Android compatible
