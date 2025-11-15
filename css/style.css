@@ -1527,17 +1527,57 @@ img.lazy-loaded {
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 1rem;
-    background: #000;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-video {
     width: 100%;
     height: auto;
+    min-height: 250px;
     border-radius: 10px;
-    background: #000;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* Video loading state - show gradient background until video loads */
+.project-video:not([src]) {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #533483 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Ensure video is visible and ready to play */
+.project-video {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.project-video[poster] {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+/* Video controls visibility */
+.project-video::-webkit-media-controls-panel {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.project-video::-webkit-media-controls-play-button {
+    background-color: #74b9ff;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
+
+.project-video::-webkit-media-controls-play-button:hover {
+    background-color: #0984e3;
+    transform: scale(1.1);
 }
 
 .video-content {

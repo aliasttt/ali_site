@@ -1430,9 +1430,43 @@ function loadSavedLanguage() {
     }
 }
 
+// Initialize video functionality
+function initVideos() {
+    const videos = document.querySelectorAll('.project-video');
+    
+    videos.forEach(video => {
+        // Ensure video loads metadata for immediate play
+        video.addEventListener('loadedmetadata', function() {
+            // Video metadata is loaded, ready to play
+            this.style.opacity = '1';
+        });
+        
+        // Handle play event for immediate playback
+        video.addEventListener('play', function() {
+            // Ensure video plays immediately
+            this.currentTime = 0;
+        });
+        
+        // Preload metadata when video comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const video = entry.target;
+                    if (video.readyState < 1) {
+                        video.load(); // Load metadata
+                    }
+                }
+            });
+        }, { rootMargin: '50px' });
+        
+        observer.observe(video);
+    });
+}
+
 // Initialize additional effects
 document.addEventListener('DOMContentLoaded', function() {
     loadSavedLanguage();
+    initVideos();
 });
 
 // Add CSS for animations - Completely disabled
