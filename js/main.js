@@ -1107,8 +1107,10 @@ let currentLang = 'tr';
     document.documentElement.lang = defaultLang;
     document.documentElement.dir = (defaultLang === 'fa' || defaultLang === 'ar') ? 'rtl' : 'ltr';
     
-    // Clean URL - Remove .html extension
-    cleanURL();
+    // Clean URL - Remove .html extension (only for HTTP/HTTPS)
+    if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+        cleanURL();
+    }
     
     // Set page title immediately based on current page
     const pageName = getPageName();
@@ -1118,10 +1120,15 @@ let currentLang = 'tr';
 
 // Clean URL - Remove .html extension and update browser URL
 function cleanURL() {
+    // Only work on HTTP/HTTPS protocols, not file://
+    if (window.location.protocol === 'file:') {
+        return; // Skip for local file system
+    }
+    
     const path = window.location.pathname;
     const filename = path.split('/').pop() || '';
     
-    // If URL contains .html, clean it
+    // If URL contains .html, redirect to clean URL
     if (filename.includes('.html')) {
         const cleanPath = filename.replace('.html', '');
         let newPath = '';
@@ -1133,9 +1140,10 @@ function cleanURL() {
             newPath = '/' + cleanPath;
         }
         
-        // Update URL without reloading page
-        if (window.history && window.history.replaceState) {
-            window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
+        // Redirect to clean URL (this will reload the page)
+        const newURL = window.location.origin + newPath + window.location.search + window.location.hash;
+        if (window.location.href !== newURL) {
+            window.location.replace(newURL);
         }
     }
 }
@@ -1266,8 +1274,10 @@ function initCleanURLs() {
         }
     });
     
-    // Also clean URL on page load if it still has .html
-    cleanURL();
+    // Also clean URL on page load if it still has .html (only for HTTP/HTTPS)
+    if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+        cleanURL();
+    }
 }
 
 // Anti-disappearing function
