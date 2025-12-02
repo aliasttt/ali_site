@@ -132,6 +132,10 @@ const translations = {
         // Footer
         professional_portfolio: "Profesyonel Portföy",
         all_rights_reserved: "Tüm hakları saklıdır.",
+        footer_description: "Profesyonel web tasarım ve geliştirme hizmetleri. Modern, hızlı ve kullanıcı dostu web siteleri ile işinizi dijital dünyada büyütün.",
+        quick_links: "Hızlı Bağlantılar",
+        contact_info: "İletişim Bilgileri",
+        follow_us: "Bizi Takip Edin",
         
         // Certificates
         certificates_placeholder: "Sertifika resimlerinizi certificates klasörüne ekleyin",
@@ -406,6 +410,10 @@ const translations = {
         // Footer
         professional_portfolio: "Professional Portfolio",
         all_rights_reserved: "All rights reserved.",
+        footer_description: "Professional web design and development services. Grow your business in the digital world with modern, fast and user-friendly websites.",
+        quick_links: "Quick Links",
+        contact_info: "Contact Information",
+        follow_us: "Follow Us",
         
         // Certificates
         certificates_placeholder: "Add your certificate images to the certificates folder",
@@ -674,6 +682,10 @@ const translations = {
         // Footer
         professional_portfolio: "پورتفولیو حرفه‌ای",
         all_rights_reserved: "تمامی حقوق محفوظ است.",
+        footer_description: "خدمات طراحی و توسعه وب حرفه‌ای. کسب‌وکار خود را در دنیای دیجیتال با وب‌سایت‌های مدرن، سریع و کاربرپسند رشد دهید.",
+        quick_links: "لینک‌های سریع",
+        contact_info: "اطلاعات تماس",
+        follow_us: "ما را دنبال کنید",
         
         // Certificates
         certificates_placeholder: "تصاویر گواهینامه‌های خود را در پوشه certificates قرار دهید",
@@ -942,6 +954,10 @@ const translations = {
         // Footer
         professional_portfolio: "محفظة احترافية",
         all_rights_reserved: "جميع الحقوق محفوظة.",
+        footer_description: "خدمات تصميم وتطوير الويب الاحترافية. نمّي عملك في العالم الرقمي مع مواقع ويب حديثة وسريعة وسهلة الاستخدام.",
+        quick_links: "روابط سريعة",
+        contact_info: "معلومات الاتصال",
+        follow_us: "تابعنا",
         
         // Certificates
         certificates_placeholder: "أضف صور شهاداتك إلى مجلد certificates",
@@ -1714,6 +1730,8 @@ function initProjectCards() {
     
     projectCards.forEach(card => {
         const overlay = card.querySelector('.project-overlay');
+        if (!overlay) return; // Skip if overlay doesn't exist
+        
         const visitButton = overlay.querySelector('a[target="_blank"]');
         
         if (visitButton) {
