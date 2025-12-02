@@ -1107,23 +1107,56 @@ let currentLang = 'tr';
     document.documentElement.lang = defaultLang;
     document.documentElement.dir = (defaultLang === 'fa' || defaultLang === 'ar') ? 'rtl' : 'ltr';
     
+    // Clean URL - Remove .html extension
+    cleanURL();
+    
     // Set page title immediately based on current page
     const pageName = getPageName();
     const pageTitles = getPageTitles(pageName);
     document.title = pageTitles[defaultLang] || pageTitles['tr'];
 })();
 
+// Clean URL - Remove .html extension and update browser URL
+function cleanURL() {
+    const path = window.location.pathname;
+    const filename = path.split('/').pop() || '';
+    
+    // If URL contains .html, clean it
+    if (filename.includes('.html')) {
+        const cleanPath = filename.replace('.html', '');
+        let newPath = '';
+        
+        // Map filenames to clean URLs
+        if (cleanPath === 'index' || cleanPath === '') {
+            newPath = '/';
+        } else {
+            newPath = '/' + cleanPath;
+        }
+        
+        // Update URL without reloading page
+        if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
+        }
+    }
+}
+
 // Get current page name
 function getPageName() {
     const path = window.location.pathname;
-    const filename = path.split('/').pop() || 'index.html';
+    const filename = path.split('/').pop() || '';
     
-    if (filename.includes('packages')) return 'packages';
-    if (filename.includes('about')) return 'about';
-    if (filename.includes('services')) return 'services';
-    if (filename.includes('projects')) return 'projects';
-    if (filename.includes('resume')) return 'resume';
-    if (filename.includes('contact')) return 'contact';
+    // Handle root path
+    if (filename === '' || filename === 'index' || filename === 'index.html') return 'index';
+    
+    // Remove .html if present
+    const cleanName = filename.replace('.html', '');
+    
+    if (cleanName === 'packages') return 'packages';
+    if (cleanName === 'about') return 'about';
+    if (cleanName === 'services') return 'services';
+    if (cleanName === 'projects') return 'projects';
+    if (cleanName === 'resume') return 'resume';
+    if (cleanName === 'contact') return 'contact';
     return 'index';
 }
 
@@ -1194,6 +1227,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initProjectCards();
     setupLazyInit();
     setupIdleTasks();
+    initCleanURLs(); // Initialize clean URL handling for links
     
     // Set language (will use saved preference or default to Turkish)
     changeLanguage(defaultLang);
@@ -1202,6 +1236,39 @@ document.addEventListener('DOMContentLoaded', function() {
     forceContentVisibility();
     
 });
+
+// Initialize clean URLs for all internal links
+function initCleanURLs() {
+    // Get all internal links
+    const links = document.querySelectorAll('a[href]');
+    
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+        
+        // Only process internal links with .html
+        if (href && href.includes('.html') && !href.startsWith('http') && !href.startsWith('//') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+            // Remove .html extension
+            let cleanHref = href.replace('.html', '');
+            
+            // Handle index.html specially
+            if (cleanHref === 'index' || cleanHref === './index' || cleanHref === '/index' || cleanHref === 'index.html') {
+                cleanHref = '/';
+            } else if (cleanHref.startsWith('./')) {
+                // Handle relative paths like ./about.html
+                cleanHref = '/' + cleanHref.substring(2);
+            } else if (!cleanHref.startsWith('/') && !cleanHref.startsWith('#')) {
+                // Ensure relative paths start with /
+                cleanHref = '/' + cleanHref;
+            }
+            
+            // Update href attribute
+            link.setAttribute('href', cleanHref);
+        }
+    });
+    
+    // Also clean URL on page load if it still has .html
+    cleanURL();
+}
 
 // Anti-disappearing function
 function forceContentVisibility() {
@@ -1367,12 +1434,12 @@ function initSmoothScrolling() {
                 
                 if (supportsSmoothScroll) {
                     e.preventDefault();
-                    const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
-                    
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
                 } else {
                     // Fallback for browsers without smooth scroll support (including some Android browsers)
                     e.preventDefault();
