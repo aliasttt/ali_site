@@ -1225,6 +1225,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedLang = localStorage.getItem('preferred-language');
     const defaultLang = savedLang && translations[savedLang] ? savedLang : 'tr';
     
+    // Set language immediately before any rendering
+    changeLanguage(defaultLang);
+    
+    // Show body content after language is set
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = '1';
+    
     // Initialize all functions
     initLanguageSwitcher();
     initNavbar();
@@ -1236,9 +1243,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setupLazyInit();
     setupIdleTasks();
     initCleanURLs(); // Initialize clean URL handling for links
-    
-    // Set language (will use saved preference or default to Turkish)
-    changeLanguage(defaultLang);
     
     // Force all content to be visible - Anti-disappearing fix
     forceContentVisibility();
@@ -1689,9 +1693,11 @@ function initLanguageSwitcher() {
 function changeLanguage(lang) {
     currentLang = lang;
     
-    // Update HTML lang and dir attributes
-    document.documentElement.lang = lang;
-    document.documentElement.dir = (lang === 'fa' || lang === 'ar') ? 'rtl' : 'ltr';
+    // Update HTML lang and dir attributes immediately
+    if (document.documentElement) {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === 'fa' || lang === 'ar') ? 'rtl' : 'ltr';
+    }
     
     // Update all translatable elements
     const translatableElements = document.querySelectorAll('[data-translate]');
@@ -1708,6 +1714,15 @@ function changeLanguage(lang) {
         const key = element.getAttribute('data-translate-placeholder');
         if (translations[lang] && translations[lang][key]) {
             element.placeholder = translations[lang][key];
+        }
+    });
+    
+    // Update active language button
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
         }
     });
     

@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web sitesi ve mobil uygulama tasarımı | Özel yazılımcı ve tasarımcı</title>
     
-    
+    <!-- Set language immediately before any content renders -->
+    <script>
+        (function() {
+            // Get saved language or default to Turkish
+            var savedLang = localStorage.getItem('preferred-language');
+            var defaultLang = (savedLang && (savedLang === 'tr' || savedLang === 'en' || savedLang === 'fa' || savedLang === 'ar')) ? savedLang : 'tr';
+            
+            // Set HTML attributes immediately
+            document.documentElement.lang = defaultLang;
+            document.documentElement.dir = (defaultLang === 'fa' || defaultLang === 'ar') ? 'rtl' : 'ltr';
+            
+            // Hide body content until language is set (prevent flash)
+            document.write('<style>body { visibility: hidden; opacity: 0; }</style>');
+        })();
+    </script>
     
     <!-- Event snippet for Contact conversion page
     In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
