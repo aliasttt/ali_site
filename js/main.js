@@ -1098,8 +1098,91 @@ const translations = {
 // Current language
 let currentLang = 'tr';
 
+// Set language immediately before DOM loads to prevent flash
+(function() {
+    const savedLang = localStorage.getItem('preferred-language');
+    const defaultLang = savedLang && translations[savedLang] ? savedLang : 'tr';
+    
+    // Set HTML attributes immediately
+    document.documentElement.lang = defaultLang;
+    document.documentElement.dir = (defaultLang === 'fa' || defaultLang === 'ar') ? 'rtl' : 'ltr';
+    
+    // Set page title immediately based on current page
+    const pageName = getPageName();
+    const pageTitles = getPageTitles(pageName);
+    document.title = pageTitles[defaultLang] || pageTitles['tr'];
+})();
+
+// Get current page name
+function getPageName() {
+    const path = window.location.pathname;
+    const filename = path.split('/').pop() || 'index.html';
+    
+    if (filename.includes('packages')) return 'packages';
+    if (filename.includes('about')) return 'about';
+    if (filename.includes('services')) return 'services';
+    if (filename.includes('projects')) return 'projects';
+    if (filename.includes('resume')) return 'resume';
+    if (filename.includes('contact')) return 'contact';
+    return 'index';
+}
+
+// Get page titles for all languages
+function getPageTitles(pageName) {
+    const titles = {
+        index: {
+            tr: "Web sitesi ve mobil uygulama tasarımı | Özel yazılımcı ve tasarımcı",
+            en: "Website & Mobile App Design | Custom Programmer & Designer",
+            fa: "طراحی وب‌سایت و اپلیکیشن موبایل | برنامه‌نویس و طراح اختصاصی",
+            ar: "تصميم مواقع الويب وتطبيقات الجوال | مبرمج ومصمم مخصص"
+        },
+        packages: {
+            tr: "Paketler | Web Sitesi ve Mobil Uygulama Paketleri",
+            en: "Packages | Website & Mobile App Packages",
+            fa: "پکیج‌ها | پکیج‌های وب‌سایت و اپلیکیشن موبایل",
+            ar: "الباقات | باقات مواقع الويب وتطبيقات الجوال"
+        },
+        about: {
+            tr: "Hakkımda | Profesyonel Web Geliştirici ve Tasarımcı",
+            en: "About Me | Professional Web Developer & Designer",
+            fa: "درباره من | توسعه‌دهنده و طراح وب حرفه‌ای",
+            ar: "نبذة عني | مطور ومصمم ويب محترف"
+        },
+        services: {
+            tr: "Hizmetler | Web Tasarım ve Geliştirme Hizmetleri",
+            en: "Services | Web Design & Development Services",
+            fa: "خدمات | خدمات طراحی و توسعه وب",
+            ar: "الخدمات | خدمات تصميم وتطوير الويب"
+        },
+        projects: {
+            tr: "Projeler | Tamamlanan Web Sitesi ve Uygulama Projeleri",
+            en: "Projects | Completed Website & App Projects",
+            fa: "پروژه‌ها | پروژه‌های تکمیل شده وب‌سایت و اپلیکیشن",
+            ar: "المشاريع | مشاريع مواقع الويب والتطبيقات المكتملة"
+        },
+        resume: {
+            tr: "Özgeçmiş | Eğitim, Deneyim ve Sertifikalar",
+            en: "Resume | Education, Experience & Certificates",
+            fa: "رزومه | تحصیلات، تجربه و گواهینامه‌ها",
+            ar: "السيرة الذاتية | التعليم والخبرة والشهادات"
+        },
+        contact: {
+            tr: "İletişim | Ücretsiz Danışmanlık ve Teklif Alın",
+            en: "Contact | Free Consultation & Get Quote",
+            fa: "تماس | مشاوره رایگان و دریافت پیشنهاد",
+            ar: "اتصل بنا | استشارة مجانية واحصل على عرض أسعار"
+        }
+    };
+    
+    return titles[pageName] || titles.index;
+}
+
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // Load saved language or use default
+    const savedLang = localStorage.getItem('preferred-language');
+    const defaultLang = savedLang && translations[savedLang] ? savedLang : 'tr';
     
     // Initialize all functions
     initLanguageSwitcher();
@@ -1112,8 +1195,8 @@ document.addEventListener('DOMContentLoaded', function() {
     setupLazyInit();
     setupIdleTasks();
     
-    // Set Turkish as default language on page load
-    changeLanguage('tr');
+    // Set language (will use saved preference or default to Turkish)
+    changeLanguage(defaultLang);
     
     // Force all content to be visible - Anti-disappearing fix
     forceContentVisibility();
@@ -1560,24 +1643,58 @@ function changeLanguage(lang) {
 
 // Update page meta information
 function updatePageMeta(lang) {
-    const titles = {
-        tr: "Web sitesi ve mobil uygulama tasarımı | Özel yazılımcı ve tasarımcı",
-        en: "Website & Mobile App Design | Custom Programmer & Designer",
-        fa: "طراحی وب‌سایت و اپلیکیشن موبایل | برنامه‌نویس و طراح اختصاصی",
-        ar: "تصميم مواقع الويب وتطبيقات الجوال | مبرمج ومصمم مخصص"
-    };
+    const pageName = getPageName();
+    const pageTitles = getPageTitles(pageName);
     
     const descriptions = {
-        tr: "Özel web sitesi ve mobil uygulama geliştiricisi ve tasarımcısı – 5.000 Toman'dan başlayan fiyatlarla",
-        en: "Programmer and Custom Website & Mobile App Designer - Starting from 5,000 TL",
-        fa: "برنامه‌نویس و طراح اختصاصی وب‌سایت و اپلیکیشن موبایل - از 5,000 تومان شروع می‌شود",
-        ar: "مبرمج ومصمم مواقع ويب وتطبيقات الجوال المخصصة - بدءًا من 5,000 ليرة"
+        index: {
+            tr: "Özel web sitesi ve mobil uygulama geliştiricisi ve tasarımcısı – 5.000 TL'den başlayan fiyatlarla",
+            en: "Programmer and Custom Website & Mobile App Designer - Starting from 5,000 TL",
+            fa: "برنامه‌نویس و طراح اختصاصی وب‌سایت و اپلیکیشن موبایل - از 5,000 تومان شروع می‌شود",
+            ar: "مبرمج ومصمم مواقع ويب وتطبيقات الجوال المخصصة - بدءًا من 5,000 ليرة"
+        },
+        packages: {
+            tr: "Web sitesi ve mobil uygulama paketleri - Uygun fiyatlı çözümler",
+            en: "Website & mobile app packages - Affordable solutions",
+            fa: "پکیج‌های وب‌سایت و اپلیکیشن موبایل - راه‌حل‌های مقرون به صرفه",
+            ar: "باقات مواقع الويب وتطبيقات الجوال - حلول بأسعار معقولة"
+        },
+        about: {
+            tr: "Profesyonel web geliştirici ve tasarımcı hakkında bilgi edinin",
+            en: "Learn about professional web developer and designer",
+            fa: "درباره توسعه‌دهنده و طراح وب حرفه‌ای اطلاعات کسب کنید",
+            ar: "تعرف على مطور ومصمم الويب المحترف"
+        },
+        services: {
+            tr: "Web tasarım, e-ticaret, mobil uygulama ve SEO hizmetleri",
+            en: "Web design, e-commerce, mobile app and SEO services",
+            fa: "خدمات طراحی وب، تجارت الکترونیک، اپلیکیشن موبایل و SEO",
+            ar: "خدمات تصميم الويب والتجارة الإلكترونية وتطبيقات الجوال وتحسين محركات البحث"
+        },
+        projects: {
+            tr: "Tamamlanan web sitesi ve mobil uygulama projeleri portföyü",
+            en: "Portfolio of completed website and mobile app projects",
+            fa: "نمونه کارهای پروژه‌های تکمیل شده وب‌سایت و اپلیکیشن موبایل",
+            ar: "محفظة مشاريع مواقع الويب وتطبيقات الجوال المكتملة"
+        },
+        resume: {
+            tr: "Eğitim, iş deneyimi, beceriler ve sertifikalar",
+            en: "Education, work experience, skills and certificates",
+            fa: "تحصیلات، تجربه کاری، مهارت‌ها و گواهینامه‌ها",
+            ar: "التعليم والخبرة العملية والمهارات والشهادات"
+        },
+        contact: {
+            tr: "Ücretsiz danışmanlık ve teklif almak için iletişime geçin",
+            en: "Contact us for free consultation and quote",
+            fa: "برای مشاوره رایگان و دریافت پیشنهاد با ما تماس بگیرید",
+            ar: "اتصل بنا للحصول على استشارة مجانية وعرض أسعار"
+        }
     };
     
-    document.title = titles[lang] || titles.en;
+    document.title = pageTitles[lang] || pageTitles['tr'];
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-        metaDesc.setAttribute('content', descriptions[lang] || descriptions.en);
+    if (metaDesc && descriptions[pageName]) {
+        metaDesc.setAttribute('content', descriptions[pageName][lang] || descriptions[pageName]['tr']);
     }
 }
 
@@ -1633,7 +1750,6 @@ function initVideos() {
 
 // Initialize additional effects
 document.addEventListener('DOMContentLoaded', function() {
-    loadSavedLanguage();
     initVideos();
 });
 
